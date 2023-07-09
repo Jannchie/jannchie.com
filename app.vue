@@ -6,11 +6,11 @@ useSeoMeta({
   description: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
   ogTitle: 'Jannchie\'s Full Stack Engineer Journey',
   ogDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
-  ogImage: '/imgs/jannchie.jpg',
+  ogImage: 'https://jannchie.com/imgs/jannchie.jpg',
   ogUrl: 'https://jannchie.com',
   twitterTitle: 'Jannchie\'s Full Stack Engineer Journey',
   twitterDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
-  twitterImage: '/imgs/jannchie.jpg',
+  twitterImage: 'https://jannchie.com/imgs/jannchie.jpg',
   twitterCard: 'summary',
 })
 
