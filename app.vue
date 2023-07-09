@@ -48,30 +48,31 @@ const isClient = typeof window !== 'undefined'
   <div>
     <VitePwaManifest />
     <ReloadPrompt v-if="isClient" />
-    <div
-      v-if="isClient && $pwa?.showInstallPrompt && !$pwa?.offlineReady && !$pwa?.needRefresh"
-      class="pwa-toast"
-      role="alert"
-    >
-      <div class="message">
-        <span>
-          Install PWA
-        </span>
-      </div>
-      <button @click="$pwa.install()">
-        Install
-      </button>
-      <button @click="$pwa.cancelInstall()">
-        Cancel
-      </button>
-    </div>
-    <NuxtPage />
+    <NuxtPage v-if="isClient" />
   </div>
 </template>
 
 <style>
 :root {
   color-scheme: light dark;
+  --j-bg-1: #fff;
+  --j-bg-2: #ddd;
+  --j-bg-3: #aaa;
+  --j-fg-1: #333;
+  --j-fg-2: #222;
+  --j-fg-3: #111;
+}
+
+/* if preferred theme is dark: */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --j-bg-1: #333;
+    --j-bg-2: #222;
+    --j-bg-3: #111;
+    --j-fg-1: #fff;
+    --j-fg-2: #ddd;
+    --j-fg-3: #aaa;
+  }
 }
 
 ::selection {

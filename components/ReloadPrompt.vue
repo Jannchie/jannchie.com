@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { updateCursor } from 'ipad-cursor'
 
 const {
   offlineReady,
@@ -11,15 +12,23 @@ async function close() {
   offlineReady.value = false
   needRefresh.value = false
 }
+
+nextTick(() => {
+  if (typeof window !== 'undefined') {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    if (!isMobile)
+      updateCursor()
+  }
+})
 </script>
 
 <template>
   <div
     v-if="offlineReady || needRefresh"
-    class="pwa-toast"
+    class="p-4 fixed bottom-8 right-8 w-72 border rounded-xl bg-bg-3 border-bg-2"
     role="alert"
   >
-    <div class="message">
+    <div>
       <span v-if="offlineReady">
         App ready to work offline
       </span>
@@ -27,33 +36,13 @@ async function close() {
         New content available, click on reload button to update.
       </span>
     </div>
-    <button v-if="needRefresh" @click="updateServiceWorker()">
-      Reload
-    </button>
-    <button @click="close">
-      Close
-    </button>
+    <div class="flex justify-end">
+      <button v-if="needRefresh" data-cursor="block" class="p-2 cursor-none" @click="updateServiceWorker()">
+        Reload
+      </button>
+      <button data-cursor="block" class="p-2 cursor-none" @click="close">
+        Close
+      </button>
+    </div>
   </div>
 </template>
-
-<style>
-.pwa-toast {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 16px;
-  padding: 12px;
-  border-radius: 4px;
-  z-index: 1;
-  text-align: left;
-}
-.pwa-toast .message {
-  margin-bottom: 8px;
-}
-.pwa-toast button {
-  outline: none;
-  margin-right: 5px;
-  border-radius: 2px;
-  padding: 3px 10px;
-}
-</style>

@@ -4,6 +4,16 @@ export default defineConfig({
   theme: {
     colors: {
       primary: '#03ae67',
+      bg: {
+        1: 'var(--j-bg-1)',
+        2: 'var(--j-bg-2)',
+        3: 'var(--j-bg-3)',
+      },
+      fg: {
+        1: 'var(--j-fg-1)',
+        2: 'var(--j-fg-2)',
+        3: 'var(--j-fg-3)',
+      },
     },
   },
   presets: [
