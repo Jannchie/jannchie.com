@@ -68,7 +68,7 @@ const groupedSponsors = computed(() => {
         <a href="https://azz.ee/jannchie" target="_blank" data-cursor="block" class="p-2 inline-block text-orange"> <i class="i-tabler-pig-money" /> 爱赞助 </a>
       </div>
     </div>
-    <div class="flex items-start gap-2 flex-wrap p-8 w-[80ch] m-auto">
+    <div class="flex items-start gap-2 flex-wrap p-y px-2 m-auto max-w-[100vw] justify-center">
       <div v-for="sponsor in groupedSponsors" :key="sponsor.user_name">
         <img v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'" width="48" height="48" :src="sponsor.user_avatar" class="rounded-full">
         <div v-else class="w-[48px] h-[48px] overflow-hidden rounded-full text-xs text-center flex items-center justify-center bg-neutral-8 text-neutral-4">
