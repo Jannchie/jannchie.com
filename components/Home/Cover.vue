@@ -32,7 +32,7 @@ if (typeof window !== 'undefined') {
       enter-to-class="opacity-100"
     >
       <div v-if="isTop" class="absolute animate-bounce flex flex-col items-center bottom-20 text-base">
-        K.M.N
+        More...
         <i
           class="i-tabler-arrow-big-down-lines-filled"
         />

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 const projects = [{
   title: 'CodeTime',
   description: 'Programmer Time Tracking.',
@@ -21,9 +21,20 @@ const projects = [{
   link: 'https://www.jannchie.com',
 }]
 
-// const notes = await queryContent('/notes').sort({
-//   createdAt: -1,
-// }).limit(4).find()
+const { data: sponsorsRaw } = await useFetch('https://api.zeroroku.com/sponsor')
+const groupedSponsors = computed(() => {
+  if (!sponsorsRaw.value)
+    return []
+  return Object.values(sponsorsRaw.value.reduce((result, sponsor) => {
+    const { user_name, order_price } = sponsor
+    if (!result[user_name])
+      result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
+
+    result[user_name].total_order_price += order_price
+
+    return result
+  }, {})).sort((a, b) => b.total_order_price - a.total_order_price)
+})
 </script>
 
 <template>
@@ -41,12 +52,17 @@ const projects = [{
         :link="project.link"
       />
     </div>
-    <!-- <HomeSectionTitle>
-      Notes
+    <HomeSectionTitle>
+      Sponsors
     </HomeSectionTitle>
-    <div class="flex flex-col items-start gap-8 p-8 w-[80ch] m-auto">
-      <HomePostLine v-for="content in notes" :key="content._id" :content="content" />
-    </div> -->
+    <div class="flex items-start gap-2 flex-wrap p-8 w-[80ch] m-auto">
+      <div v-for="sponsor in groupedSponsors" :key="sponsor.user_name">
+        <img v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'" width="48" height="48" :src="sponsor.user_avatar" class="rounded-full">
+        <div v-else class="w-[48px] h-[48px] overflow-hidden rounded-full text-xs text-center flex items-center justify-center bg-neutral-8 text-neutral-4">
+          {{ sponsor.user_name }}
+        </div>
+      </div>
+    </div>
     <Footer />
   </main>
 </template>
