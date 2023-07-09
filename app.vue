@@ -1,5 +1,5 @@
 <script setup>
-import { initCursor } from 'ipad-cursor'
+import { initCursor, updateCursor } from 'ipad-cursor'
 import { initRainy } from '@/scripts/rainy'
 import '@unocss/reset/tailwind.css'
 
@@ -40,7 +40,7 @@ if (typeof window !== 'undefined') {
   if (!isMobile)
     initCursor({ enableAutoTextCursor: true, enableLighting: true })
 }
-
+updateCursor()
 const isClient = typeof window !== 'undefined'
 </script>
 
@@ -48,7 +48,7 @@ const isClient = typeof window !== 'undefined'
   <div>
     <VitePwaManifest />
     <ReloadPrompt v-if="isClient" />
-    <NuxtPage v-if="isClient" />
+    <NuxtPage />
   </div>
 </template>
 

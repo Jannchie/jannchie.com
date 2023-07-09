@@ -24,20 +24,17 @@ nextTick(() => {
 
 <template>
   <div
-    v-if="offlineReady || needRefresh"
+    v-if="needRefresh"
     class="p-4 fixed bottom-8 right-8 w-72 border rounded-xl bg-bg-3 border-bg-2"
     role="alert"
   >
     <div>
-      <span v-if="offlineReady">
-        App ready to work offline
-      </span>
-      <span v-else>
+      <span>
         New content available, click on reload button to update.
       </span>
     </div>
     <div class="flex justify-end">
-      <button v-if="needRefresh" data-cursor="block" class="p-2 cursor-none" @click="updateServiceWorker()">
+      <button data-cursor="block" class="p-2 cursor-none" @click="updateServiceWorker()">
         Reload
       </button>
       <button data-cursor="block" class="p-2 cursor-none" @click="close">
