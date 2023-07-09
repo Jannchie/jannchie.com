@@ -4,9 +4,9 @@ const projects = [{
   description: 'Programmer Time Tracking.',
   link: 'https://codetime.dev',
 }, {
-  title: 'Anichart',
+  title: 'Anichart.js',
   description: 'Animate historical data.',
-  link: 'https://github.com/Jannchie/anichart',
+  link: 'https://github.com/Jannchie/anichart.js',
 }, {
   title: 'Zeroroku',
   description: 'Data Observatory.',
