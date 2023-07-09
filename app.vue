@@ -7,7 +7,7 @@ useSeoMeta({
   ogTitle: 'Jannchie\'s Full Stack Engineer Journey',
   ogDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
   ogImage: '/imgs/jannchie.jpg',
-  ogUrl: 'jannchie.com',
+  ogUrl: 'https://jannchie.com',
   twitterTitle: 'Jannchie\'s Full Stack Engineer Journey',
   twitterDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
   twitterImage: '/imgs/jannchie.jpg',
