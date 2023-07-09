@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Nuxt Vite PWA',
+      name: 'Jannchie\'s',
       short_name: 'NuxtVitePWA',
       theme_color: '#ffffff',
       icons: [

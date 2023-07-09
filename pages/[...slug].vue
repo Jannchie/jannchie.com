@@ -17,7 +17,7 @@ const projects = [{
   link: 'https://roku-ui.vercel.app',
 }, {
   title: 'Jannchie\'s Blog',
-  description: 'My Blog.',
+  description: 'Here.',
   link: 'https://www.jannchie.com',
 }]
 
