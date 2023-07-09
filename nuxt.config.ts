@@ -1,21 +1,15 @@
-import tailwindTypography from '@tailwindcss/typography'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxt/content',
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
+    '@vite-pwa/nuxt',
+    '@unocss/nuxt',
   ],
   eslint: {
     lintOnStart: false,
-  },
-  tailwindcss: {
-    config: {
-      plugins: [tailwindTypography],
-    },
   },
   content: {
     highlight: {
@@ -38,5 +32,7 @@ export default defineNuxtConfig({
     families: {
       'My Soul': true,
     },
+  },
+  pwa: {
   },
 })

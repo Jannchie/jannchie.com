@@ -1,6 +1,15 @@
+<script setup>
+const isTop = ref(true)
+if (typeof window !== 'undefined') {
+  window.addEventListener('scroll', () => {
+    isTop.value = window.scrollY < 20
+  })
+}
+</script>
+
 <template>
-  <h1 class="pt-8 pb-16 h-screen flex items-center justify-center">
-    <div>
+  <div class="pt-8 pb-16 h-screen flex items-center justify-center">
+    <h1>
       <div class="flex items-end">
         <div style="font-family: 'My Soul', cursive;" class="relative text-center text-4xl lg:text-6xl">
           <div class="pointer-events-none select-none">
@@ -11,9 +20,30 @@
           </div>
         </div>
       </div>
-      <div class="opacity-50 ml-12">
-        Full Stack Engineer journey.
+      <div class="opacity-50 ml-8">
+        Journey as Full Stack Engineer.
       </div>
-    </div>
-  </h1>
+    </h1>
+    <Transition
+      class="absolute bottom-0 duration-300 animate-bounce"
+      name="fade"
+      enter-active-class="transition-opacity duration-300"
+      leave-active-class="transition-opacity duration-300"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+    >
+      <div v-if="isTop" class="absolute flex flex-col items-center bottom-20 text-base">
+        K.M.N
+        <i
+          class="i-tabler-arrow-big-down-lines-filled"
+        />
+      </div>
+    </Transition>
+  </div>
 </template>
+
+<style scoped>
+
+</style>
