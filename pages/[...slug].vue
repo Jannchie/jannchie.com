@@ -60,6 +60,15 @@ const groupedSponsors = computed(() => {
     <HomeSectionTitle>
       Sponsors
     </HomeSectionTitle>
+    <div class="text-center text-sm text-sm opacity-75">
+      <div>
+        Join the list
+      </div>
+      <div class="p-2">
+        <a href="https://github.com/sponsors/Jannchie" target="_blank" data-cursor="block" class="p-2 inline-block"> <i class="i-tabler-brand-github" /> Github </a>
+        <a href="https://azz.ee/jannchie" target="_blank" data-cursor="block" class="p-2 inline-block text-orange"> <i class="i-tabler-pig-money" /> 爱赞助 </a>
+      </div>
+    </div>
     <div class="flex items-start gap-2 flex-wrap p-8 w-[80ch] m-auto">
       <div v-for="sponsor in groupedSponsors" :key="sponsor.user_name">
         <img v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'" width="48" height="48" :src="sponsor.user_avatar" class="rounded-full">
