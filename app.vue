@@ -40,14 +40,16 @@ if (typeof window !== 'undefined') {
   if (!isMobile)
     initCursor({ enableAutoTextCursor: true, enableLighting: true })
 }
+
+const isClient = typeof window !== 'undefined'
 </script>
 
 <template>
   <div>
     <VitePwaManifest />
-    <ReloadPrompt />
+    <ReloadPrompt v-if="isClient" />
     <div
-      v-if="$pwa?.showInstallPrompt && !$pwa?.offlineReady && !$pwa?.needRefresh"
+      v-if="isClient && $pwa?.showInstallPrompt && !$pwa?.offlineReady && !$pwa?.needRefresh"
       class="pwa-toast"
       role="alert"
     >
