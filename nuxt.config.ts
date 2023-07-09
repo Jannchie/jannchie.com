@@ -34,5 +34,43 @@ export default defineNuxtConfig({
     },
   },
   pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Nuxt Vite PWA',
+      short_name: 'NuxtVitePWA',
+      theme_color: '#ffffff',
+      icons: [
+        {
+          src: 'imgs/jannchie-192.jpg',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'imgs/jannchie-512.jpg',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+        {
+          src: 'imgs/jannchie-512.jpg',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
+    },
+    workbox: {
+      navigateFallback: '/',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 3600,
+    },
+    devOptions: {
+      enabled: true,
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
+    },
   },
 })

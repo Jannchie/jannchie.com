@@ -22,6 +22,10 @@ useHead({
   htmlAttrs: {
     lang: 'en',
   },
+  meta: {
+    name: 'theme-color',
+    content: '#000000',
+  },
   link: [
     {
       rel: 'icon',
@@ -40,6 +44,25 @@ if (typeof window !== 'undefined') {
 
 <template>
   <div>
+    <VitePwaManifest />
+    <ReloadPrompt />
+    <div
+      v-if="$pwa?.showInstallPrompt && !$pwa?.offlineReady && !$pwa?.needRefresh"
+      class="pwa-toast"
+      role="alert"
+    >
+      <div class="message">
+        <span>
+          Install PWA
+        </span>
+      </div>
+      <button @click="$pwa.install()">
+        Install
+      </button>
+      <button @click="$pwa.cancelInstall()">
+        Cancel
+      </button>
+    </div>
     <NuxtPage />
   </div>
 </template>
