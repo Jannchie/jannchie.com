@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  ipad-cursor:
+    specifier: ^0.4.4
+    version: 0.4.4
   three:
     specifier: ^0.154.0
     version: 0.154.0
@@ -40,12 +43,12 @@ devDependencies:
   '@vite-pwa/nuxt':
     specifier: ^0.1.0
     version: 0.1.0(@nuxt/kit@3.6.2)(vite-plugin-pwa@0.16.4)
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   eslint:
     specifier: ^8.44.0
     version: 8.44.0
-  ipad-cursor:
-    specifier: ^0.3.1
-    version: 0.3.1
   katex:
     specifier: ^0.16.8
     version: 0.16.8
@@ -4306,6 +4309,10 @@ packages:
       consola: 3.2.3
     dev: true
 
+  /classnames@2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: true
+
   /clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
@@ -6524,9 +6531,9 @@ packages:
     resolution: {integrity: sha512-WKa+XuLG1A1R0UWhl2+1XQSi+fZWMsYKffMZTTYsiZaUD8k2yDAj5atimTUD2TZkyCkNEeYE5NhFZmupOGtjYQ==}
     dev: true
 
-  /ipad-cursor@0.3.1:
-    resolution: {integrity: sha512-omhSMS9nc676nqFXe/xeeEXCpc4ENPsiTQoVDAzr5Kqp2rDOnZmLf/s+CPP2BR54jbK+YIe/RgAn8TjN66PNAw==}
-    dev: true
+  /ipad-cursor@0.4.4:
+    resolution: {integrity: sha512-JfftapDmfJE+Bksji6TztFeB3rJ9s6zUB5Z1ZuNnU0QFNezXMdNAC0ivQXQr/AQd+mc9XQxS4Zfptx/PP7h9ig==}
+    dev: false
 
   /iron-webcrypto@0.7.1:
     resolution: {integrity: sha512-K/UmlEhPCPXEHV5hAtH5C0tI5JnFuOrv4yO/j7ODPl3HaiiHBLbOLTde+ieUaAyfCATe4LoAnclyF+hmSCOVmQ==}

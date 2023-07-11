@@ -7,12 +7,12 @@ const { link } = defineProps({
 </script>
 
 <template>
-  <a data-cursor="block" :href="link" target="_blank" class="p-4 w-72 rounded-xl flex flex-col items-center">
+  <NuxtLink data-cursor="block" :href="link" target="_blank" class="p-4 w-72 rounded-xl flex flex-col items-center">
     <div class="font-bold text-base">
       {{ title }}
     </div>
     <div class="opacity-50 text-sm">
       {{ description }}
     </div>
-  </a>
+  </NuxtLink>
 </template>

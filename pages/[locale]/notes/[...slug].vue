@@ -1,5 +1,7 @@
 <script setup>
 import 'katex/dist/katex.min.css'
+
+const locale = useRoute().params.locale
 </script>
 
 <template>
@@ -14,16 +16,23 @@ import 'katex/dist/katex.min.css'
       <ContentDoc />
       <div class="opacity-75 text-sm font-mono mt-32">
         本文采用
-        <a
-          class="inline-block"
+        <NuxtLink
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
           data-cursor="block"
         >
           CC BY-NC-SA 4.0
-        </a>
+        </NuxtLink>
         协议进行公开
+      </div>
+      <div class="font-mono opacity-75 text-sm">
+        <span>$ </span>
+        <NuxtLink
+          :to="`/${locale}`"
+          data-cursor="block"
+        >
+          cd ..
+        </NuxtLink>
       </div>
     </article>
   </main>
-  <Footer />
 </template>

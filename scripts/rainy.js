@@ -35,7 +35,7 @@ export function initRainy() {
 
   raindropGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
 
-  const rainCount = 1000 // the number of raindrops
+  const rainCount = 2000 // the number of raindrops
   for (let i = 0; i < rainCount; i++) {
     const raindropGeometry = new THREE.BufferGeometry()
 
@@ -55,16 +55,15 @@ export function initRainy() {
 
     // 在雨滴对象中添加速度属性
     raindrop.velocity = new THREE.Vector3(
-      Math.random() * 0.02 - 0.01, // X speed
-      (Math.random() * 0.3 - 0.6) - 0.2, // Y speed
-      Math.random() * 0.02 - 0.01, // Z speed
+      Math.random() * 0.12 - 0.06, // X speed
+      (Math.random() * 0.1 - 0.2) - 0.6, // Y speed
+      Math.random() * 0.12 - 0.06, // Z speed
     )
     scene.add(raindrop)
   }
 
   function animate() {
     requestAnimationFrame(animate)
-
     scene.traverse((object) => {
       if (object instanceof THREE.Line) {
         object.position.add(object.velocity)
@@ -72,7 +71,6 @@ export function initRainy() {
           object.position.copy(new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100))
       }
     })
-
     renderer.render(scene, camera)
   }
   animate()

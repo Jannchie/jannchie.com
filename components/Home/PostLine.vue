@@ -22,12 +22,12 @@ const createdAtStr = computed(() => {
 </script>
 
 <template>
-  <a :key="content.slug" data-cursor="block" :href="`${content._path}`" class="w-full p-4 inline">
+  <NuxtLink :key="content.slug" data-cursor="block" :href="`${content._path}`" class="w-full p-4 inline">
     <div>
       {{ content.title }}
     </div>
     <div class="text-sm opacity-75">
       {{ createdAtStr }}
     </div>
-  </a>
+  </NuxtLink>
 </template>

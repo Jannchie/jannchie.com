@@ -1,5 +1,5 @@
 <script setup>
-import { initCursor, updateCursor } from 'ipad-cursor'
+import { useCursor } from 'ipad-cursor/vue'
 import { initRainy } from '@/scripts/rainy'
 import '@unocss/reset/tailwind.css'
 
@@ -34,22 +34,24 @@ useHead({
     },
   ],
 })
-
-if (typeof window !== 'undefined') {
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-  if (!isMobile)
-    initCursor({ enableAutoTextCursor: true, enableLighting: true })
+if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  const { updateCursor, initCursor } = useCursor()
+  initCursor()
+  const targetNode = document.body
+  const config = { childList: true, subtree: true }
+  const callback = function () {
+    updateCursor()
+  }
+  const observer = new MutationObserver(callback)
+  observer.observe(targetNode, config)
 }
-updateCursor()
-const isClient = typeof window !== 'undefined'
 </script>
 
 <template>
-  <div>
+  <NuxtLayout>
     <VitePwaManifest />
-    <ReloadPrompt v-if="isClient" />
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
 
 <style>
@@ -75,7 +77,20 @@ const isClient = typeof window !== 'undefined'
   }
 }
 
+[data-cursor="block"] {
+  @apply border border-transparent hover:border-bg-2 rounded-lg transition-all duration-300;
+}
+
 ::selection {
-  background-color: #444; /* 设置选中背景颜色 */
+  @apply bg-bg-1 text-fg-1;
+}
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-all duration-300;
+}
+.page-enter-from,
+.page-leave-to {
+  @apply blur-2xl opacity-0;
 }
 </style>

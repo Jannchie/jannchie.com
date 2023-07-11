@@ -17,14 +17,15 @@
     "@types/three": "^0.153.0",
     "@unocss/nuxt": "^0.53.5",
     "@vite-pwa/nuxt": "^0.1.0",
+    "classnames": "^2.3.2",
     "eslint": "^8.44.0",
-    "ipad-cursor": "^0.3.1",
     "katex": "^0.16.8",
     "nuxt": "^3.6.2",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1"
   },
   "dependencies": {
+    "ipad-cursor": "^0.4.4",
     "three": "^0.154.0"
   }
 }

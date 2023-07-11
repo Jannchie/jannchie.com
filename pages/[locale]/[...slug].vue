@@ -18,7 +18,7 @@ const projects = [{
 }, {
   title: 'Jannchie\'s Blog',
   description: 'Here.',
-  link: 'https://www.jannchie.com',
+  link: 'https://github.com/Jannchie/jannchie.com',
 }]
 
 const { data: sponsorsRaw } = await useFetch('https://api.zeroroku.com/sponsor', {
@@ -33,11 +33,9 @@ const groupedSponsors = computed(() => {
     const { user_name, order_price } = sponsor
     if (!result[user_name])
       result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
-
     result[user_name].total_order_price += order_price
-
     return result
-  }, {})).sort((a, b) => b.total_order_price - a.total_order_price)
+  }, {})).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
 })
 </script>
 
@@ -60,22 +58,22 @@ const groupedSponsors = computed(() => {
       Sponsors
     </HomeSectionTitle>
     <div class="text-center text-sm text-sm opacity-75">
-      <div>
-        Join the list
-      </div>
       <div class="p-2">
-        <a href="https://github.com/sponsors/Jannchie" target="_blank" data-cursor="block" class="p-2 inline-block"> <i class="i-tabler-brand-github" /> Github </a>
-        <a href="https://azz.ee/jannchie" target="_blank" data-cursor="block" class="p-2 inline-block text-orange"> <i class="i-tabler-pig-money" /> 爱赞助 </a>
+        <NuxtLink aria-label="github sponsor" href="https://github.com/sponsors/Jannchie" target="_blank" data-cursor="block" class="p-2 inline-block">
+          <i class="i-tabler-brand-github" /> Github
+        </NuxtLink>
+        <NuxtLink aria-label="azz sponsor" href="https://azz.ee/jannchie" target="_blank" data-cursor="block" class="p-2 inline-block">
+          <i class="i-tabler-pig-money" /> 爱赞助
+        </NuxtLink>
       </div>
     </div>
     <div class="flex items-start gap-2 flex-wrap p-y px-2 m-auto max-w-[100vw] justify-center">
       <div v-for="sponsor in groupedSponsors" :key="sponsor.user_name">
-        <img v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'" width="48" height="48" :src="sponsor.user_avatar" class="rounded-full">
-        <div v-else class="w-[48px] h-[48px] overflow-hidden rounded-full text-xs text-center flex items-center justify-center bg-neutral-8 text-neutral-4">
+        <img v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'" :alt="sponsor.user_name" width="48" height="48" :src="sponsor.user_avatar" class="rounded-full">
+        <div v-else class="w-[48px] h-[48px] overflow-hidden rounded-full text-xs text-center flex items-center justify-center bg-bg-2 text-fg-2">
           {{ sponsor.user_name }}
         </div>
       </div>
     </div>
-    <Footer />
   </main>
 </template>
