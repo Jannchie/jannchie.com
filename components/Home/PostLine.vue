@@ -6,7 +6,7 @@ const { content } = defineProps({
   },
 })
 
-const formater = new Intl.DateTimeFormat('zh-CN', {
+const formater = new Intl.DateTimeFormat('zh', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',

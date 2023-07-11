@@ -37,11 +37,27 @@ const groupedSponsors = computed(() => {
     return result
   }, {})).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
 })
+const locale = useRoute().params.locale
+const posts = await queryContent(`/${locale}/posts`).find()
+const post = posts[0]
 </script>
 
 <template>
   <main class="flex flex-col">
     <HomeCover />
+    <HomeSectionTitle>
+      Posts
+    </HomeSectionTitle>
+    <div class="flex justify-center">
+      <NuxtLink v-if="post" class="text-center p-4 min-w-72" data-cursor="block" :to="post._path">
+        <div>
+          {{ post.title }}
+        </div>
+        <div class="text-sm text-fg-3">
+          {{ new Date(post.createdAt).toDateString() }}
+        </div>
+      </NuxtLink>
+    </div>
     <HomeSectionTitle>
       Projects
     </HomeSectionTitle>

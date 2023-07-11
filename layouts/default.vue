@@ -1,7 +1,7 @@
 <script setup>
 const route = useRoute()
 const router = useRouter()
-const locales = ['en', 'zh-CN', 'ja']
+const locales = ['en', 'zh', 'ja']
 watchEffect(() => {
   const currentLocale = route.params.locale
   if (!locales.includes(currentLocale)) {

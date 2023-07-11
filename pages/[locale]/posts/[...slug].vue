@@ -7,7 +7,7 @@ const locale = useRoute().params.locale
 <template>
   <main>
     <h1 class="text-center text-4xl lg:text-6xl font-black pt-8 pb-16">
-      {{ `Jannchie's Notes` }}
+      {{ `Jannchie's Posts` }}
     </h1>
     <article
       data-cursor="text"
