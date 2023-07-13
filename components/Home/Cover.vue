@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { t } from '~/i18n'
 
 const isTop = ref(true)
@@ -7,7 +7,7 @@ if (typeof window !== 'undefined') {
     isTop.value = window.scrollY < 20
   })
 }
-const locale = useRoute().params.locale
+const locale = useRoute('locale').params.locale
 </script>
 
 <template>
@@ -46,17 +46,18 @@ const locale = useRoute().params.locale
     </div>
     <div class="m-2 flex gap-2">
       <NuxtLink :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block" to="/en">
-        en
+        English
       </NuxtLink>
       <NuxtLink :class="`${locale === 'zh' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="zh" data-cursor="block" to="/zh">
-        zh
+        中文
       </NuxtLink>
       <NuxtLink :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="ja" data-cursor="block" to="/ja">
-        ja
+        日本語
       </NuxtLink>
     </div>
     <Transition
-      class="absolute bottom-0 transition-opacity duration-300"
+      enter-active-class="absolute bottom-0 transition-opacity duration-300"
+      leave-active-class="absolute bottom-0 transition-opacity duration-300"
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
       enter-from-class="opacity-0"

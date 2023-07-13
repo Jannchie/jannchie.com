@@ -31,7 +31,7 @@ export function initRainy() {
   const raindropGeometry = new THREE.BufferGeometry()
   const vertices = []
   vertices.push(0, 0, 0)
-  vertices.push(0, -1, 0) // the raindrop length
+  vertices.push(0, -2, 0) // the raindrop length
 
   raindropGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
 
@@ -56,7 +56,7 @@ export function initRainy() {
     // 在雨滴对象中添加速度属性
     raindrop.velocity = new THREE.Vector3(
       Math.random() * 0.12 - 0.06, // X speed
-      (Math.random() * 0.1 - 0.2) - 0.6, // Y speed
+      (Math.random() * 0.1 - 0.2) - 1, // Y speed
       Math.random() * 0.12 - 0.06, // Z speed
     )
     scene.add(raindrop)
