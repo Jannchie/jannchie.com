@@ -36,7 +36,11 @@ useHead({
 })
 if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   const { updateCursor, initCursor } = useCursor()
-  initCursor()
+  initCursor({
+    enableAutoTextCursor: true,
+    enableLighting: true,
+    enableMouseDownEffect: true,
+  })
   const targetNode = document.body
   const config = { childList: true, subtree: true }
   const callback = function () {

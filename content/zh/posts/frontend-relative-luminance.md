@@ -1,8 +1,8 @@
 ---
 title: 提高浏览器的可访问性 - 对比度计算
-createdAt: 2023-05-23T10:48:51+09:00
-modifiedAt: 2023-05-24T12:09:34+09:00
 tags: [前端, Web开发]
+createdAt: 2023-05-23T10:48:51+09:00
+modifiedAt: 2023-07-15T20:33:58+09:00
 ---
 
 为了确保网站和应用程序能够被更广泛的用户群体使用，关注和提高可访问性是至关重要的。而在可访问性中，对比度是一个非常关键的因素。对比度指的是前景色（文本或图标）与背景色之间的明暗差异程度。在浏览器中，我们可以检查和评估前景和背景色的对比度，以确保内容易于阅读和辨别。
@@ -98,6 +98,6 @@ const contrast = calculateContrast(color1, color2)
 console.log(`Contrast: ${contrast}`)
 ```
 
-最后，推荐一个可以检查并自动调整颜色至安全对比度的 Web APP：
+最后，我强烈推荐一个名为 "Color Contrast Checker - Coolors" 的网页应用。这个应用不仅可以检查颜色的对比度是否符合无障碍标准，还可以自动调整颜色以满足安全对比度的需求。
 
 [Color Contrast Checker - Coolors](https://coolors.co/contrast-checker/112a46-acc8e5)

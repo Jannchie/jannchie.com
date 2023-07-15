@@ -28,9 +28,9 @@ MongoDB 是一种功能强大且灵活的 NoSQL 数据库，默认情况下，�
 
 我们可以编辑这个文件，添加以下配置项来启动副本集：
 
-``` yml
+``` yaml
 replication:
-  replSetName: rs0
+  replSetName: rs0
 ```
 
 在完成配置文件的设置后，我们需要重启 MongoDB 服务以应用更改。
