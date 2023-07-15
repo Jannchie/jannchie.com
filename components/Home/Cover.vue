@@ -56,14 +56,14 @@ const locale = useRoute('locale').params.locale
       </NuxtLink>
     </div>
     <Transition
-      enter-active-class="absolute bottom-0 transition-opacity duration-300"
-      leave-active-class="absolute bottom-0 transition-opacity duration-300"
+      enter-active-class="transition-opacity duration-300"
+      leave-active-class="transition-opacity duration-300"
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
       enter-from-class="opacity-0"
       enter-to-class="opacity-100"
     >
-      <div v-if="isTop" class="absolute animate-bounce flex flex-col items-center bottom-20 text-base">
+      <div v-if="isTop" class="bottom-0 absolute animate-bounce flex flex-col items-center bottom-20 text-base">
         More...
         <i
           class="i-tabler-arrow-big-down-lines-filled"

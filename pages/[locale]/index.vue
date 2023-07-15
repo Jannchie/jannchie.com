@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+import { t } from '@/i18n'
+
 const projects = [{
   title: 'CodeTime',
   description: 'Programmer Time Tracking.',
@@ -21,7 +23,7 @@ const projects = [{
   link: 'https://github.com/Jannchie/jannchie.com',
 }]
 
-const { data: sponsorsRaw } = await useFetch('https://api.zeroroku.com/sponsor', {
+const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string; user_name: string; order_price: number }]>('https://api.zeroroku.com/sponsor', {
   headers: {
     'Content-Type': 'application/json',
   },
@@ -35,9 +37,9 @@ const groupedSponsors = computed(() => {
       result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
     result[user_name].total_order_price += order_price
     return result
-  }, {})).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
+  }, {} as { [user_name: string]: { user_name: string; total_order_price: number; user_avatar: string } })).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
 })
-const locale = useRoute().params.locale
+const locale = useRoute('locale').params.locale
 const posts = await queryContent(`/${locale}/posts`).find()
 const post = posts[0]
 </script>
@@ -45,21 +47,23 @@ const post = posts[0]
 <template>
   <main class="flex flex-col">
     <HomeCover />
-    <HomeSectionTitle>
-      Posts
-    </HomeSectionTitle>
-    <div class="flex justify-center">
-      <NuxtLink v-if="post" class="text-center p-4 min-w-72" data-cursor="block" :to="post._path">
-        <div>
-          {{ post.title }}
-        </div>
-        <div class="text-sm text-fg-3">
-          {{ new Date(post.createdAt).toDateString() }}
-        </div>
-      </NuxtLink>
+    <div v-if="post">
+      <HomeSectionTitle>
+        {{ t('posts') }}
+      </HomeSectionTitle>
+      <div class="flex justify-center">
+        <NuxtLink class="text-center p-4 min-w-72" data-cursor="block" :to="post._path">
+          <div>
+            {{ post.title }}
+          </div>
+          <div class="text-sm text-fg-3">
+            {{ new Date(post.createdAt).toDateString() }}
+          </div>
+        </NuxtLink>
+      </div>
     </div>
     <HomeSectionTitle>
-      Projects
+      {{ t('projects') }}
     </HomeSectionTitle>
     <div class="flex flex-wrap gap-4 p-8 m-auto justify-center">
       <HomeProjectCard
@@ -71,7 +75,7 @@ const post = posts[0]
       />
     </div>
     <HomeSectionTitle>
-      Sponsors
+      {{ t('sponsors') }}
     </HomeSectionTitle>
     <div class="text-center text-sm text-sm opacity-75">
       <div class="p-2">
