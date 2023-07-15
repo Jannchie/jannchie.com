@@ -41,18 +41,18 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
     enableLighting: true,
   })
   const targetNode = document.body
-  const config = { childList: true, subtree: true }
   const callback = function () {
     updateCursor()
   }
   const observer = new MutationObserver(callback)
-  observer.observe(targetNode, config)
+  observer.observe(targetNode, { childList: true, subtree: true })
 }
 </script>
 
 <template>
   <NuxtLayout>
     <VitePwaManifest />
+    <NuxtLoadingIndicator color="#23a1c0" />
     <NuxtPage />
   </NuxtLayout>
 </template>
@@ -60,6 +60,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 <style>
 :root {
   color-scheme: light dark;
+  --j-main: #23a1c0;
   --j-bg-1: #fff;
   --j-bg-2: #ddd;
   --j-bg-3: #aaa;

@@ -4,6 +4,6 @@
   "compilerOptions": {
     "types": [
       "vite-plugin-pwa/client"
-    ]
+    ],
   }
 }

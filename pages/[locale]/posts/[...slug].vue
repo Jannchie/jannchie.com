@@ -1,6 +1,8 @@
 <script setup>
 import 'katex/dist/katex.min.css'
+import { t } from '@/i18n'
 
+const ContentLicense = t('contentLicense')
 const locale = useRoute().params.locale
 </script>
 
@@ -15,14 +17,7 @@ const locale = useRoute().params.locale
     >
       <ContentDoc />
       <div class="opacity-75 text-sm font-mono mt-32">
-        本文采用
-        <NuxtLink
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-          data-cursor="block"
-        >
-          CC BY-NC-SA 4.0
-        </NuxtLink>
-        协议进行公开
+        <ContentLicense />
       </div>
       <div class="font-mono opacity-75 text-sm">
         <span>$ </span>
