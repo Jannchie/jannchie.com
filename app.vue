@@ -61,13 +61,14 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 <style>
 :root {
   color-scheme: light dark;
+  background: var(--j-bg-3);
   --j-main: #23a1c0;
   --j-bg-1: #fff;
   --j-bg-2: #ddd;
   --j-bg-3: #aaa;
   --j-fg-1: #333;
   --j-fg-2: #222;
-  --j-fg-3: #111;
+  --j-fg-3: #161718;
 }
 
 /* if preferred theme is dark: */
@@ -75,7 +76,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
   :root {
     --j-bg-1: #333;
     --j-bg-2: #222;
-    --j-bg-3: #111;
+    --j-bg-3: #161718;
     --j-fg-1: #fff;
     --j-fg-2: #ddd;
     --j-fg-3: #aaa;

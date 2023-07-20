@@ -3,7 +3,7 @@ const locale = useRoute('locale').params.locale
 </script>
 
 <template>
-  <div v-if="locale === 'en'" class="text-fg-3 children:my-4 max-w-[60ch]">
+  <div v-if="locale === 'en'" class="text-fg-3 children:my-4 max-w-[60ch] p-2">
     <p>
       I'm Jannchie Pan, a developer.
       <br>
@@ -17,7 +17,7 @@ const locale = useRoute('locale').params.locale
       Very fortunately, I have unlimited enthusiasm and energy to realize interesting ideas. I owe it all to the company and support of my wife.
     </p>
   </div>
-  <div v-if="locale === 'zh'" class="text-fg-3 children:my-4 max-w-[60ch]">
+  <div v-if="locale === 'zh'" class="text-fg-3 children:my-4 max-w-[60ch] p-2">
     <p>
       我是见齐，一个开发者。
       <br>
@@ -31,7 +31,7 @@ const locale = useRoute('locale').params.locale
       非常幸运，我有无限的热情和精力去实现有趣的想法。这一切都要归功于我的妻子的陪伴和支持。
     </p>
   </div>
-  <div v-if="locale === 'ja'" class="text-fg-3 children:my-4 max-w-[60ch]">
+  <div v-if="locale === 'ja'" class="text-fg-3 children:my-4 max-w-[60ch] p-2">
     <p>
       ケンキと申します、開発者です。
       <br>
