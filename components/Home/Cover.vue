@@ -55,6 +55,7 @@ const locale = useRoute('locale').params.locale
         日本語
       </NuxtLink>
     </div>
+    <HomeBio />
     <Transition
       enter-active-class="transition-opacity duration-300"
       leave-active-class="transition-opacity duration-300"

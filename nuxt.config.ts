@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@vite-pwa/nuxt',
     '@unocss/nuxt',
+    '@vueuse/nuxt',
   ],
   eslint: {
     lintOnStart: false,

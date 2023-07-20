@@ -54,6 +54,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
     <VitePwaManifest />
     <NuxtLoadingIndicator color="#23a1c0" />
     <NuxtPage />
+    <ToTopFab />
   </NuxtLayout>
 </template>
 

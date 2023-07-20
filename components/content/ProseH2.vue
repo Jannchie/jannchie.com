@@ -9,9 +9,9 @@ const generate = anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes
 
 <template>
   <h2 :id="id" class="relative">
-    <a v-if="id && generate" data-cursor="block" class="hover:before:content-['##'] before:-left-[3ch] before:absolute before:text-fg-3 decoration-offset-8 font-bold" :href="`#${id}`">
+    <NuxtLink v-if="id && generate" exact data-cursor="block" class="before:transition-all before:opacity-0 hover:before:opacity-100 before:content-['##'] before:-left-[3ch] before:absolute before:text-fg-3 decoration-offset-8 font-bold" :href="`#${id}`">
       <slot />
-    </a>
+    </NuxtLink>
     <slot v-else />
   </h2>
 </template>

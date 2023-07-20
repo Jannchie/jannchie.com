@@ -17,6 +17,7 @@
     "@types/three": "^0.154.0",
     "@unocss/nuxt": "^0.53.5",
     "@vite-pwa/nuxt": "^0.1.0",
+    "@vueuse/nuxt": "^10.2.1",
     "classnames": "^2.3.2",
     "eslint": "^8.45.0",
     "katex": "^0.16.8",
