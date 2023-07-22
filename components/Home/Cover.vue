@@ -23,7 +23,7 @@ const locale = useRoute('locale').params.locale
           </div>
         </div>
       </div>
-      <div :class="`opacity-50 ${locale !== 'zh' ? 'ml-8' : 'ml-32'}`">
+      <div :class="`opacity-50 ${locale !== 'zh-CN' ? 'ml-8' : 'ml-32'}`">
         {{ t('subtitle') }}
       </div>
     </h1>
@@ -48,7 +48,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block" to="/en">
         English
       </NuxtLink>
-      <NuxtLink :class="`${locale === 'zh' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="zh" data-cursor="block" to="/zh">
+      <NuxtLink :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="zh" data-cursor="block" to="/zh-CN">
         中文
       </NuxtLink>
       <NuxtLink :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="ja" data-cursor="block" to="/ja">

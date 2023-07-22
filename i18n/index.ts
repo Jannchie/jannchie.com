@@ -1,5 +1,5 @@
 import en from './data/en'
-import zh from './data/zh'
+import zh from './data/zhCN'
 import ja from './data/ja'
 
 export * from './component'
@@ -9,9 +9,9 @@ function objectToMap(obj: { [key: string]: any }): Map<string, any> {
   return new Map(entries)
 }
 
-const i18NMap = new Map([['en', objectToMap(en)], ['zh', objectToMap(zh)], ['ja', objectToMap(ja)]])
+const i18NMap = new Map([['en', objectToMap(en)], ['zh-CN', objectToMap(zh)], ['ja', objectToMap(ja)]])
 
-export function t(key: string, locale?: 'ja' | 'zh' | 'en') {
+export function t(key: string, locale?: 'ja' | 'zh-CN' | 'en') {
   const { params } = useRoute()
   locale = locale ?? (params as any).locale
   if (!locale)

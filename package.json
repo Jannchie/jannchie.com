@@ -7,10 +7,10 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.39.7",
-    "@iconify-json/tabler": "^1.1.82",
-    "@nuxt/content": "^2.7.0",
-    "@nuxt/devtools": "^0.6.7",
+    "@antfu/eslint-config": "^0.39.8",
+    "@iconify-json/tabler": "^1.1.83",
+    "@nuxt/content": "^2.7.1",
+    "@nuxt/devtools": "^0.7.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/google-fonts": "^3.0.1",
     "@types/node": "^20.4.2",
@@ -21,7 +21,7 @@
     "classnames": "^2.3.2",
     "eslint": "^8.45.0",
     "katex": "^0.16.8",
-    "nuxt": "^3.6.3",
+    "nuxt": "^3.6.5",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1"
   },

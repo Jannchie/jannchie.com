@@ -23,6 +23,14 @@ const projects = [{
   link: 'https://github.com/Jannchie/jannchie.com',
 }]
 
+const locale = useRoute('locale').params.locale
+
+useHead({
+  htmlAttrs: {
+    lang: locale,
+  },
+})
+
 const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string; user_name: string; order_price: number }]>('https://api.zeroroku.com/sponsor', {
   headers: {
     'Content-Type': 'application/json',
@@ -39,7 +47,6 @@ const groupedSponsors = computed(() => {
     return result
   }, {} as { [user_name: string]: { user_name: string; total_order_price: number; user_avatar: string } })).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
 })
-const locale = useRoute('locale').params.locale
 const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: -1 }).find()
 </script>
 

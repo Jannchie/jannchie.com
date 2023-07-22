@@ -1,7 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import 'katex/dist/katex.min.css'
 
-const locale = useRoute().params.locale
+useSeoMeta({
+  title: '1',
+})
+const locale = useRoute('locale').params.locale
 </script>
 
 <template>
@@ -13,17 +16,8 @@ const locale = useRoute().params.locale
       data-cursor="text"
       class="m-auto p-2 sm:px-0 dark:prose-invert prose sm:prose-sm md:prose-md lg:prose-lg"
     >
-      <ContentDoc />
-      <div class="opacity-75 text-sm font-mono mt-32">
-        本文采用
-        <NuxtLink
-          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-          data-cursor="block"
-        >
-          CC BY-NC-SA 4.0
-        </NuxtLink>
-        协议进行公开
-      </div>
+      <ContentDoc :head="false" />
+      <ContentLicense />
       <div class="font-mono opacity-75 text-sm">
         <span>$ </span>
         <NuxtLink

@@ -1,6 +1,8 @@
-# Content v2 Minimal Starter
+# jannchie.com
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+My personal website
+
+Made with [Nuxt.js](https://nuxtjs.org)
 
 ## Setup
 
@@ -38,5 +40,3 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.

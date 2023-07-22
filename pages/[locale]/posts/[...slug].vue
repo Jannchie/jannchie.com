@@ -1,21 +1,44 @@
-<script setup>
+<script setup lang="ts">
 import 'katex/dist/katex.min.css'
-import { t } from '@/i18n'
 
-const ContentLicense = t('contentLicense')
-const locale = useRoute().params.locale
+const { params: { locale }, path } = useRoute('locale')
+const data = await queryContent(path).findOne()
+useSeoMeta({
+  title: data.title,
+})
+
+const createdAt = computed(() => {
+  return Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(new Date(data.createdAt))
+})
+const modifiedAt = computed(() => {
+  return Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(new Date(data.modifiedAt))
+})
 </script>
 
 <template>
   <main>
-    <h1 class="text-center text-4xl lg:text-6xl font-black pt-8 pb-16">
+    <div class="text-center text-4xl lg:text-3xl font-black pt-8 pb-16">
       {{ `Jannchie's Posts` }}
-    </h1>
+    </div>
     <article
       data-cursor="text"
       class="m-auto p-2 sm:px-0 dark:prose-invert prose sm:prose-sm md:prose-md lg:prose-lg"
     >
-      <ContentDoc />
+      <h1 class="text-center">
+        {{ data.title }}
+      </h1>
+      <div class="text-sm text-fg-3 text-center">
+        {{ createdAt }} / {{ modifiedAt }}
+      </div>
+      <ContentDoc :head="false" />
       <div class="opacity-75 text-sm font-mono mt-32">
         <ContentLicense />
       </div>
