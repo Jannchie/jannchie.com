@@ -43,6 +43,9 @@ const locale = useRoute('locale').params.locale
       <NuxtLink aria-label="gmail" data-cursor="block" target="_blank" href="mailto:jannchie@gmail.com">
         <i class="i-tabler-brand-gmail" />
       </NuxtLink>
+      <NuxtLink aria-label="steam" data-cursor="block" target="_blank" href="https://steamcommunity.com/profiles/76561198025338946/">
+        <i class="i-tabler-brand-steam" />
+      </nuxtlink>
     </div>
     <div class="m-2 flex gap-2">
       <NuxtLink :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block" to="/en">
