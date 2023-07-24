@@ -39,6 +39,11 @@ const modifiedAt = computed(() => {
         {{ createdAt }} / {{ modifiedAt }}
       </div>
       <ContentDoc :head="false" />
+      <div class="mt-32 mx-2 flex gap-4 justify-end">
+        <span v-for="tag in data.tags" :key="tag" class="text-sm text-fg-3 border-fg-3 border px-2 rounded">
+          #{{ tag }}
+        </span>
+      </div>
       <div class="opacity-75 text-sm font-mono mt-32">
         <ContentLicense />
       </div>
