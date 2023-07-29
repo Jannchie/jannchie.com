@@ -8,14 +8,14 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
-    "@iconify-json/tabler": "^1.1.83",
-    "@nuxt/content": "^2.7.1",
-    "@nuxt/devtools": "^0.7.0",
+    "@iconify-json/tabler": "^1.1.85",
+    "@nuxt/content": "^2.7.2",
+    "@nuxt/devtools": "^0.7.1",
     "@nuxtjs/eslint-module": "^4.1.0",
-    "@nuxtjs/google-fonts": "^3.0.1",
-    "@types/node": "^20.4.2",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@types/node": "^20.4.5",
     "@types/three": "^0.154.0",
-    "@unocss/nuxt": "^0.53.5",
+    "@unocss/nuxt": "^0.53.6",
     "@vite-pwa/nuxt": "^0.1.0",
     "@vueuse/nuxt": "^10.2.1",
     "classnames": "^2.3.2",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "ipad-cursor": "^0.4.4",
-    "three": "^0.154.0"
+    "three": "^0.155.0",
+    "vue-waterfall-plugin-next": "^2.2.2"
   }
 }

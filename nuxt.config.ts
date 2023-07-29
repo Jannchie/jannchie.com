@@ -2,7 +2,13 @@
 import process from 'node:process'
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },

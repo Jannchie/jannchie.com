@@ -48,6 +48,19 @@ const groupedSponsors = computed(() => {
   }, {} as { [user_name: string]: { user_name: string; total_order_price: number; user_avatar: string } })).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
 })
 const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: -1 }).find()
+
+const demos = [
+  {
+    title: t('demo-ios-sheet-title'),
+    desc: t('demo-ios-sheet-desc'),
+    link: '/videos/demo-ios-sheet.mp4',
+  },
+  {
+    title: t('demo-vzad-title'),
+    desc: t('demo-vzad-desc'),
+    link: '/videos/demo-vzad.mp4',
+  },
+]
 </script>
 
 <template>
@@ -78,6 +91,18 @@ const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: 
         :title="project.title"
         :description="project.description"
         :link="project.link"
+      />
+    </div>
+    <HomeSectionTitle>
+      {{ t('demos') }}
+    </HomeSectionTitle>
+    <div class="flex gap-2 justify-center items-start">
+      <HomeDemoCard
+        v-for="demo in demos"
+        :key="demo.title"
+        :title="demo.title"
+        :desc="demo.desc"
+        :link="demo.link"
       />
     </div>
     <HomeSectionTitle>
