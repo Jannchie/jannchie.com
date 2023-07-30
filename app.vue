@@ -51,6 +51,19 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 
 <template>
   <NuxtLayout>
+    <link
+      rel="preload"
+      href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
+
+    <link
+      rel="preload"
+      href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
     <VitePwaManifest />
     <NuxtLoadingIndicator color="#23a1c0" />
     <NuxtPage />
@@ -69,6 +82,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
   --j-fg-1: #333;
   --j-fg-2: #222;
   --j-fg-3: #161718;
+  font-family: 'HarmonyOS_Medium' ,ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* if preferred theme is dark: */

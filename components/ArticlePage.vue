@@ -34,7 +34,7 @@ const modifiedAt = computed(() => {
     </div>
     <article
       data-cursor="text"
-      class="m-auto p-2 sm:px-0 dark:prose-invert prose sm:prose-sm md:prose-md lg:prose-lg"
+      class="m-auto p-2 sm:px-0 dark:prose-invert prose text-md"
     >
       <h1 class="text-center">
         {{ data.title }}
