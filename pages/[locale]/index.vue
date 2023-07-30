@@ -53,11 +53,13 @@ const demos = [
   {
     title: t('demo-ios-sheet-title'),
     desc: t('demo-ios-sheet-desc'),
+    href: 'https://github.com/Jannchie/vue-ios-sheet',
     link: '/videos/demo-ios-sheet.mp4',
   },
   {
     title: t('demo-vzad-title'),
     desc: t('demo-vzad-desc'),
+    href: 'https://github.com/Jannchie/vzad',
     link: '/videos/demo-vzad.mp4',
   },
 ]
@@ -103,6 +105,7 @@ const demos = [
         :title="demo.title"
         :desc="demo.desc"
         :link="demo.link"
+        :href="demo.href"
       />
     </div>
     <HomeSectionTitle>

@@ -15,18 +15,18 @@
     "@nuxtjs/google-fonts": "^3.0.2",
     "@types/node": "^20.4.5",
     "@types/three": "^0.154.0",
-    "@unocss/nuxt": "^0.53.6",
+    "@unocss/nuxt": "^0.54.0",
     "@vite-pwa/nuxt": "^0.1.0",
     "@vueuse/nuxt": "^10.2.1",
     "classnames": "^2.3.2",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "katex": "^0.16.8",
     "nuxt": "^3.6.5",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1"
   },
   "dependencies": {
-    "ipad-cursor": "^0.4.4",
+    "ipad-cursor": "^0.5.2",
     "three": "^0.155.0",
     "vue-waterfall-plugin-next": "^2.2.2"
   }
