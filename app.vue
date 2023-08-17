@@ -61,6 +61,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
     <NuxtLoadingIndicator color="#23a1c0" />
     <NuxtPage />
     <ToTopFab />
+    <a rel="me" href="https://mastodon.social/@jannchie">Mastodon</a>
   </NuxtLayout>
 </template>
 
