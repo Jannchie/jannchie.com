@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { t } from '@/i18n'
 
+definePageMeta({ middleware: ['i18n'] })
+
 const projects = [{
   title: 'CodeTime',
   description: 'Programmer Time Tracking.',
