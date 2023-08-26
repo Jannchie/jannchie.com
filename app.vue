@@ -50,19 +50,7 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 </script>
 
 <template>
-  <NuxtLayout>
-    <link
-      rel="preload"
-      href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    >
-    <VitePwaManifest />
-    <NuxtLoadingIndicator color="#23a1c0" />
-    <NuxtPage />
-    <ToTopFab />
-    <a rel="me" href="https://mastodon.social/@jannchie">Mastodon</a>
-  </NuxtLayout>
+  <NuxtPage />
 </template>
 
 <style>
