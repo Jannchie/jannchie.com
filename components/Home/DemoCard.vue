@@ -1,16 +1,31 @@
 <script setup lang="ts">
+import { useElementVisibility } from '@vueuse/core'
+
 const { title, desc, link } = defineProps<{
   title: string
   desc: string
   link: string
   href: string
 }>()
+
+const target = ref()
+const isVisiable = useElementVisibility(target)
+const style = computed(() => {
+  return {
+    opacity: isVisiable.value ? 1 : 0,
+    transform: `translateY(${isVisiable.value ? 0 : 100}px) scale(${isVisiable.value ? 1 : 1.2})`,
+    transitionDelay: `${Math.random() * 0.2}s`,
+  }
+})
 </script>
 
 <template>
-  <NuxtLink target="_blank" :href="href" class="rounded-xl border-bg-1 border inline-block bg-bg-3 w-[512px]">
+  <NuxtLink ref="target" :style="style" target="_blank" :href="href" class="rounded-xl border-bg-1 border inline-block bg-bg-3 w-[512px] transition-all duration-1000">
     <video
-      autoplay muted loop
+      autoplay
+      muted
+      loop
+      playsinline
       class="rounded-t-xl border-b border-bg-1"
       controlslist="nodownload"
       :src="link"

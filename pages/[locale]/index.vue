@@ -64,6 +64,12 @@ const demos = [
     href: 'https://github.com/Jannchie/vzad',
     link: '/videos/demo-vzad.mp4',
   },
+  {
+    title: t('demo-gitcm-title'),
+    desc: t('demo-gitcm-desc'),
+    href: 'https://github.com/Jannchie/gitcm',
+    link: '/videos/demo-gitcm.mp4',
+  },
 ]
 </script>
 
