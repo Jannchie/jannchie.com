@@ -37,7 +37,7 @@ function calculateWaterfallLayout(itemsRef: Ref<{ width: Ref<number>; height: Re
   const items = unref(itemsRef)
   const columnHeights = Array.from<number>({ length: unref(columnCount) }).fill(0) // 初始化列高度数组
   const itemPositions = [] // 存储每个项目的坐标
-  const offset = Math.max(0, wrapperWidth.value - unref(paddingX) * 2 - itemWidth.value * items.length - unref(gap) * (rowCount.value)) / 2
+  const offset = Math.max(0, wrapperWidth.value - unref(paddingX) * 2 - itemWidth.value * items.length - unref(gap) * (items.length)) / 2
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i]
