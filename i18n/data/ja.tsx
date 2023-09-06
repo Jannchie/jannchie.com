@@ -10,4 +10,6 @@ export default {
   'demo-vzad-desc': 'これはVue.jsをベースとしたズーム＆ドラッグのインタラクションシステムです。SVGとHTMLの両方のモードをサポートしており、エディタやテーブルゲームの作成に適しています。',
   'demo-gitcm-title': 'Gitcm - Git コミットメッセージの作成ツール',
   'demo-gitcm-desc': 'Gitcm は、Git コミットメッセージを作成するためのツールです。統一されたフォーマットのコミットメッセージを素早く作成できます。',
+  'demo-cake47-title': 'Cake4.art - 個人イラストポートフォリオ',
+  'demo-cake47-desc': 'Cake4.art は、妻の Cake47 の個人イラストポートフォリオです。Nuxt.js、Three.js、UnoCSS で構築されています。',
 }

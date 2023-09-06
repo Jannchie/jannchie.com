@@ -10,4 +10,6 @@ export default {
   'demo-vzad-desc': '这是一个基于 Vue.js 的缩放和拖拽交互系统。它支持 SVG 和 HTML 两种模式，适用于创建编辑器或桌面游戏。',
   'demo-gitcm-title': 'Gitcm - Git 提交信息生成器',
   'demo-gitcm-desc': 'Gitcm 是一个用于生成 Git 提交信息的工具。你可以使用统一的格式快速生成提交信息。',
+  'demo-cake47-title': 'Cake4.art - 个人插画作品集',
+  'demo-cake47-desc': 'Cake4.art 是我妻子 Cake47 的个人插画作品集。它使用 Nuxt.js、Three.js 和 UnoCSS 构建。',
 }

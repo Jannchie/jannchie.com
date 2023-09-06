@@ -73,7 +73,7 @@ function getItemStyle(i: number) {
 <template>
   <div
     ref="wrapper"
-    class="relative overflow-hidden" :style="{
+    class="relative" :style="{
       width: `${wrapperWidth}px`,
       height: `${wrapperHeight}px`,
     }"

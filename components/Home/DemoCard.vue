@@ -20,7 +20,7 @@ const style = computed(() => {
 </script>
 
 <template>
-  <NuxtLink ref="target" :style="style" target="_blank" :href="href" class="rounded-xl border-bg-1 border inline-block max-w-512px bg-bg-3 transition-all duration-1000">
+  <NuxtLink ref="target" :style="style" target="_blank" :href="href" class="rounded-xl hover:bg-bg-2 border-bg-1 !border inline-block max-w-512px bg-bg-3 transition-all duration-1000">
     <video
       autoplay
       muted

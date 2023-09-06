@@ -53,10 +53,10 @@ const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: 
 
 const demos = [
   {
-    title: t('demo-ios-sheet-title'),
-    desc: t('demo-ios-sheet-desc'),
-    href: 'https://github.com/Jannchie/vue-ios-sheet',
-    link: '/videos/demo-ios-sheet.mp4',
+    title: t('demo-cake47-title'),
+    desc: t('demo-cake47-desc'),
+    href: 'https://cake47.art',
+    link: '/videos/demo-cake47.mp4',
   },
   {
     title: t('demo-vzad-title'),
@@ -69,6 +69,12 @@ const demos = [
     desc: t('demo-gitcm-desc'),
     href: 'https://github.com/Jannchie/gitcm',
     link: '/videos/demo-gitcm.mp4',
+  },
+  {
+    title: t('demo-ios-sheet-title'),
+    desc: t('demo-ios-sheet-desc'),
+    href: 'https://github.com/Jannchie/vue-ios-sheet',
+    link: '/videos/demo-ios-sheet.mp4',
   },
 ]
 const { width } = useWindowSize()
