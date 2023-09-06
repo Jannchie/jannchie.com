@@ -32,7 +32,6 @@ export default defineNuxtConfig({
     lintOnStart: false,
   },
   content: {
-    documentDriven: true,
     respectPathCase: true,
     highlight: {
       theme: 'github-dark',

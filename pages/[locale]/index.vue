@@ -71,6 +71,15 @@ const demos = [
     link: '/videos/demo-gitcm.mp4',
   },
 ]
+const { width } = useWindowSize()
+const column = computed(() => {
+  if (width.value === Number.POSITIVE_INFINITY)
+    return 1
+  return Math.floor(width.value / 500) + 1
+})
+const itemWidth = computed(() => {
+  return (width.value - 32 * column.value) / column.value
+})
 </script>
 
 <template>
@@ -92,6 +101,21 @@ const demos = [
       </div>
     </div>
     <HomeSectionTitle>
+      {{ t('demos') }}
+    </HomeSectionTitle>
+    <div class="flex gap-2 justify-center items-start">
+      <Waterfall :item-width="itemWidth" :row-count="column">
+        <HomeDemoCard
+          v-for="demo in demos"
+          :key="demo.title"
+          :title="demo.title"
+          :desc="demo.desc"
+          :link="demo.link"
+          :href="demo.href"
+        />
+      </Waterfall>
+    </div>
+    <HomeSectionTitle>
       {{ t('projects') }}
     </HomeSectionTitle>
     <div class="flex flex-wrap gap-4 p-8 m-auto justify-center">
@@ -101,19 +125,6 @@ const demos = [
         :title="project.title"
         :description="project.description"
         :link="project.link"
-      />
-    </div>
-    <HomeSectionTitle>
-      {{ t('demos') }}
-    </HomeSectionTitle>
-    <div class="flex gap-2 justify-center items-start">
-      <HomeDemoCard
-        v-for="demo in demos"
-        :key="demo.title"
-        :title="demo.title"
-        :desc="demo.desc"
-        :link="demo.link"
-        :href="demo.href"
       />
     </div>
     <HomeSectionTitle>

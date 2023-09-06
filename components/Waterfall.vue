@@ -3,13 +3,15 @@
 const props = defineProps<{
   gap?: MaybeRef<number>
   wrapperWidth?: MaybeRef<number>
+  itemWidth?: MaybeRef<number>
   rowCount?: MaybeRef<number>
+  paddingX?: MaybeRef<number>
 }>()
 
-const wrapperWidth = computed(() => unref(props.wrapperWidth) ?? 1200)
 const gap = computed(() => unref(props.gap) ?? 16)
 const rowCount = computed(() => unref(props.rowCount) ?? 3)
-
+const paddingX = computed(() => unref(props.paddingX) ?? 0)
+const itemWidth = computed(() => unref(props.itemWidth) ?? 500)
 const wrapper = ref<HTMLDivElement>()
 
 function isArray<T>(val: any): val is T[] {
@@ -24,28 +26,34 @@ const boundings = computed(() => {
     return useElementBounding(item)
   })
 })
-watch(boundings, () => {})
-const itemWidth = computed(() => (wrapperWidth.value - (rowCount.value - 1) * gap.value) / rowCount.value)
-let wrapperHeight = 0
-function calculateWaterfallLayout(itemsRef: Ref<{ width: Ref<number>; height: Ref<number> }[]>, columnCount: MaybeRef<number>, gap: MaybeRef<number>) {
+
+watch(boundings, () => {}) // Magic, to avoid warning
+
+const wrapperWidth = computed(() => itemWidth.value * rowCount.value + gap.value * (rowCount.value - 1) + paddingX.value * 2)
+
+const wrapperHeight = ref(0)
+function calculateWaterfallLayout(itemsRef: Ref<{ width: Ref<number>; height: Ref<number> }[]>, columnCount: MaybeRef<number>, gap: MaybeRef<number>, paddingX: MaybeRef<number>) {
+  wrapperHeight.value = 0
   const items = unref(itemsRef)
   const columnHeights = Array.from<number>({ length: unref(columnCount) }).fill(0) // 初始化列高度数组
   const itemPositions = [] // 存储每个项目的坐标
+  const offset = Math.max(0, wrapperWidth.value - unref(paddingX) * 2 - itemWidth.value * items.length - unref(gap) * (rowCount.value)) / 2
+
   for (let i = 0; i < items.length; i++) {
     const item = items[i]
     const columnIndex = columnHeights.indexOf(Math.min(...columnHeights)) // 找到最短的列
-    const x = columnIndex * (itemWidth.value + unref(gap)) // 计算 x 坐标
+    const x = columnIndex * (itemWidth.value + unref(gap)) + unref(paddingX) + offset
     const y = columnHeights[columnIndex] // 计算 y 坐标
     itemPositions.push({ x, y })
     // 更新列的高度
     columnHeights[columnIndex] += item.height.value + unref(gap)
-    wrapperHeight = Math.max(wrapperHeight, columnHeights[columnIndex])
+    wrapperHeight.value = Math.max(wrapperHeight.value, columnHeights[columnIndex])
   }
   return itemPositions
 }
 
 const layoutData = computed(() => {
-  return calculateWaterfallLayout(boundings, rowCount, gap)
+  return calculateWaterfallLayout(boundings, rowCount, gap, paddingX)
 })
 
 function getItemStyle(i: number) {
@@ -57,7 +65,7 @@ function getItemStyle(i: number) {
   return {
     left: `${current.x ?? 0}px`,
     top: `${current.y ?? 0}px`,
-    width: `${itemWidth.value}px`,
+    maxWidth: `${itemWidth.value}px`,
   }
 }
 </script>
@@ -65,7 +73,7 @@ function getItemStyle(i: number) {
 <template>
   <div
     ref="wrapper"
-    class="relative" :style="{
+    class="relative overflow-hidden" :style="{
       width: `${wrapperWidth}px`,
       height: `${wrapperHeight}px`,
     }"
