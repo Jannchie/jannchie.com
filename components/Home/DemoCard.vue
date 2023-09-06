@@ -20,7 +20,7 @@ const style = computed(() => {
 </script>
 
 <template>
-  <NuxtLink ref="target" :style="style" target="_blank" :href="href" class="rounded-xl border-bg-1 border inline-block bg-bg-3 w-[512px] transition-all duration-1000">
+  <NuxtLink ref="target" :style="style" target="_blank" :href="href" class="rounded-xl border-bg-1 border inline-block max-w-512px bg-bg-3 transition-all duration-1000">
     <video
       autoplay
       muted
@@ -34,7 +34,7 @@ const style = computed(() => {
       <h3 class="font-bold mb-2">
         {{ title }}
       </h3>
-      <p class="text-fg-3">
+      <p class="text-fg-3 text-sm">
         {{ desc }}
       </p>
     </div>
