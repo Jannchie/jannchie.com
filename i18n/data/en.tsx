@@ -12,4 +12,6 @@ export default {
   'demo-gitcm-desc': 'Gitcm is a tool for creating Git commit messages. You can quickly create commit messages with a unified format.',
   'demo-cake47-title': 'Cake4.art - Personal Illustration Portfolio',
   'demo-cake47-desc': 'Cake4.art is a personal illustration portfolio for my wife, Cake47. It is built with Nuxt.js, Three.js and UnoCSS.',
+  'demo-anichart-title': 'Anichart - Create Dynamic Data Visualizatio Video',
+  'demo-anichart-desc': 'Anichart is a tool for creating dynamic data visualization videos. Implemented using the pure canvas API.',
 }

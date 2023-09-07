@@ -12,4 +12,6 @@ export default {
   'demo-gitcm-desc': 'Gitcm 是一个用于生成 Git 提交信息的工具。你可以使用统一的格式快速生成提交信息。',
   'demo-cake47-title': 'Cake4.art - 个人插画作品集',
   'demo-cake47-desc': 'Cake4.art 是我妻子 Cake47 的个人插画作品集。它使用 Nuxt.js、Three.js 和 UnoCSS 构建。',
+  'demo-anichart-title': 'Anichart - 动态数据可视化视频生成器',
+  'demo-anichart-desc': 'Anichart 是一个用于生成动态数据可视化视频的工具。它使用纯 Canvas API 实现。',
 }

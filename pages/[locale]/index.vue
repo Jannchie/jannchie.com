@@ -59,6 +59,12 @@ const demos = [
     link: '/videos/demo-cake47.mp4',
   },
   {
+    title: t('demo-anichart-title'),
+    desc: t('demo-anichart-desc'),
+    href: 'https://github.com/Jannchie/anichart.js',
+    link: '/videos/demo-anichart.mp4',
+  },
+  {
     title: t('demo-vzad-title'),
     desc: t('demo-vzad-desc'),
     href: 'https://github.com/Jannchie/vzad',

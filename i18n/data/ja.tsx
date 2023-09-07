@@ -12,4 +12,6 @@ export default {
   'demo-gitcm-desc': 'Gitcm は、Git コミットメッセージを作成するためのツールです。統一されたフォーマットのコミットメッセージを素早く作成できます。',
   'demo-cake47-title': 'Cake4.art - 個人イラストポートフォリオ',
   'demo-cake47-desc': 'Cake4.art は、妻の Cake47 の個人イラストポートフォリオです。Nuxt.js、Three.js、UnoCSS で構築されています。',
+  'demo-anichart-title': 'Anichart - 動的なデータ可視化動画の作成',
+  'demo-anichart-desc': 'Anichart は、動的なデータ可視化動画を作成するためのツールです。純粋なキャンバス API を使用して実装されています。',
 }
