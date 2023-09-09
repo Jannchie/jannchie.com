@@ -73,7 +73,7 @@ function getItemStyle(i: number) {
 <template>
   <div
     ref="wrapper"
-    class="relative" :style="{
+    class="relative overflow-x-clip" :style="{
       width: `${wrapperWidth}px`,
       height: `${wrapperHeight}px`,
     }"
