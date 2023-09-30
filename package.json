@@ -4,30 +4,31 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
-    "@iconify-json/tabler": "^1.1.91",
-    "@nuxt/content": "^2.8.2",
-    "@nuxt/devtools": "^0.8.3",
-    "@nuxtjs/eslint-module": "^4.1.0",
-    "@nuxtjs/google-fonts": "^3.0.2",
-    "@types/node": "^20.6.0",
-    "@types/three": "^0.156.0",
-    "@unocss/nuxt": "^0.55.7",
-    "@vite-pwa/nuxt": "^0.1.1",
-    "@vueuse/nuxt": "^10.4.1",
-    "classnames": "^2.3.2",
-    "eslint": "^8.49.0",
-    "katex": "^0.16.8",
-    "nuxt": "3.7.1",
-    "rehype-katex": "^6.0.3",
-    "remark-math": "^5.1.1"
+    "preview": "nuxt preview",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "ipad-cursor": "^0.5.2",
-    "three": "^0.156.1",
-    "vue-waterfall-plugin-next": "^2.2.3"
+    "three": "^0.157.0",
+    "vue-waterfall-plugin-next": "^2.2.4",
+    "vue-wf": "^0.1.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.17",
+    "@iconify-json/tabler": "^1.1.93",
+    "@nuxt/content": "^2.8.5",
+    "@nuxt/devtools": "^0.8.5",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@types/node": "^20.7.2",
+    "@types/three": "^0.156.0",
+    "@unocss/nuxt": "^0.56.4",
+    "@vite-pwa/nuxt": "^0.1.1",
+    "@vueuse/nuxt": "^10.4.1",
+    "classnames": "^2.3.2",
+    "eslint": "^8.50.0",
+    "katex": "^0.16.8",
+    "nuxt": "3.7.4",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
   }
 }

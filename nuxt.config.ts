@@ -22,15 +22,11 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxt/content',
-    '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     '@vite-pwa/nuxt',
     '@unocss/nuxt',
     '@vueuse/nuxt',
   ],
-  eslint: {
-    lintOnStart: false,
-  },
   content: {
     respectPathCase: true,
     highlight: {

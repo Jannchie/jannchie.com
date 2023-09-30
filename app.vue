@@ -50,7 +50,9 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 </script>
 
 <template>
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>
@@ -59,24 +61,21 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
   background: var(--j-bg-3);
   --j-main: #23a1c0;
   --j-bg-1: #fff;
-  --j-bg-2: #ddd;
-  --j-bg-3: #aaa;
+  --j-bg-2: #f9f9f9;
+  --j-bg-3: #f9f9f9;
   --j-fg-1: #333;
   --j-fg-2: #222;
   --j-fg-3: #161718;
   font-family: 'HarmonyOS_Medium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* if preferred theme is dark: */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --j-bg-1: #333;
-    --j-bg-2: #222;
-    --j-bg-3: #161718;
-    --j-fg-1: #fff;
-    --j-fg-2: #ddd;
-    --j-fg-3: #aaa;
-  }
+[color-scheme="dark"] {
+  --j-bg-1: #333;
+  --j-bg-2: #222;
+  --j-bg-3: #161718;
+  --j-fg-1: #fff;
+  --j-fg-2: #fafafa;
+  --j-fg-3: #f9f9f9;
 }
 
 [data-cursor="block"] {
