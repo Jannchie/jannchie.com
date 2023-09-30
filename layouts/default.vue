@@ -7,7 +7,6 @@
       as="style"
       onload="this.rel='stylesheet'"
     >
-    <Link rel="me" href="https://mastodon.social/@jannchie" />
     <VitePwaManifest />
     <NuxtLoadingIndicator color="#23a1c0" />
     <slot />

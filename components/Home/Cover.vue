@@ -32,7 +32,7 @@ const locale = useRoute('locale').params.locale
         <i class="i-tabler-brand-bilibili" />
       </NuxtLink>
       <NuxtLink aria-label="twitter" data-cursor="block" target="_blank" href="https://twitter.com/jannchie">
-        <i class="i-tabler-brand-twitter" />
+        <i class="i-tabler-brand-x" />
       </NuxtLink>
       <NuxtLink aria-label="github" data-cursor="block" target="_blank" href="https://github.com/Jannchie">
         <i class="i-tabler-brand-github" />
@@ -45,7 +45,12 @@ const locale = useRoute('locale').params.locale
       </NuxtLink>
       <NuxtLink aria-label="steam" data-cursor="block" target="_blank" href="https://steamcommunity.com/profiles/76561198025338946/">
         <i class="i-tabler-brand-steam" />
-      </nuxtlink>
+      </Nuxtlink>
+      <NuxtLink
+        aria-label="mastodon" data-cursor="block" target="_blank" href="https://mastodon.social/@jannchie" rel="me"
+      >
+        <i class="i-tabler-brand-mastodon" />
+      </NuxtLink>
     </div>
     <div class="m-2 flex gap-2">
       <NuxtLink :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block" to="/en">
