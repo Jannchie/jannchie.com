@@ -1,5 +1,4 @@
 <script setup>
-import { useCursor } from 'ipad-cursor/vue'
 import { initRainy } from '@/scripts/rainy'
 import '@unocss/reset/tailwind.css'
 
@@ -18,9 +17,12 @@ useSeoMeta({
   twitterCard: 'summary',
 })
 
+const preferredDark = usePreferredDark()
+
 useHead({
   htmlAttrs: {
-    lang: 'en',
+    'lang': 'en',
+    'color-scheme': preferredDark ? 'dark' : 'light',
   },
   meta: {
     name: 'theme-color',
@@ -34,19 +36,6 @@ useHead({
     },
   ],
 })
-if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  const { updateCursor } = useCursor({
-    enableMouseDownEffect: true,
-    enableAutoTextCursor: true,
-    enableLighting: true,
-  })
-  const targetNode = document.body
-  const callback = function () {
-    updateCursor()
-  }
-  const observer = new MutationObserver(callback)
-  observer.observe(targetNode, { childList: true, subtree: true })
-}
 </script>
 
 <template>
@@ -59,13 +48,13 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
 :root {
   color-scheme: light dark;
   background: var(--j-bg-3);
-  --j-main: #23a1c0;
   --j-bg-1: #fff;
   --j-bg-2: #f9f9f9;
   --j-bg-3: #f9f9f9;
-  --j-fg-1: #333;
+  --j-fg-1: #161718;
   --j-fg-2: #222;
-  --j-fg-3: #161718;
+  --j-fg-3: #2f2f2f;
+  color: var(--j-fg-2);
   font-family: 'HarmonyOS_Medium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -74,8 +63,8 @@ if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry
   --j-bg-2: #222;
   --j-bg-3: #161718;
   --j-fg-1: #fff;
-  --j-fg-2: #fafafa;
-  --j-fg-3: #f9f9f9;
+  --j-fg-2: #ddd;
+  --j-fg-3: #aaa;
 }
 
 [data-cursor="block"] {

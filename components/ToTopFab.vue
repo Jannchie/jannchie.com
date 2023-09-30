@@ -14,14 +14,7 @@ if (typeof window !== 'undefined') {
 </script>
 
 <template>
-  <Transition
-    enter-active-class="transition-opacity duration-300"
-    leave-active-class="transition-opacity duration-300"
-    leave-from-class="opacity-100"
-    leave-to-class="opacity-0"
-    enter-from-class="opacity-0"
-    enter-to-class="opacity-100"
-  >
+  <TransitionFade>
     <div
       v-if="!isTop"
       data-cursor="block"
@@ -30,5 +23,5 @@ if (typeof window !== 'undefined') {
     >
       <i class="i-tabler-chevron-up" />
     </div>
-  </Transition>
+  </TransitionFade>
 </template>

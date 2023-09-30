@@ -23,7 +23,7 @@ const locale = useRoute('locale').params.locale
           </div>
         </div>
       </div>
-      <div :class="`opacity-50 ${locale !== 'zh-CN' ? 'ml-8' : 'ml-32'}`">
+      <div :class="`text-fg-3 ${locale !== 'zh-CN' ? 'ml-8' : 'ml-32'}`">
         {{ t('subtitle') }}
       </div>
     </h1>
@@ -59,21 +59,13 @@ const locale = useRoute('locale').params.locale
       </NuxtLink>
     </div>
     <HomeBio />
-    <Transition
-      enter-active-class="transition-opacity duration-300"
-      leave-active-class="transition-opacity duration-300"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-    >
+    <TransitionFade>
       <div v-if="isTop" class="bottom-0 absolute animate-bounce flex flex-col items-center bottom-20 text-base">
-        More...
         <i
-          class="i-tabler-arrow-big-down-lines-filled"
+          class="i-tabler-chevron-down"
         />
       </div>
-    </Transition>
+    </TransitionFade>
   </div>
 </template>
 
