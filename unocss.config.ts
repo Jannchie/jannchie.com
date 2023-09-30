@@ -17,6 +17,11 @@ export default defineConfig({
       bd: 'var(--j-bd)',
     },
   },
+  content: {
+    pipeline: {
+      include: [/\.(vue|svelte|[jt]sx?|mdx?|astro|elm|php|phtml|html)($|\?)/],
+    },
+  },
   presets: [
     presetUno(),
     presetAttributify(),

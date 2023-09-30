@@ -4,28 +4,8 @@ import { t } from '@/i18n'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
 
-const projects = [{
-  title: 'CodeTime',
-  description: 'Programmer Time Tracking.',
-  link: 'https://codetime.dev',
-}, {
-  title: 'Anichart.js',
-  description: 'Animate historical data.',
-  link: 'https://github.com/Jannchie/anichart.js',
-}, {
-  title: 'Zeroroku',
-  description: 'Data Observatory.',
-  link: 'https://zeroroku.com',
-}, {
-  title: 'Roku UI',
-  description: 'React UI Library.',
-  link: 'https://roku-ui.vercel.app',
-}, {
-  title: 'Jannchie\'s Blog',
-  description: 'Here.',
-  link: 'https://github.com/Jannchie/jannchie.com',
-}]
-
+const projects = useProjects()
+const demos = useDemos()
 const locale = useRoute('locale').params.locale
 
 useHead({
@@ -52,38 +32,6 @@ const groupedSponsors = computed(() => {
 })
 const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: -1 }).find()
 
-const demos = [
-  {
-    title: t('demo-cake47-title'),
-    desc: t('demo-cake47-desc'),
-    href: 'https://cake47.art',
-    link: '/videos/demo-cake47.mp4',
-  },
-  {
-    title: t('demo-anichart-title'),
-    desc: t('demo-anichart-desc'),
-    href: 'https://github.com/Jannchie/anichart.js',
-    link: '/videos/demo-anichart.mp4',
-  },
-  {
-    title: t('demo-vzad-title'),
-    desc: t('demo-vzad-desc'),
-    href: 'https://github.com/Jannchie/vzad',
-    link: '/videos/demo-vzad.mp4',
-  },
-  {
-    title: t('demo-gitcm-title'),
-    desc: t('demo-gitcm-desc'),
-    href: 'https://github.com/Jannchie/gitcm',
-    link: '/videos/demo-gitcm.mp4',
-  },
-  {
-    title: t('demo-ios-sheet-title'),
-    desc: t('demo-ios-sheet-desc'),
-    href: 'https://github.com/Jannchie/vue-ios-sheet',
-    link: '/videos/demo-ios-sheet.mp4',
-  },
-]
 const { width } = useWindowSize()
 const column = computed(() => {
   if (width.value === Number.POSITIVE_INFINITY)

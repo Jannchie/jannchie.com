@@ -28,47 +28,37 @@ const locale = useRoute('locale').params.locale
       </div>
     </h1>
     <div class="flex gap-2 children:p-2 leading-0">
-      <NuxtLink aria-label="bilibili" data-cursor="block" target="_blank" href="https://space.bilibili.com/1850091">
-        <i class="i-tabler-brand-bilibili" />
-      </NuxtLink>
-      <NuxtLink aria-label="twitter" data-cursor="block" target="_blank" href="https://twitter.com/jannchie">
-        <i class="i-tabler-brand-x" />
-      </NuxtLink>
-      <NuxtLink aria-label="github" data-cursor="block" target="_blank" href="https://github.com/Jannchie">
-        <i class="i-tabler-brand-github" />
-      </NuxtLink>
-      <NuxtLink aria-label="stackoverflow" data-cursor="block" target="_blank" href="https://stackoverflow.com/users/8625892/jannchie">
-        <i class="i-tabler-brand-stackoverflow" />
-      </NuxtLink>
-      <NuxtLink aria-label="gmail" data-cursor="block" target="_blank" href="mailto:jannchie@gmail.com">
-        <i class="i-tabler-brand-gmail" />
-      </NuxtLink>
-      <NuxtLink aria-label="steam" data-cursor="block" target="_blank" href="https://steamcommunity.com/profiles/76561198025338946/">
-        <i class="i-tabler-brand-steam" />
-      </Nuxtlink>
       <NuxtLink
-        aria-label="mastodon" data-cursor="block" target="_blank" href="https://mastodon.social/@jannchie" rel="me"
+        v-for="link in socialLinks" :key="link.label" :aria-label="link.label" data-cursor="block" target="_blank"
+        :href="link.href" :rel="link.rel || ''"
       >
-        <i class="i-tabler-brand-mastodon" />
+        <i :class="link.iconClass" />
       </NuxtLink>
     </div>
     <div class="m-2 flex gap-2">
-      <NuxtLink :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block" to="/en">
+      <NuxtLink
+        :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="en" data-cursor="block"
+        to="/en"
+      >
         English
       </NuxtLink>
-      <NuxtLink :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="zh" data-cursor="block" to="/zh-CN">
+      <NuxtLink
+        :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="zh" data-cursor="block"
+        to="/zh-CN"
+      >
         中文
       </NuxtLink>
-      <NuxtLink :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="ja" data-cursor="block" to="/ja">
+      <NuxtLink
+        :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`" aria-label="ja" data-cursor="block"
+        to="/ja"
+      >
         日本語
       </NuxtLink>
     </div>
     <HomeBio />
     <TransitionFade>
       <div v-if="isTop" class="bottom-0 absolute animate-bounce flex flex-col items-center bottom-20 text-base">
-        <i
-          class="i-tabler-chevron-down"
-        />
+        <i class="i-tabler-chevron-down" />
       </div>
     </TransitionFade>
   </div>
@@ -77,3 +67,4 @@ const locale = useRoute('locale').params.locale
 <style scoped>
 
 </style>
+../../data/links
