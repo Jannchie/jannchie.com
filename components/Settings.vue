@@ -20,7 +20,7 @@ const { toggleCursor, isEnabled } = useIPadCursor()
             'cursor-pointer': !isEnabled,
           }"
           data-cursor="block"
-          class="p-2 leading-0 rounded-xl hover:border-bg-2"
+          class="p-2 leading-0 rounded-xl hover:border-bd"
           tabindex="0"
           @click="toggleCursor()"
         >
@@ -32,7 +32,7 @@ const { toggleCursor, isEnabled } = useIPadCursor()
             'cursor-none': isEnabled,
             'cursor-pointer': !isEnabled,
           }"
-          class="p-2 leading-0 rounded-xl hover:border-bg-2"
+          class="p-2 leading-0 rounded-xl hover:border-bd"
           tabindex="0"
           @click="toggleDark()"
         >

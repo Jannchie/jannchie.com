@@ -14,6 +14,7 @@ export default defineConfig({
         2: 'var(--j-fg-2)',
         3: 'var(--j-fg-3)',
       },
+      bd: 'var(--j-bd)',
     },
   },
   presets: [

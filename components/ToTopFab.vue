@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
     <div
       v-if="!isTop"
       data-cursor="block"
-      class="fixed bottom-8 right-8 p-2 bg-bg-2 leading-0 border! !border-bg-1 cursor-none rounded-xl"
+      class="fixed bottom-8 right-8 p-2 bg-bg-2 leading-0 border! !border-bd cursor-none rounded-xl"
       @click="scrollToTop"
     >
       <i class="i-tabler-chevron-up" />

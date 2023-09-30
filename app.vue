@@ -54,6 +54,7 @@ useHead({
   --j-fg-1: #161718;
   --j-fg-2: #222;
   --j-fg-3: #2f2f2f;
+  --j-bd: #ccc;
   color: var(--j-fg-2);
   font-family: 'HarmonyOS_Medium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -65,10 +66,11 @@ useHead({
   --j-fg-1: #fff;
   --j-fg-2: #ddd;
   --j-fg-3: #aaa;
+  --j-bd: #333;
 }
 
 [data-cursor="block"] {
-  @apply border border-transparent hover:border-bg-2 rounded-lg transition-all duration-300;
+  @apply border border-transparent hover:border-bd rounded-lg transition-all duration-300;
 }
 
 ::selection {
