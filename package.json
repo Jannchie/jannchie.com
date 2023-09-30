@@ -29,6 +29,6 @@
     "katex": "^0.16.8",
     "nuxt": "3.7.4",
     "rehype-katex": "^7.0.0",
-    "remark-math": "^6.0.0"
+    "remark-math": "^5.1.1"
   }
 }

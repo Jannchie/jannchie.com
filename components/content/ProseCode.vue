@@ -14,7 +14,7 @@ export default defineComponent({
       default: null,
     },
     highlights: {
-      type: Function,
+      type: Array,
       default: () => [],
     },
     meta: {
@@ -26,8 +26,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="bg-[#222] rounded-xl relative">
-    <span class="p-2 absolute right-2 text-sm text-fg-3 font-mono">
+  <div class="bg-[#222] rounded-xl relative text-xs">
+    <span class="p-2 absolute right-2 text-xs text-fg-3 font-mono">
       {{ language }}
     </span>
     <slot />

@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   content: {
     respectPathCase: true,
     highlight: {
+      preload: ['go'],
       theme: 'github-dark',
     },
     markdown: {
