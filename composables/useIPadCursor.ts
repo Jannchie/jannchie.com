@@ -8,7 +8,7 @@ export function useIPadCursor() {
     enableAutoUpdateCursor: true,
   })
 
-  let toggleCursor: () => void
+  let toggleCursor: (() => void) | null = null
   const isEnabled = ref(false)
   if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     isEnabled.value = true

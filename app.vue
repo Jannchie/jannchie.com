@@ -17,12 +17,13 @@ useSeoMeta({
   twitterCard: 'summary',
 })
 
-const preferredDark = usePreferredDark()
-
-useHead({
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'color-scheme',
+})
+const d = useHead({
   htmlAttrs: {
-    'lang': 'en',
-    'color-scheme': preferredDark ? 'dark' : 'light',
+    lang: 'en',
   },
   meta: {
     name: 'theme-color',
@@ -35,6 +36,20 @@ useHead({
       href: '/favicon.ico',
     },
   ],
+}, { mode: 'server' })
+
+d.value?.patch({
+  htmlAttrs: {
+    'color-scheme': 'dark',
+  },
+})
+
+watchEffect(() => {
+  d.value?.patch({
+    htmlAttrs: {
+      'color-scheme': isDark ? 'dark' : 'light',
+    },
+  })
 })
 </script>
 
