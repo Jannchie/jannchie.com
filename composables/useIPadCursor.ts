@@ -2,18 +2,16 @@ import { disposeCursor, initCursor } from 'ipad-cursor'
 
 export function useIPadCursor() {
   const isEnabled = useLocalStorage('enable-ipad-cursor', true)
-
-  if (isEnabled.value) {
-    initCursor({
-      enableMouseDownEffect: true,
-      enableAutoTextCursor: true,
-      enableLighting: true,
-      enableAutoUpdateCursor: true,
-    })
-  }
-
   let toggleCursor: (() => void) | null = null
   if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    if (isEnabled.value) {
+      initCursor({
+        enableMouseDownEffect: true,
+        enableAutoTextCursor: true,
+        enableLighting: true,
+        enableAutoUpdateCursor: true,
+      })
+    }
     toggleCursor = () => {
       const el = document.querySelector('.ipad-cursor')
       if (el) {
