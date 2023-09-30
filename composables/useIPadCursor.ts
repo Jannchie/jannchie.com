@@ -1,20 +1,21 @@
-import { useCursor } from 'ipad-cursor/vue'
+import { disposeCursor, initCursor } from 'ipad-cursor'
 
 export function useIPadCursor() {
-  const { initCursor, disposeCursor } = useCursor({
-    enableMouseDownEffect: true,
-    enableAutoTextCursor: true,
-    enableLighting: true,
-    enableAutoUpdateCursor: true,
-  })
+  const isEnabled = useLocalStorage('enable-ipad-cursor', true)
+
+  if (isEnabled.value) {
+    initCursor({
+      enableMouseDownEffect: true,
+      enableAutoTextCursor: true,
+      enableLighting: true,
+      enableAutoUpdateCursor: true,
+    })
+  }
 
   let toggleCursor: (() => void) | null = null
-  const isEnabled = ref(false)
   if (typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    isEnabled.value = true
     toggleCursor = () => {
       const el = document.querySelector('.ipad-cursor')
-      // if exist, dispose
       if (el) {
         isEnabled.value = false
         disposeCursor()
