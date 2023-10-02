@@ -14,4 +14,6 @@ export default {
   'demo-cake47-desc': 'Cake4.art 是我妻子 Cake47 的个人插画作品集。它使用 Nuxt.js、Three.js 和 UnoCSS 构建。',
   'demo-anichart-title': 'Anichart - 动态数据可视化视频生成器',
   'demo-anichart-desc': 'Anichart 是一个用于生成动态数据可视化视频的工具。它使用纯 Canvas API 实现。',
+  'demo-vue-wf-title': 'Vue.js 瀑布流布局',
+  'demo-vue-wf-desc': '一个 Vue.js 瀑布流布局组件。',
 }

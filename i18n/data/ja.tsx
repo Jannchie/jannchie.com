@@ -14,4 +14,6 @@ export default {
   'demo-cake47-desc': 'Cake4.art は、妻の Cake47 の個人イラストポートフォリオです。Nuxt.js、Three.js、UnoCSS で構築されています。',
   'demo-anichart-title': 'Anichart - 動的なデータ可視化動画の作成',
   'demo-anichart-desc': 'Anichart は、動的なデータ可視化動画を作成するためのツールです。純粋なキャンバス API を使用して実装されています。',
+  'demo-vue-wf-title': 'Vue.js ワーターフォールレイアウト',
+  'demo-vue-wf-desc': 'Vue.js 用のワーターフォールレイアウトコンポーネント。',
 }

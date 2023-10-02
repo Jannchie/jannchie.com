@@ -34,12 +34,14 @@ const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: 
 
 const { width } = useWindowSize()
 const column = computed(() => {
+  const w = Math.min(1660, width.value)
   if (width.value === Number.POSITIVE_INFINITY)
     return 1
-  return Math.floor(width.value / 500) + 1
+  return Math.floor(w / 500) + 1
 })
 const itemWidth = computed(() => {
-  return (width.value - 32 * column.value) / column.value
+  const w = Math.min(1660, width.value)
+  return (w - 32 * column.value) / column.value
 })
 </script>
 

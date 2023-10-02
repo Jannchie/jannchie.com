@@ -32,5 +32,11 @@ export function useDemos() {
       href: 'https://github.com/Jannchie/vue-ios-sheet',
       link: '/videos/demo-ios-sheet.mp4',
     },
+    {
+      title: t('demo-vue-wf-title'),
+      desc: t('demo-vue-wf-desc'),
+      href: 'https://github.com/Jannchie/vue-wf',
+      link: '/videos/demo-vue-wf.mp4',
+    },
   ]
 }

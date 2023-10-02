@@ -10,10 +10,18 @@ const { title, desc, link } = defineProps<{
 
 const target = ref()
 const isVisiable = useElementVisibility(target)
+const alreadyLoaded = ref(false)
+watchOnce(isVisiable, () => {
+  if (!alreadyLoaded.value) {
+    alreadyLoaded.value = true
+    target.value?.click()
+  }
+})
 const style = computed(() => {
+  const show = isVisiable.value || alreadyLoaded.value
   return {
-    opacity: isVisiable.value ? 1 : 0,
-    transform: `translateY(${isVisiable.value ? 0 : 100}px) scale(${isVisiable.value ? 1 : 1.2})`,
+    opacity: show ? 1 : 0,
+    transform: `translateY(${show ? 0 : 100}px) scale(${show ? 1 : 1.2})`,
     transitionDelay: `${Math.random() * 0.2}s`,
   }
 })
