@@ -16,12 +16,7 @@ useSeoMeta({
   twitterImage: 'https://jannchie.com/imgs/jannchie.jpg',
   twitterCard: 'summary',
 })
-
-const isDark = useDark({
-  selector: 'html',
-  attribute: 'color-scheme',
-})
-const d = useHead({
+useHead({
   htmlAttrs: {
     lang: 'en',
   },
@@ -37,20 +32,6 @@ const d = useHead({
     },
   ],
 }, { mode: 'server' })
-
-d.value?.patch({
-  htmlAttrs: {
-    'color-scheme': 'dark',
-  },
-})
-
-watchEffect(() => {
-  d.value?.patch({
-    htmlAttrs: {
-      'color-scheme': isDark ? 'dark' : 'light',
-    },
-  })
-})
 </script>
 
 <template>
