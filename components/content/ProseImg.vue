@@ -28,5 +28,11 @@ const refinedSrc = computed(() => {
 </script>
 
 <template>
-  <img class="rounded-xl flex justify-center brightness-75 hover:brightness-100 transition-all inline-block m-auto" :src="refinedSrc" :alt="alt" :width="width" :height="height">
+  <img
+    class="rounded-xl flex justify-center brightness-75 hover:brightness-100 transition-all inline-block m-auto"
+    :src="refinedSrc"
+    :alt="alt"
+    :width="width"
+    :height="height"
+  >
 </template>
