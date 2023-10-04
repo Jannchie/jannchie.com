@@ -7,8 +7,10 @@ export function useViewTransitionDark() {
   })
 
   function setThemeAttributeWithAnimation(theme: string, x: Ref<number>, y: Ref<number>) {
-    if (typeof window === 'undefined')
+    if (typeof window === 'undefined' || typeof document.startViewTransition === 'undefined') {
+      document.documentElement.setAttribute('color-scheme', theme)
       return
+    }
     const endRadius = Math.hypot(
       Math.max(x.value, innerWidth - x.value),
       Math.max(y.value, innerHeight - y.value),
@@ -19,8 +21,8 @@ export function useViewTransitionDark() {
     })
     transition.ready.then(() => {
       const clipPath = [
-              `circle(0px at ${x.value}px ${y.value}px)`,
-              `circle(${endRadius}px at ${x.value}px ${y.value}px)`,
+        `circle(0px at ${x.value}px ${y.value}px)`,
+        `circle(${endRadius}px at ${x.value}px ${y.value}px)`,
       ]
       document.documentElement.animate(
         {
