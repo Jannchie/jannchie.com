@@ -12,10 +12,8 @@ const target = ref()
 const isVisiable = useElementVisibility(target)
 const alreadyLoaded = ref(false)
 watchOnce(isVisiable, () => {
-  if (!alreadyLoaded.value) {
+  if (!alreadyLoaded.value)
     alreadyLoaded.value = true
-    target.value?.click()
-  }
 })
 const style = computed(() => {
   const show = isVisiable.value || alreadyLoaded.value
