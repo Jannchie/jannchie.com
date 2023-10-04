@@ -17,6 +17,11 @@ const { isEnabled } = useIPadCursor()
     tabindex="0"
     @click="toggleDark()"
   >
-    <i class="i-tabler-moon" />
+    <i
+      :class="{
+        'i-tabler-sun': isDark,
+        'i-tabler-moon': !isDark,
+      }"
+    />
   </button>
 </template>
