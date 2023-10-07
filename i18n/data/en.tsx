@@ -16,4 +16,6 @@ export default {
   'demo-anichart-desc': 'Anichart is a tool for creating dynamic data visualization videos. Implemented using the pure canvas API.',
   'demo-vue-wf-title': 'Vue.js Waterfall Layout',
   'demo-vue-wf-desc': 'A waterfall layout component for Vue.js.',
+  'demo-houki-title': 'Houki - A Reach Mahjong Game',
+  'demo-houki-desc': 'Houki is a reach mahjong game for the web. Includes not only the complete game logic, but also the game AI and UI interface.',
 }

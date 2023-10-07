@@ -16,4 +16,6 @@ export default {
   'demo-anichart-desc': 'Anichart 是一个用于生成动态数据可视化视频的工具。它使用纯 Canvas API 实现。',
   'demo-vue-wf-title': 'Vue.js 瀑布流布局',
   'demo-vue-wf-desc': '一个 Vue.js 瀑布流布局组件。',
+  'demo-houki-title': '凤姬 - 麻将游戏',
+  'demo-houki-desc': '凤姬是一个 Web 端的麻将游戏。它不仅包含完整的游戏逻辑，还包括游戏 AI 和 UI 界面。',
 }

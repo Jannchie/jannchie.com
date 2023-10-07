@@ -9,4 +9,10 @@ module.exports = antfu({}, {
       },
     }],
   },
+}, {
+  rules: {
+    'curly': ['error', 'multi-line'],
+    'max-statements-per-line': ['warn', { max: 2 }],
+    'no-console': 'warn',
+  },
 })

@@ -38,5 +38,11 @@ export function useDemos() {
       href: 'https://github.com/Jannchie/vue-wf',
       link: '/videos/demo-vue-wf.mp4',
     },
+    {
+      title: t('demo-houki-title'),
+      desc: t('demo-houki-desc'),
+      href: 'https://github.com/Jannchie/houki',
+      link: '/videos/demo-houki.mp4',
+    },
   ]
 }

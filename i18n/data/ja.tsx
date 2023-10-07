@@ -16,4 +16,6 @@ export default {
   'demo-anichart-desc': 'Anichart は、動的なデータ可視化動画を作成するためのツールです。純粋なキャンバス API を使用して実装されています。',
   'demo-vue-wf-title': 'Vue.js ワーターフォールレイアウト',
   'demo-vue-wf-desc': 'Vue.js 用のワーターフォールレイアウトコンポーネント。',
+  'demo-houki-title': '鳳姫 - リーチ麻雀ゲーム',
+  'demo-houki-desc': '鳳姫は、Web 用のリーチ麻雀ゲームです。完全なゲームロジックだけでなく、ゲーム AI と UI インターフェイスも含まれています。',
 }
