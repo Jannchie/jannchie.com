@@ -47,7 +47,7 @@ useHead({
   --j-bg-1: #fff;
   --j-bg-2: #f9f9f9;
   --j-bg-3: #f9f9f9;
-  --j-fg-1: #161718;
+  --j-fg-1: #100F0F;
   --j-fg-2: #222;
   --j-fg-3: #2f2f2f;
   --j-bd: #ccc;
@@ -58,7 +58,7 @@ useHead({
 [color-scheme="dark"] {
   --j-bg-1: #333;
   --j-bg-2: #222;
-  --j-bg-3: #161718;
+  --j-bg-3: #100F0F;
   --j-fg-1: #fff;
   --j-fg-2: #ddd;
   --j-fg-3: #aaa;

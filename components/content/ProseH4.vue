@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { useRuntimeConfig } from '#imports'
+import { computed, useRuntimeConfig } from '#imports'
 
-defineProps<{ id?: string }>()
-const heading = 3
-const { anchorLinks } = useRuntimeConfig().public.content
-const generate = anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes(heading)
+const props = defineProps<{ id?: string }>()
+
+const { headings } = useRuntimeConfig().public.mdc
+const generate = computed(() => props.id && headings?.anchorLinks?.h4)
 </script>
 
 <template>
