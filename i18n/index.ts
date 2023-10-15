@@ -14,7 +14,6 @@ const i18NMap = new Map([['en', objectToMap(en)], ['zh-CN', objectToMap(zh)], ['
 export function t(key: string, locale?: 'ja' | 'zh-CN' | 'en') {
   const { params } = useRoute()
   locale = locale ?? (params as any).locale
-  if (!locale)
-    locale = 'en'
+  if (!locale) { locale = 'en' }
   return i18NMap.get(locale)?.get(key) ?? key
 }

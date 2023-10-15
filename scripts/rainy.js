@@ -3,8 +3,7 @@ import * as THREE from 'three'
 let isRainy = false
 
 export function initRainy() {
-  if (typeof window === 'undefined' || isRainy)
-    return
+  if (typeof window === 'undefined' || isRainy) { return }
   isRainy = true
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
@@ -67,8 +66,7 @@ export function initRainy() {
     scene.traverse((object) => {
       if (object instanceof THREE.Line) {
         object.position.add(object.velocity)
-        if (object.position.y < -100)
-          object.position.copy(new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100))
+        if (object.position.y < -100) { object.position.copy(new THREE.Vector3(Math.random() * 200 - 100, Math.random() * 200 - 100, Math.random() * 200 - 100)) }
       }
     })
     renderer.render(scene, camera)
