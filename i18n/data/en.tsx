@@ -18,4 +18,6 @@ export default {
   'demo-vue-wf-desc': 'A waterfall layout component for Vue.js.',
   'demo-houki-title': 'Houki - A Reach Mahjong Game',
   'demo-houki-desc': 'Houki is a reach mahjong game for the web. Includes not only the complete game logic, but also the game AI and UI interface.',
+  'demo-blueprint-title': 'Blueprint - Create Blueprint Animations',
+  'demo-blueprint-desc': 'Blueprint is a component for creating blueprint animations. It automatically animates blueprints based on the size of the dom\'s flexbox.',
 }

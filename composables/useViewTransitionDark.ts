@@ -3,9 +3,15 @@ export function useViewTransitionDark() {
   const isDark = useDark({
     onChanged: (isDark) => {
       const a = document.documentElement.getAttribute('color-scheme')
-      if (a === 'dark' && isDark) { return }
-      if (a === 'light' && !isDark) { return }
-      if (a === null && !isDark) { return }
+      if (a === 'dark' && isDark) {
+        return
+      }
+      if (a === 'light' && !isDark) {
+        return
+      }
+      if (a === null && !isDark) {
+        return
+      }
       setThemeAttributeWithAnimation(isDark ? 'dark' : 'light', x, y)
     },
   })

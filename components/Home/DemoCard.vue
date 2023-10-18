@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useElementVisibility } from '@vueuse/core'
+import { t } from '@/i18n'
 
 const { title, desc, link } = defineProps<{
   title: string
@@ -12,13 +13,15 @@ const target = ref()
 const isVisiable = useElementVisibility(target)
 const alreadyLoaded = ref(false)
 watchOnce(isVisiable, () => {
-  if (!alreadyLoaded.value) { alreadyLoaded.value = true }
+  if (!alreadyLoaded.value) {
+    alreadyLoaded.value = true
+  }
 })
 const style = computed(() => {
   const show = isVisiable.value || alreadyLoaded.value
   return {
     opacity: show ? 1 : 0,
-    transform: `translateY(${show ? 0 : 100}px) scale(${show ? 1 : 1.2})`,
+    transform: `translateY(${show ? 0 : 100}px)`,
     transitionDelay: `${Math.random() * 0.2}s`,
   }
 })
@@ -43,10 +46,10 @@ const style = computed(() => {
     />
     <div class="p-4">
       <h3 class="font-bold mb-2">
-        {{ title }}
+        {{ t(title) }}
       </h3>
       <p class="text-fg-3 text-sm">
-        {{ desc }}
+        {{ t(desc) }}
       </p>
     </div>
   </NuxtLink>

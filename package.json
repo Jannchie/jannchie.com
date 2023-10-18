@@ -14,12 +14,12 @@
     "vue-wf": "^0.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "1.0.0-beta.27",
     "@iconify-json/tabler": "^1.1.95",
+    "@jannchie/eslint-config": "^2.3.0",
     "@nuxt/content": "^2.8.5",
     "@nuxt/devtools": "1.0.0-beta.2",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@types/node": "^20.8.6",
+    "@types/node": "^20.8.7",
     "@types/three": "^0.157.0",
     "@unocss/nuxt": "^0.56.5",
     "@vite-pwa/nuxt": "^0.1.1",

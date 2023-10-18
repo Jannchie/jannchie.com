@@ -18,4 +18,6 @@ export default {
   'demo-vue-wf-desc': '一个 Vue.js 瀑布流布局组件。',
   'demo-houki-title': '凤姬 - 麻将游戏',
   'demo-houki-desc': '凤姬是一个 Web 端的麻将游戏。它不仅包含完整的游戏逻辑，还包括游戏 AI 和 UI 界面。',
+  'demo-blueprint-title': 'Blueprint - 创建蓝图动画',
+  'demo-blueprint-desc': 'Blueprint 是一个用于创建蓝图动画的组件。它会根据 dom 的 flexbox 尺寸创建惊艳的蓝图动画效果。',
 }

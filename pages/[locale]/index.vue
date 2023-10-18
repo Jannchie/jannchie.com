@@ -20,10 +20,14 @@ const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string; user_name: 
   },
 })
 const groupedSponsors = computed(() => {
-  if (!sponsorsRaw.value) { return [] }
+  if (!sponsorsRaw.value) {
+    return []
+  }
   return Object.values(sponsorsRaw.value.reduce((result, sponsor) => {
     const { user_name, order_price } = sponsor
-    if (!result[user_name]) { result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar } }
+    if (!result[user_name]) {
+      result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
+    }
     result[user_name].total_order_price += order_price
     return result
   }, {} as { [user_name: string]: { user_name: string; total_order_price: number; user_avatar: string } })).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
@@ -33,7 +37,9 @@ const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: 
 const { width } = useWindowSize()
 const column = computed(() => {
   const w = Math.min(1660, width.value)
-  if (width.value === Number.POSITIVE_INFINITY) { return 1 }
+  if (width.value === Number.POSITIVE_INFINITY) {
+    return 1
+  }
   return Math.floor(w / 500) + 1
 })
 const itemWidth = computed(() => {
