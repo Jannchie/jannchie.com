@@ -2,8 +2,6 @@ import en from './data/en'
 import zh from './data/zhCN'
 import ja from './data/ja'
 
-export * from './component'
-
 function objectToMap(obj: { [key: string]: any }): Map<string, any> {
   const entries = Object.entries(obj)
   return new Map(entries)
