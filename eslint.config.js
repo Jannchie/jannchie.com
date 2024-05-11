@@ -1,3 +1,3 @@
-const jannchie = require('@jannchie/eslint-config').default
+import jannchie from '@jannchie/eslint-config'
 
-module.exports = jannchie({ react: false })
+export default jannchie({ unocss: true })

@@ -20,4 +20,6 @@ export default {
   'demo-houki-desc': '凤姬是一个 Web 端的麻将游戏。它不仅包含完整的游戏逻辑，还包括游戏 AI 和 UI 界面。',
   'demo-blueprint-title': 'Blueprint - 创建蓝图动画',
   'demo-blueprint-desc': 'Blueprint 是一个用于创建蓝图动画的组件。它会根据 dom 的 flexbox 尺寸创建惊艳的蓝图动画效果。',
+  'demo-gemini-chat-title': 'Gemini Chat UI',
+  'demo-gemini-chat-desc': '酷炫的双子星风格聊天 UI，支持文字渐隐动画，使用 Vue.js 开发，支持 ChatGPT API。',
 }

@@ -1,7 +1,7 @@
 export function useViewTransitionDark() {
   const { x, y } = useMouse()
   const isDark = useDark({
-    onChanged: (isDark) => {
+    onChanged: (isDark: any) => {
       const a = document.documentElement.getAttribute('color-scheme')
       if (a === 'dark' && isDark) {
         return
@@ -16,7 +16,6 @@ export function useViewTransitionDark() {
     },
   })
   function setThemeAttributeWithAnimation(theme: string, x: Ref<number>, y: Ref<number>) {
-    // @ts-expect-error: Transition API
     if (typeof window === 'undefined' || typeof document.startViewTransition === 'undefined') {
       document.documentElement.setAttribute('color-scheme', theme)
       return
@@ -26,7 +25,6 @@ export function useViewTransitionDark() {
       Math.max(x.value, innerWidth - x.value),
       Math.max(y.value, innerHeight - y.value),
     )
-    // @ts-expect-error: Transition API
     const transition = document.startViewTransition(() => {
       document.documentElement.setAttribute('color-scheme', theme)
     })

@@ -14,23 +14,23 @@ useHead({
   },
 })
 
-const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string; user_name: string; order_price: number }]>('https://api.zeroroku.com/sponsor', {
+const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string, user_name: string, order_price: number }]>('https://api.zeroroku.com/sponsor', {
   headers: {
     'Content-Type': 'application/json',
   },
 })
 const groupedSponsors = computed(() => {
   if (!sponsorsRaw.value) {
-    return []
+    return [] as any
   }
-  return Object.values(sponsorsRaw.value.reduce((result, sponsor) => {
+  return Object.values(sponsorsRaw.value.reduce((result: any, sponsor: any) => {
     const { user_name, order_price } = sponsor
     if (!result[user_name]) {
       result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
     }
     result[user_name].total_order_price += order_price
     return result
-  }, {} as { [user_name: string]: { user_name: string; total_order_price: number; user_avatar: string } })).sort((NuxtLink, b) => b.total_order_price - NuxtLink.total_order_price)
+  }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
 const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: -1 }).find()
 
@@ -51,46 +51,51 @@ const itemWidth = computed(() => {
 <template>
   <main class="flex flex-col">
     <HomeCover />
-    <div v-if="posts.length > 0">
+    <div
+      v-if="posts.length > 0"
+      class="max-w-full w-[60ch] m-auto mb-48"
+    >
       <HomeSectionTitle>
         {{ t('posts') }}
       </HomeSectionTitle>
-      <div class="flex justify-center flex-col max-w-md m-auto">
+      <div class="flex justify-center flex-col m-auto">
         <NuxtLink
           v-for="post in posts"
           :key="post._path"
-          class="text-center p-4 min-w-72"
+          class="p-4 w-full"
           data-cursor="block"
           :to="post._path"
         >
           <div>
             {{ post.title }}
           </div>
-          <div class="text-sm text-fg-3">
+          <div class="text-xs text-fg-3">
             {{ new Date(post.createdAt).toDateString() }}
           </div>
         </NuxtLink>
       </div>
     </div>
-    <HomeSectionTitle>
+    <HomeSectionTitle class="justify-center">
       {{ t('demos') }}
     </HomeSectionTitle>
     <div class="flex gap-2 justify-center items-start">
-      <Waterfall
-        :item-width="itemWidth"
-        :row-count="column"
-      >
-        <HomeDemoCard
-          v-for="demo in demos"
-          :key="demo.title"
-          :title="demo.title"
-          :desc="demo.desc"
-          :link="demo.link"
-          :href="demo.href"
-        />
-      </Waterfall>
+      <ClientOnly>
+        <Waterfall
+          :item-width="itemWidth"
+          :row-count="column"
+        >
+          <HomeDemoCard
+            v-for="demo in demos"
+            :key="demo.title"
+            :title="demo.title"
+            :desc="demo.desc"
+            :link="demo.link"
+            :href="demo.href"
+          />
+        </Waterfall>
+      </ClientOnly>
     </div>
-    <HomeSectionTitle>
+    <HomeSectionTitle class="justify-center">
       {{ t('projects') }}
     </HomeSectionTitle>
     <div class="flex flex-wrap gap-4 p-8 m-auto justify-center">
@@ -103,7 +108,7 @@ const itemWidth = computed(() => {
         :icon="project.icon"
       />
     </div>
-    <HomeSectionTitle>
+    <HomeSectionTitle class="justify-center">
       {{ t('sponsors') }}
     </HomeSectionTitle>
     <div class="text-center text-sm text-sm opacity-75">
@@ -113,18 +118,24 @@ const itemWidth = computed(() => {
           href="https://github.com/sponsors/Jannchie"
           target="_blank"
           data-cursor="block"
-          class="p-2 inline-block"
+          class="p-2 inline-block inline-flex gap-2 items-center"
         >
-          <i class="i-tabler-brand-github" /> Github
+          <i class="i-tabler-brand-github" />
+          <span>
+            Github
+          </span>
         </NuxtLink>
         <NuxtLink
           aria-label="azz sponsor"
           href="https://azz.ee/jannchie"
           target="_blank"
           data-cursor="block"
-          class="p-2 inline-block"
+          class="p-2 inline-block inline-flex gap-2 items-center"
         >
-          <i class="i-tabler-pig-money" /> 爱赞助
+          <i class="i-tabler-pig-money" />
+          <span>
+            爱赞助
+          </span>
         </NuxtLink>
       </div>
     </div>

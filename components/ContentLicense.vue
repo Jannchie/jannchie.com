@@ -7,7 +7,6 @@ const locale = useRoute('locale').params.locale
     {{ 'This content is licensed under ' }}
     <NuxtLink
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-      data-cursor="block"
     >
       {{ 'CC BY-NC-SA 4.0' }}
     </NuxtLink>
@@ -17,7 +16,6 @@ const locale = useRoute('locale').params.locale
     {{ '本文采用 ' }}
     <NuxtLink
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-      data-cursor="block"
     >
       {{ 'CC BY-NC-SA 4.0' }}
     </NuxtLink>
@@ -27,7 +25,6 @@ const locale = useRoute('locale').params.locale
     {{ 'このコンテンツは ' }}
     <NuxtLink
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
-      data-cursor="block"
     >
       {{ 'CC BY-NC-SA 4.0' }}
     </NuxtLink>

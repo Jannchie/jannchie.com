@@ -48,5 +48,11 @@ export function useDemos() {
       href: 'https://github.com/Jannchie/blueprint',
       link: '/videos/demo-blueprint.mp4',
     },
+    {
+      title: 'demo-gemini-chat-title',
+      desc: 'demo-gemini-chat-desc',
+      href: 'https://github.com/Jannchie/gemini-chat-ui',
+      link: '/videos/demo-gemini-chat.mp4',
+    },
   ]
 }

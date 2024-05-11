@@ -33,14 +33,14 @@ const style = computed(() => {
     :style="style"
     target="_blank"
     :href="href"
-    class="rounded-xl hover:bg-bg-2 border-bd !border inline-block max-w-512px bg-bg-3 transition-all duration-1000"
+    class="hover:bg-bg-2 pr-0.3px border-bd !border inline-block max-w-512px bg-bg-3  duration-1000 transition-all"
   >
     <video
       autoplay
       muted
       loop
       playsinline
-      class="rounded-t-xl border-b border-bd"
+      class="border-b border-bd w-full"
       controlslist="nodownload"
       :src="link"
     />

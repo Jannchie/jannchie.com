@@ -14,7 +14,6 @@ const generate = computed(() => props.id && headings?.anchorLinks?.h1)
     <NuxtLink
       v-if="id && generate"
       exact
-      data-cursor="block"
       class="hover:before:content-['#'] decoration-offset-8 font-bold before:-left-[2ch] before:absolute before:text-fg-3"
       :href="`#${id}`"
     >

@@ -12,7 +12,7 @@ defineProps<{
     data-cursor="block"
     :href="link"
     target="_blank"
-    class="p-4 w-72 rounded-xl flex flex-col items-center"
+    class="p-4 w-72 flex flex-col items-center"
   >
     <i
       :class="icon"

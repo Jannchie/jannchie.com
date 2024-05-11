@@ -52,7 +52,18 @@ useHead({
   --j-fg-3: #2f2f2f;
   --j-bd: #ccc;
   color: var(--j-fg-2);
-  font-family: 'HarmonyOS_Medium', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+[lang="ja"] *:not(.font-mono) {
+  font-family: 'HarmonyOS Sans JP', 'Yu Gothic UI', 'Segoe UI', 'Inter', system-ui, sans-serif;
+}
+
+[lang="zh-CN"] *:not(.font-mono) {
+  font-family: 'HarmonyOS Sans SC', 'Microsoft YaHei UI', 'Segoe UI', 'Inter', system-ui, sans-serif;
+}
+
+*:not(.font-mono) {
+  font-family: 'Oxygen', 'Segoe UI', 'Inter', system-ui, sans-serif;
 }
 
 [color-scheme="dark"] {
@@ -66,7 +77,7 @@ useHead({
 }
 
 [data-cursor="block"] {
-  @apply border border-transparent hover:border-bd rounded-lg transition-all duration-300;
+  @apply border border-transparent hover:border-bd px-2 md:px-4 py-2 transition-all duration-300;
 }
 
 ::selection {

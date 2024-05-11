@@ -1,6 +1,6 @@
 const locales = ['en', 'zh-CN', 'ja']
 
-export default defineNuxtRouteMiddleware((to) => {
+export default defineNuxtRouteMiddleware((to: any) => {
   const { locale } = to.params as { locale: string }
   if (locales.includes(locale)) {
     return

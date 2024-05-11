@@ -20,4 +20,6 @@ export default {
   'demo-houki-desc': '鳳姫は、Web 用のリーチ麻雀ゲームです。完全なゲームロジックだけでなく、ゲーム AI と UI インターフェイスも含まれています。',
   'demo-blueprint-title': 'Blueprint - ブループリントアニメーションの作成',
   'demo-blueprint-desc': 'Blueprint は、ブループリントアニメーションを作成するためのコンポーネントです。DOM の flexbox のサイズに基づいてブループリントを自動的にアニメーション化します。',
+  'demo-gemini-chat-title': 'Genimi Chat UI',
+  'demo-gemini-chat-desc': 'クールなジェミニスタイルのチャット UI で、テキストフェードアニメーションをサポートし、Vue.js で開発されており、ChatGPT API をサポートしています。',
 }

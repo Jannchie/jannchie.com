@@ -9,7 +9,7 @@ tags: [Golang, 后端]
 
 ## 基本概念
 
-`golang.org/x/time/rate`  
+`golang.org/x/time/rate`
 
 - Limiter（速率限制器）：Limiter 用于控制事件的发生速率。
 - Rate（速率）：Rate 表示每秒钟允许的事件数量。它由单位时间内的事件数量和时间单位组成。例如，一个速率为 10 events/second 的 Rate 表示每秒钟允许处理 10 个事件。

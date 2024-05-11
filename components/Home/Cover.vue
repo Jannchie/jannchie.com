@@ -5,6 +5,8 @@ const isTop = ref(true)
 if (typeof window !== 'undefined') {
   window.addEventListener('scroll', () => {
     isTop.value = window.scrollY < 20
+  }, {
+    passive: true,
   })
 }
 const locale = useRoute('locale').params.locale
@@ -15,14 +17,17 @@ const locale = useRoute('locale').params.locale
     <h1>
       <div class="flex items-end">
         <div
-          style="font-family: 'My Soul', cursive;"
           class="relative text-center text-4xl lg:text-6xl"
         >
-          <div class="pointer-events-none select-none after:absolute after:top-0 after:filter">
+          <div
+            style="font-family: 'My Soul', cursive;"
+            class="pointer-events-none select-none after:absolute after:top-0 after:filter"
+          >
             {{ `Jannchie's` }}
           </div>
           <div
             class="absolute top-0 filter blur-3xl"
+            style="font-family: 'My Soul', cursive;"
             aria-hidden="true"
           >
             {{ `Jannchie's` }}
@@ -33,7 +38,7 @@ const locale = useRoute('locale').params.locale
         {{ t('subtitle') }}
       </div>
     </h1>
-    <div class="flex gap-2 children:p-2 leading-0">
+    <div class="flex gap-2 children:p-2 leading-0 py-4">
       <NuxtLink
         v-for="link in socialLinks"
         :key="link.label"

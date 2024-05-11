@@ -29,7 +29,7 @@ const modifiedAt = computed(() => {
 
 <template>
   <main>
-    <div class="text-center text-4xl lg:text-3xl font-black pt-8 pb-16">
+    <div class="text-center text-4xl lg:text-3xl pt-8 pb-16">
       {{ title }}
     </div>
     <article
@@ -59,7 +59,6 @@ const modifiedAt = computed(() => {
         <span>$ </span>
         <NuxtLink
           :to="`/${locale}`"
-          data-cursor="block"
         >
           cd ..
         </NuxtLink>
