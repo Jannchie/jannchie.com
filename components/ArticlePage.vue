@@ -1,34 +1,52 @@
 <script setup lang="ts">
 import 'katex/dist/katex.min.css'
-
 const { title } = defineProps<{
   title: string
 }>()
 
 const { params: { locale }, path } = useRoute('locale')
-const data = await queryCollection('content').path(path).findOne()
-useSeoMeta({
-  title: data.title,
+const { data } = await useAsyncData(path, () => {
+  return queryCollection('content').path(path.toLowerCase()).first()
 })
 
+useSeoMeta({
+  title: data.value?.title ?? '404',
+  description: data.value?.description ?? '404',
+})
 const createdAt = computed(() => {
+  const val = data.value
+  if (!val) {
+    return ''
+  }
+  const meta = val.meta as any
+  if (!meta) {
+    return ''
+  }
   return Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(new Date(data.createdAt))
+  }).format(new Date(meta.createdAt))
 })
 const modifiedAt = computed(() => {
+  const val = data.value
+  if (!val) {
+    return ''
+  }
+  const meta = val.meta as any
+  if (!meta) {
+    return ''
+  }
   return Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }).format(new Date(data.modifiedAt))
+  }).format(new Date(meta.modifiedAt))
 })
 </script>
 
 <template>
-  <main>
+  <main v-if="data">
     <div class="pb-16 pt-8 text-center text-4xl lg:text-3xl">
       {{ title }}
     </div>
@@ -42,10 +60,10 @@ const modifiedAt = computed(() => {
       <div class="text-center text-sm text-fg-3">
         {{ createdAt }} / {{ modifiedAt }}
       </div>
-      <ContentDoc :head="false" />
+      <ContentRenderer :value="data"/>
       <div class="mx-2 mt-32 flex justify-end gap-4">
         <span
-          v-for="tag in data.tags"
+          v-for="tag in data.meta.tags"
           :key="tag"
           class="border border-bd rounded px-2 text-sm text-fg-3"
         >

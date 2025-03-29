@@ -9,6 +9,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "shiki-transformer-color-highlight": "^1.0.0",
     "three": "^0.175.0",
     "vue-wf": "^0.5.0"
   },

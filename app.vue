@@ -54,15 +54,15 @@ useHead({
   color: var(--j-fg-2);
 }
 
-[lang="ja"] *:not(.font-mono) {
+[lang="ja"] *:not(.font-mono):not(.font-mono *){
   font-family: 'HarmonyOS Sans JP', 'Yu Gothic UI', 'Segoe UI', 'Inter', system-ui, sans-serif;
 }
 
-[lang="zh-CN"] *:not(.font-mono) {
+[lang="zh-CN"] *:not(.font-mono):not(.font-mono *) {
   font-family: 'HarmonyOS Sans SC', 'Microsoft YaHei UI', 'Segoe UI', 'Inter', system-ui, sans-serif;
 }
 
-*:not(.font-mono) {
+*:not(.font-mono):not(.font-mono *) {
   font-family: 'Oxygen', 'Segoe UI', 'Inter', system-ui, sans-serif;
 }
 

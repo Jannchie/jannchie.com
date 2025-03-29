@@ -35,10 +35,11 @@ export default defineNuxtConfig({
   ],
 
   content: {
+    
     build: {
       markdown: {
         highlight: {
-          preload: ['go'],
+          langs: ['go', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'jsx', 'tsx', 'rust'],
           theme: 'github-dark',
         },
         remarkPlugins: {
@@ -52,7 +53,15 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  mdc: {
+    highlight: {
+      theme: {
+        light: 'material-theme-lighter',
+        default: 'material-theme',
+        dark: 'material-theme-palenight',
+      },
+    },
+  },
   googleFonts: {
     preload: true,
     prefetch: true,

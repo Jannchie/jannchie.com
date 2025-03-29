@@ -1,5 +1,5 @@
-import { defineConfig, presetAttributify, presetIcons, presetTypography, presetUno, presetWebFonts, transformerDirectives } from 'unocss'
-
+import { defineConfig, presetAttributify, presetIcons, presetTypography, presetWebFonts, transformerDirectives } from 'unocss'
+import { presetWind3 } from 'unocss'
 export default defineConfig({
   theme: {
     colors: {
@@ -23,7 +23,9 @@ export default defineConfig({
     },
   },
   presets: [
-    presetUno(),
+    presetWind3({
+      dark: 'media'
+    }),
     presetAttributify(),
     presetIcons({
       scale: 1.2,

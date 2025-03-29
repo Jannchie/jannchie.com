@@ -59,6 +59,14 @@ const demosDivided = computed(() => {
   }
   return divided
 })
+
+function getTurePath(path: string) {
+  if (path.startsWith('/zh-cn')) {
+    path = path.replace('/zh-cn', '/zh-CN')
+    return path
+  }
+  return path
+}
 </script>
 
 <template>
@@ -76,14 +84,16 @@ const demosDivided = computed(() => {
           v-for="post in posts"
           :key="post.path"
           class="w-full p-4"
-          data-cursor="block"
-          :to="post.path"
+          :to="getTurePath(post.path)"
         >
           <div>
             {{ post.title }}
           </div>
-          <div class="text-xs text-fg-3">
-            <!-- {{ new Date(post.meta).toDateString() }} -->
+          <div
+            v-if="post.meta.createdAt"
+            class="text-xs text-fg-3"
+          >
+            {{ new Date(post.meta.createdAt as string).toDateString() }}
           </div>
         </NuxtLink>
       </div>
