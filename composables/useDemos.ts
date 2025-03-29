@@ -13,6 +13,24 @@ export function useDemos() {
       link: '/videos/demo-anichart.mp4',
     },
     {
+      title: 'demo-furi-title',
+      desc: 'demo-furi-desc',
+      href: 'https://furi.jannchie.com',
+      link: '/videos/demo-furi.mp4',
+    },
+    {
+      title: 'demo-gemini-chat-title',
+      desc: 'demo-gemini-chat-desc',
+      href: 'https://github.com/Jannchie/gemini-chat-ui',
+      link: '/videos/demo-gemini-chat.mp4',
+    },
+    {
+      title: 'demo-blueprint-title',
+      desc: 'demo-blueprint-desc',
+      href: 'https://github.com/Jannchie/blueprint',
+      link: '/videos/demo-blueprint.mp4',
+    },
+    {
       title: 'demo-vzad-title',
       desc: 'demo-vzad-desc',
       href: 'https://github.com/Jannchie/vzad',
@@ -41,18 +59,6 @@ export function useDemos() {
       desc: 'demo-houki-desc',
       href: 'https://github.com/Jannchie/houki',
       link: '/videos/demo-houki.mp4',
-    },
-    {
-      title: 'demo-blueprint-title',
-      desc: 'demo-blueprint-desc',
-      href: 'https://github.com/Jannchie/blueprint',
-      link: '/videos/demo-blueprint.mp4',
-    },
-    {
-      title: 'demo-gemini-chat-title',
-      desc: 'demo-gemini-chat-desc',
-      href: 'https://github.com/Jannchie/gemini-chat-ui',
-      link: '/videos/demo-gemini-chat.mp4',
     },
   ]
 }

@@ -5,15 +5,18 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./composables', './utils', './data'],
   },
+
   devtools: {
     enabled: true,
     timeline: {
       enabled: false,
     },
   },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
+
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
     // but missing on offline, disabling extraction it until fixed
@@ -22,6 +25,7 @@ export default defineNuxtConfig({
     renderJsonPayloads: true,
     typedPages: true,
   },
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/google-fonts',
@@ -29,23 +33,26 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@vueuse/nuxt',
   ],
+
   content: {
-    respectPathCase: true,
-    highlight: {
-      preload: ['go'],
-      theme: 'github-dark',
-    },
-    markdown: {
-      remarkPlugins: [
-        'remark-math',
-      ],
-      rehypePlugins: {
-        'rehype-katex': {
-          output: 'html', // the default value is 'htmlAndMathml'
+    build: {
+      markdown: {
+        highlight: {
+          preload: ['go'],
+          theme: 'github-dark',
+        },
+        remarkPlugins: {
+          'remark-math': {},
+        },
+        rehypePlugins: {
+          'rehype-katex': {
+            output: 'html', // the default value is 'htmlAndMathml'
+          },
         },
       },
     },
   },
+
   googleFonts: {
     preload: true,
     prefetch: true,
@@ -53,9 +60,11 @@ export default defineNuxtConfig({
       'My Soul': true,
     },
   },
+
   appConfig: {
     buildDate: new Date().toISOString(),
   },
+
   pwa: {
     disable: process.env.NODE_ENV === 'development',
     mode: 'production',
@@ -100,4 +109,6 @@ export default defineNuxtConfig({
       navigateFallback: '/',
     },
   },
+
+  compatibilityDate: '2025-03-28',
 })

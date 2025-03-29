@@ -7,7 +7,7 @@ const toggleDark = useToggle(isDark)
 <template>
   <button
     ref="darkBtnRef"
-    class="p-2 leading-0 border border-transparent hover:border-bd"
+    class="border border-transparent p-2 leading-0 hover:border-bd"
     tabindex="0"
     @click="toggleDark()"
   >

@@ -5,7 +5,7 @@ const locale = useRoute('locale').params.locale
 <template>
   <div
     v-if="locale === 'en'"
-    class="text-fg-3 children:my-4 max-w-[60ch] p-2"
+    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
   >
     <p>
       I am a software development engineer with a particular interest in front-end technologies, and I am also involved in operations for things like K8S and research in AIGC technologies.
@@ -15,7 +15,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="gap-2 items-center underline decoration-offset-4 decoration-bg-1 hover:bg-bg-2 px-2 py-1 transition-background-color"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}
@@ -27,7 +27,7 @@ const locale = useRoute('locale').params.locale
   </div>
   <div
     v-if="locale === 'zh-CN'"
-    class="text-fg-3 children:my-4 max-w-[60ch] p-2"
+    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
   >
     <p>
       一名全栈软件开发工程师，兴趣是前端开发，同时我也参与了 K8S 等运维工作和 AIGC 相关的人工智能技术的研究。
@@ -37,7 +37,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="gap-2 items-center underline decoration-offset-4 decoration-bg-1 hover:bg-bg-2 px-2 py-1 transition-background-color"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}
@@ -49,7 +49,7 @@ const locale = useRoute('locale').params.locale
   </div>
   <div
     v-if="locale === 'ja'"
-    class="text-fg-3 children:my-4 max-w-[60ch] p-2"
+    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
   >
     <p>
       私はソフトウェア開発エンジニアで、特にフロントエンド技術に興味を持っていますが、K8Sなどの運用業務やAIGC関連の人工知能技術の研究にも取り組んでいます。
@@ -59,7 +59,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="gap-2 items-center underline decoration-offset-4 decoration-bg-1 hover:bg-bg-2 px-2 py-1 transition-background-color"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}

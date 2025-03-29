@@ -21,5 +21,7 @@ export default {
   'demo-blueprint-title': 'Blueprint - Create Blueprint Animations',
   'demo-blueprint-desc': 'Blueprint is a component for creating blueprint animations. It automatically animates blueprints based on the size of the dom\'s flexbox.',
   'demo-gemini-chat-title': 'Gemini Chat UI',
-  'demo-gemini-chat-desc': 'Cool gemini style chat UI, supports text fading animation, developed with Vue.js, supports ChatGPT API.',
+  'demo-gemini-chat-desc': 'A cool Gemini-style chat UI with text fade-in/out animations, developed with Vue.js, supporting OpenAI, Open Router, Plamo, and other OpenAI SDK-compatible service providers.',
+  'demo-furi-title': 'Furi - Japanese Furigana Annotation',
+  'demo-furi-desc': 'Furi is a tool for quickly annotating Japanese text in the clipboard with furigana. It is based on LLM.',
 }

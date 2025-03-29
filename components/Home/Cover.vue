@@ -13,7 +13,7 @@ const locale = useRoute('locale').params.locale
 </script>
 
 <template>
-  <div class="pt-8 pb-16 h-screen flex flex-col items-center justify-center">
+  <div class="h-screen flex flex-col items-center justify-center pb-16 pt-8">
     <h1>
       <div class="flex items-end">
         <div
@@ -26,7 +26,7 @@ const locale = useRoute('locale').params.locale
             {{ `Jannchie's` }}
           </div>
           <div
-            class="absolute top-0 filter blur-3xl"
+            class="absolute top-0 blur-3xl filter"
             style="font-family: 'My Soul', cursive;"
             aria-hidden="true"
           >
@@ -38,7 +38,7 @@ const locale = useRoute('locale').params.locale
         {{ t('subtitle') }}
       </div>
     </h1>
-    <div class="flex gap-2 children:p-2 leading-0 py-4">
+    <div class="flex gap-2 py-4 leading-0 children:p-2">
       <NuxtLink
         v-for="link in socialLinks"
         :key="link.label"
@@ -78,14 +78,16 @@ const locale = useRoute('locale').params.locale
       </NuxtLink>
     </div>
     <HomeBio />
-    <TransitionFade>
-      <div
-        v-if="isTop"
-        class="bottom-0 absolute animate-bounce flex flex-col items-center bottom-20 text-base"
-      >
-        <i class="i-tabler-chevron-down" />
-      </div>
-    </TransitionFade>
+    <ClientOnly>
+      <TransitionFade>
+        <div
+          v-if="isTop"
+          class="absolute bottom-0 bottom-20 flex flex-col animate-bounce items-center text-base"
+        >
+          <i class="i-tabler-chevron-down" />
+        </div>
+      </TransitionFade>
+    </ClientOnly>
   </div>
 </template>
 

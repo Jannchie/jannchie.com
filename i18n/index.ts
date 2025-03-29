@@ -1,6 +1,6 @@
 import en from './data/en'
-import zh from './data/zhCN'
 import ja from './data/ja'
+import zh from './data/zhCN'
 
 function objectToMap(obj: { [key: string]: any }): Map<string, any> {
   const entries = Object.entries(obj)

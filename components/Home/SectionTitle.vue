@@ -1,5 +1,5 @@
 <template>
-  <h2 class="flex mt-24 mb-12 text-2xl lg:text-4xl font-bold">
+  <h2 class="mb-12 mt-24 flex text-2xl font-bold lg:text-4xl">
     <div data-cursor="text">
       <slot />
     </div>

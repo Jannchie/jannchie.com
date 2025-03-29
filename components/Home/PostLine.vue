@@ -26,7 +26,7 @@ const createdAtStr = computed(() => {
     :key="content.slug"
     data-cursor="block"
     :href="`${content._path}`"
-    class="w-full p-4 inline"
+    class="inline w-full p-4"
   >
     <div>
       {{ content.title }}

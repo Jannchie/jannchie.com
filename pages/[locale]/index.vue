@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Waterfall from 'vue-wf'
 import { t } from '@/i18n'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
@@ -32,19 +31,33 @@ const groupedSponsors = computed(() => {
     return result
   }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
-const posts = await queryContent(`/${locale}/posts`).limit(5).sort({ createdAt: -1 }).find()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).all()
 
 const { width } = useWindowSize()
-const column = computed(() => {
-  const w = Math.min(1660, width.value)
-  if (width.value === Number.POSITIVE_INFINITY) {
-    return 1
+
+const cols = computed(() => {
+  if (width.value > 1024) {
+    return 5
   }
-  return Math.floor(w / 500) + 1
+  else if (width.value > 768) {
+    return 4
+  }
+  else if (width.value > 640) {
+    return 3
+  }
+  return 2
 })
-const itemWidth = computed(() => {
-  const w = Math.min(1660, width.value)
-  return (w - 32 * column.value) / column.value
+
+const demosDivided = computed(() => {
+  const divided: any[] = []
+  // 将 demos 平均分到 cols 列中
+  for (let i = 0; i < cols.value; i++) {
+    divided[i] = []
+  }
+  for (let i = 0; i < demos.length; i++) {
+    divided[i % cols.value].push(demos[i])
+  }
+  return divided
 })
 </script>
 
@@ -53,52 +66,57 @@ const itemWidth = computed(() => {
     <HomeCover />
     <div
       v-if="posts.length > 0"
-      class="max-w-full w-[60ch] m-auto mb-48"
+      class="m-auto mb-48 max-w-full w-[60ch]"
     >
       <HomeSectionTitle>
         {{ t('posts') }}
       </HomeSectionTitle>
-      <div class="flex justify-center flex-col m-auto">
+      <div class="m-auto flex flex-col justify-center">
         <NuxtLink
           v-for="post in posts"
-          :key="post._path"
-          class="p-4 w-full"
+          :key="post.path"
+          class="w-full p-4"
           data-cursor="block"
-          :to="post._path"
+          :to="post.path"
         >
           <div>
             {{ post.title }}
           </div>
           <div class="text-xs text-fg-3">
-            {{ new Date(post.createdAt).toDateString() }}
+            <!-- {{ new Date(post.meta).toDateString() }} -->
           </div>
         </NuxtLink>
       </div>
     </div>
-    <HomeSectionTitle class="justify-center">
-      {{ t('demos') }}
-    </HomeSectionTitle>
-    <div class="flex gap-2 justify-center items-start">
-      <ClientOnly>
-        <Waterfall
-          :item-width="itemWidth"
-          :row-count="column"
+    <ClientOnly>
+      <HomeSectionTitle class="justify-center">
+        {{ t('demos') }}
+      </HomeSectionTitle>
+      <div class="flex gap-2 px-2">
+        <div
+          v-for="(demoList, index) in demosDivided"
+          :key="index"
+          class="w-full gap-2"
         >
-          <HomeDemoCard
-            v-for="demo in demos"
-            :key="demo.title"
-            :title="demo.title"
-            :desc="demo.desc"
-            :link="demo.link"
-            :href="demo.href"
-          />
-        </Waterfall>
-      </ClientOnly>
-    </div>
+          <div
+            class="flex flex-col gap-2"
+          >
+            <HomeDemoCard
+              v-for="demo in demoList"
+              :key="demo.title"
+              :title="demo.title"
+              :desc="demo.desc"
+              :link="demo.link"
+              :href="demo.href"
+            />
+          </div>
+        </div>
+      </div>
+    </ClientOnly>
     <HomeSectionTitle class="justify-center">
       {{ t('projects') }}
     </HomeSectionTitle>
-    <div class="flex flex-wrap gap-4 p-8 m-auto justify-center">
+    <div class="m-auto flex flex-wrap justify-center gap-4 p-8">
       <HomeProjectCard
         v-for="project in projects"
         :key="project.title"
@@ -118,7 +136,7 @@ const itemWidth = computed(() => {
           href="https://github.com/sponsors/Jannchie"
           target="_blank"
           data-cursor="block"
-          class="p-2 inline-block inline-flex gap-2 items-center"
+          class="inline-block inline-flex items-center gap-2 p-2"
         >
           <i class="i-tabler-brand-github" />
           <span>
@@ -130,7 +148,7 @@ const itemWidth = computed(() => {
           href="https://azz.ee/jannchie"
           target="_blank"
           data-cursor="block"
-          class="p-2 inline-block inline-flex gap-2 items-center"
+          class="inline-block inline-flex items-center gap-2 p-2"
         >
           <i class="i-tabler-pig-money" />
           <span>
@@ -139,25 +157,12 @@ const itemWidth = computed(() => {
         </NuxtLink>
       </div>
     </div>
-    <div class="flex items-start gap-2 flex-wrap p-y px-2 m-auto max-w-[100vw] justify-center">
+    <div class="m-auto max-w-[100vw] flex flex-wrap items-start justify-center gap-2 p-y px-2 text-xs">
       <div
         v-for="sponsor in groupedSponsors"
         :key="sponsor.user_name"
       >
-        <img
-          v-if="sponsor.user_avatar !== 'https://cdn.snscz.com/azz/img/avatar.png'"
-          :alt="sponsor.user_name"
-          width="48"
-          height="48"
-          :src="sponsor.user_avatar"
-          class="rounded-full"
-        >
-        <div
-          v-else
-          class="w-[48px] h-[48px] overflow-hidden rounded-full text-xs text-center flex items-center justify-center bg-bg-2 text-fg-2"
-        >
-          {{ sponsor.user_name }}
-        </div>
+        {{ sponsor.user_name }}
       </div>
     </div>
   </main>

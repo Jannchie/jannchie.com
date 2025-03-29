@@ -6,7 +6,7 @@ const { title } = defineProps<{
 }>()
 
 const { params: { locale }, path } = useRoute('locale')
-const data = await queryContent(path).findOne()
+const data = await queryCollection('content').path(path).findOne()
 useSeoMeta({
   title: data.title,
 })
@@ -29,33 +29,33 @@ const modifiedAt = computed(() => {
 
 <template>
   <main>
-    <div class="text-center text-4xl lg:text-3xl pt-8 pb-16">
+    <div class="pb-16 pt-8 text-center text-4xl lg:text-3xl">
       {{ title }}
     </div>
     <article
       data-cursor="text"
-      class="m-auto p-2 sm:px-0 dark:prose-invert prose text-md"
+      class="text-md m-auto p-2 prose sm:px-0 dark:prose-invert"
     >
       <h1 class="text-center">
         {{ data.title }}
       </h1>
-      <div class="text-sm text-fg-3 text-center">
+      <div class="text-center text-sm text-fg-3">
         {{ createdAt }} / {{ modifiedAt }}
       </div>
       <ContentDoc :head="false" />
-      <div class="mt-32 mx-2 flex gap-4 justify-end">
+      <div class="mx-2 mt-32 flex justify-end gap-4">
         <span
           v-for="tag in data.tags"
           :key="tag"
-          class="text-sm text-fg-3 border-bd border px-2 rounded"
+          class="border border-bd rounded px-2 text-sm text-fg-3"
         >
           #{{ tag }}
         </span>
       </div>
-      <div class="opacity-75 text-sm font-mono mt-32">
+      <div class="mt-32 text-sm font-mono opacity-75">
         <ContentLicense />
       </div>
-      <div class="font-mono opacity-75 text-sm">
+      <div class="text-sm font-mono opacity-75">
         <span>$ </span>
         <NuxtLink
           :to="`/${locale}`"

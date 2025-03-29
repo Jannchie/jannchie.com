@@ -26,8 +26,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="bg-[#222] rounded-xl relative text-xs">
-    <span class="p-2 absolute right-2 text-xs text-fg-3 font-mono">
+  <div class="relative rounded-xl bg-[#222] text-xs">
+    <span class="absolute right-2 p-2 text-xs text-fg-3 font-mono">
       {{ language }}
     </span>
     <slot />

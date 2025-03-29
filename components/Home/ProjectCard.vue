@@ -12,16 +12,16 @@ defineProps<{
     data-cursor="block"
     :href="link"
     target="_blank"
-    class="p-4 w-72 flex flex-col items-center"
+    class="w-72 flex flex-col items-center p-4"
   >
     <i
       :class="icon"
       class="opacity-75"
     />
-    <div class="font-bold text-base">
+    <div class="text-base font-bold">
       {{ title }}
     </div>
-    <div class="opacity-50 text-sm">
+    <div class="text-sm opacity-50">
       {{ description }}
     </div>
   </NuxtLink>

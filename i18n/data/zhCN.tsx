@@ -21,5 +21,7 @@ export default {
   'demo-blueprint-title': 'Blueprint - 创建蓝图动画',
   'demo-blueprint-desc': 'Blueprint 是一个用于创建蓝图动画的组件。它会根据 dom 的 flexbox 尺寸创建惊艳的蓝图动画效果。',
   'demo-gemini-chat-title': 'Gemini Chat UI',
-  'demo-gemini-chat-desc': '酷炫的双子星风格聊天 UI，支持文字渐隐动画，使用 Vue.js 开发，支持 ChatGPT API。',
+  'demo-gemini-chat-desc': '酷炫的 Google Gemini 风格聊天 UI，支持文字渐隐动画，使用 Vue.js 开发，支持 OpenAI、Open Router、Plamo 等 OpenAI SDK 兼容服务提供商。',
+  'demo-furi-title': '振り仮名 - 日语假名注音',
+  'demo-furi-desc': '「振り仮名」是一个日语假名注音工具。用于快速给出剪贴板中的日语文本的假名注音。基于 LLM。',
 }

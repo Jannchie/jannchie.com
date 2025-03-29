@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useElementVisibility } from '@vueuse/core'
 import { t } from '@/i18n'
+import { useElementVisibility } from '@vueuse/core'
 
 const { title, desc, link } = defineProps<{
   title: string
@@ -33,22 +33,23 @@ const style = computed(() => {
     :style="style"
     target="_blank"
     :href="href"
-    class="hover:bg-bg-2 pr-0.3px border-bd !border inline-block max-w-512px bg-bg-3  duration-1000 transition-all"
+    class="inline-block border-bd bg-bg-3 pr-0.3px transition-all duration-1000 !border hover:bg-bg-2"
   >
     <video
+
       autoplay
-      muted
       loop
+      muted
       playsinline
-      class="border-b border-bd w-full"
+      class="w-full border-b border-bd"
       controlslist="nodownload"
       :src="link"
     />
     <div class="p-4">
-      <h3 class="font-bold mb-2">
+      <h3 class="mb-2 font-bold">
         {{ t(title) }}
       </h3>
-      <p class="text-fg-3 text-sm">
+      <p class="text-sm text-fg-3">
         {{ t(desc) }}
       </p>
     </div>

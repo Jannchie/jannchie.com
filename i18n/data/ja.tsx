@@ -21,5 +21,7 @@ export default {
   'demo-blueprint-title': 'Blueprint - ブループリントアニメーションの作成',
   'demo-blueprint-desc': 'Blueprint は、ブループリントアニメーションを作成するためのコンポーネントです。DOM の flexbox のサイズに基づいてブループリントを自動的にアニメーション化します。',
   'demo-gemini-chat-title': 'Genimi Chat UI',
-  'demo-gemini-chat-desc': 'クールなジェミニスタイルのチャット UI で、テキストフェードアニメーションをサポートし、Vue.js で開発されており、ChatGPT API をサポートしています。',
+  'demo-gemini-chat-desc': 'クールな Gemini スタイルのチャット UI で、テキストのフェードイン/アウト アニメーションをサポートし、Vue.js で開発されており、OpenAI、Open Router、Plamo などの OpenAI SDK 互換サービス プロバイダーをサポートしています。',
+  'demo-furi-title': '振り仮名',
+  'demo-furi-desc': '「振り仮名」でクリップボード内の日本語テキストにふりがなを素早く付けることができます。LLMを基にしています。',
 }

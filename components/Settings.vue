@@ -5,7 +5,7 @@ import ToggleDarkBtn from './ToggleDarkBtn.vue'
 <template>
   <ClientOnly>
     <TransitionFade>
-      <div class="absolute top-2 right-4 flex">
+      <div class="absolute right-4 top-2 flex">
         <ToggleDarkBtn />
       </div>
     </TransitionFade>
