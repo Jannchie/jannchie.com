@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import 'katex/dist/katex.min.css'
+
 const { title } = defineProps<{
   title: string
 }>()
@@ -60,7 +61,7 @@ const modifiedAt = computed(() => {
       <div class="text-center text-sm text-fg-3">
         {{ createdAt }} / {{ modifiedAt }}
       </div>
-      <ContentRenderer :value="data"/>
+      <ContentRenderer :value="data" />
       <div class="mx-2 mt-32 flex justify-end gap-4">
         <span
           v-for="tag in data.meta.tags"

@@ -66,7 +66,7 @@ useHead({
   font-family: 'Oxygen', 'Segoe UI', 'Inter', system-ui, sans-serif;
 }
 
-[color-scheme="dark"] {
+[data-scheme="dark"] {
   --j-bg-1: #333;
   --j-bg-2: #222;
   --j-bg-3: #100F0F;

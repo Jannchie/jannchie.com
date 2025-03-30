@@ -31,7 +31,7 @@ const groupedSponsors = computed(() => {
     return result
   }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
-const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).all()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('meta', 'ASC').all()
 
 const { width } = useWindowSize()
 
@@ -74,24 +74,25 @@ function getTurePath(path: string) {
     <HomeCover />
     <div
       v-if="posts.length > 0"
-      class="m-auto mb-48 max-w-full w-[60ch]"
+      class="m-auto mb-12 max-w-full w-[60ch]"
     >
-      <HomeSectionTitle>
+      <HomeSectionTitle class="mb-6">
         {{ t('posts') }}
       </HomeSectionTitle>
-      <div class="m-auto flex flex-col justify-center">
+
+      <div class="flex flex-col gap-6">
         <NuxtLink
           v-for="post in posts"
           :key="post.path"
-          class="w-full p-4"
+          class="block rounded-md p-4 transition-shadow hover:shadow-sm"
           :to="getTurePath(post.path)"
         >
-          <div>
+          <h3 class="mb-2 text-lg font-medium">
             {{ post.title }}
-          </div>
+          </h3>
           <div
             v-if="post.meta.createdAt"
-            class="text-xs text-fg-3"
+            class="text-xs"
           >
             {{ new Date(post.meta.createdAt as string).toDateString() }}
           </div>

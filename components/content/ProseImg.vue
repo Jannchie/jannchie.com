@@ -30,7 +30,7 @@ const refinedSrc = computed(() => {
 
 <template>
   <img
-    class="m-auto inline-block flex justify-center rounded-xl brightness-75 transition-all hover:brightness-100"
+    class="m-auto inline-block flex justify-center rounded-xl shadow-2xl transition-all dark:brightness-75 hover:brightness-100"
     :src="refinedSrc"
     :alt="alt"
     :width="width"

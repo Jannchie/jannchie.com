@@ -25,11 +25,11 @@
   z-index: 9999;
 }
 
-[color-scheme="dark"]::view-transition-old(root) {
+[data-scheme="dark"]::view-transition-old(root) {
   z-index: 9999;
 }
 
-[color-scheme="dark"]::view-transition-new(root) {
+[data-scheme="dark"]::view-transition-new(root) {
   z-index: 1;
 }
 </style>

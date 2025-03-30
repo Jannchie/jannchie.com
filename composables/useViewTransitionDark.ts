@@ -2,7 +2,7 @@ export function useViewTransitionDark() {
   const { x, y } = useMouse()
   const isDark = useDark({
     onChanged: (isDark: any) => {
-      const a = document.documentElement.getAttribute('color-scheme')
+      const a = document.documentElement.getAttribute('data-scheme')
       if (a === 'dark' && isDark) {
         return
       }
@@ -17,7 +17,7 @@ export function useViewTransitionDark() {
   })
   function setThemeAttributeWithAnimation(theme: string, x: Ref<number>, y: Ref<number>) {
     if (typeof window === 'undefined' || typeof document.startViewTransition === 'undefined') {
-      document.documentElement.setAttribute('color-scheme', theme)
+      document.documentElement.setAttribute('data-scheme', theme)
       return
     }
 
@@ -26,7 +26,7 @@ export function useViewTransitionDark() {
       Math.max(y.value, innerHeight - y.value),
     )
     const transition = document.startViewTransition(() => {
-      document.documentElement.setAttribute('color-scheme', theme)
+      document.documentElement.setAttribute('data-scheme', theme)
     })
     transition.ready.then(() => {
       const clipPath = [

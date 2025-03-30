@@ -6,7 +6,7 @@ defineProps({
   },
   target: {
     type: String,
-    default: undefined,
+    default: '_blank',
     required: false,
   },
 })
@@ -14,7 +14,6 @@ defineProps({
 
 <template>
   <NuxtLink
-    data-cursor="block"
     :href="href"
     :target="target"
   >

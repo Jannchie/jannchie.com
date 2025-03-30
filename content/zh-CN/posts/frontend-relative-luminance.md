@@ -81,7 +81,11 @@ function calculateContrast(rgb1: RGBColor, rgb2: RGBColor): number {
 function calculateRelativeLuminance(rgb: RGBColor): number {
   const { r, g, b } = rgb
   const sRGB = [r / 255, g / 255, b / 255]
-  const [rL,gL,bL] = sRGB.map((c) => {
+  const [
+    rL,
+    gL,
+    bL,
+  ] = sRGB.map((c) => {
     if (c <= 0.03928) {
       return c / 12.92
     }

@@ -1,40 +1,52 @@
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
-  code:string
-  language?:string
-  filename?:string
-  highlights?:Array<number>
-  meta?:string
+import {} from 'shiki'
+
+withDefaults(defineProps<{
+  code: string
+  language?: string
+  filename?: string
+  highlights?: Array<number>
+  meta?: string
 }>(), {
-  code: '',
   language: 'txt',
   filename: undefined,
   highlights: () => [],
   meta: undefined,
 })
-import {} from 'shiki'
 </script>
 
 <template>
-  <div class="relative rounded-xl overflow-hidden font-mono text-sm">
-    <div class="flex items-center justify-between px-4 py-2 bg-zinc-200 dark:bg-zinc-900 border-b border-zinc-300 dark:border-zinc-800">
-      <div v-if="filename" class="text-zinc-700 dark:text-zinc-300">
+  <div class="relative overflow-hidden border rounded-xl text-sm font-mono dark:border-zinc-700">
+    <div class="flex items-center justify-between border-b border-zinc-300 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900">
+      <div
+        v-if="filename"
+        class="text-zinc-700 dark:text-zinc-300"
+      >
         {{ filename }}
       </div>
-      <div v-else class="text-zinc-500 dark:text-zinc-400">
+      <div
+        v-else
+        class="text-zinc-500 dark:text-zinc-400"
+      >
         &lt;/&gt;
       </div>
-      
-      <div v-if="language" class="px-2 py-0.5 rounded text-xs bg-zinc-300 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">
+
+      <div
+        v-if="language"
+        class="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+      >
         {{ language }}
       </div>
     </div>
-    
-    <pre class="shiki not-prose px-6 font-mono m-0 bg-white dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 overflow-x-auto" >
-          <slot />
+
+    <pre class="shiki not-prose m-0 overflow-x-auto bg-zinc-950 px-6 text-zinc-800 font-mono dark:text-zinc-200">
+      <slot />
     </pre>
-    
-    <div v-if="meta" class="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 text-zinc-500 dark:text-zinc-400 text-xs border-t border-zinc-200 dark:border-zinc-800">
+
+    <div
+      v-if="meta"
+      class="border-t border-zinc-200 bg-zinc-100 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
+    >
       {{ meta }}
     </div>
   </div>
@@ -70,5 +82,4 @@ code::before {
 code::after {
   content: '' !important;
 }
-
 </style>
