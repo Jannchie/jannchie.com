@@ -35,8 +35,12 @@ export default defineNuxtConfig({
   ],
 
   content: {
-
     build: {
+      pathMeta: {
+        slugifyOptions: {
+          lower: false,
+        },
+      },
       markdown: {
         highlight: {
           langs: ['go', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'jsx', 'tsx', 'rust'],

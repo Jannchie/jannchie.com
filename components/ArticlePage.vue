@@ -7,7 +7,7 @@ const { title } = defineProps<{
 
 const { params: { locale }, path } = useRoute('locale')
 const { data } = await useAsyncData(path, () => {
-  return queryCollection('content').path(path.toLowerCase()).first()
+  return queryCollection('content').path(path).first()
 })
 
 useSeoMeta({

@@ -32,7 +32,7 @@ const groupedSponsors = computed(() => {
   }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
 const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('meta', 'ASC').all()
-
+console.log(posts)
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -60,13 +60,7 @@ const demosDivided = computed(() => {
   return divided
 })
 
-function getTurePath(path: string) {
-  if (path.startsWith('/zh-cn')) {
-    path = path.replace('/zh-cn', '/zh-CN')
-    return path
-  }
-  return path
-}
+
 </script>
 
 <template>
@@ -85,7 +79,7 @@ function getTurePath(path: string) {
           v-for="post in posts"
           :key="post.path"
           class="block rounded-md p-4 transition-shadow hover:shadow-sm"
-          :to="getTurePath(post.path)"
+          :to="post.path"
         >
           <h3 class="mb-2 text-lg font-medium">
             {{ post.title }}
