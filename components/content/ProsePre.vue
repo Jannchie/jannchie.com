@@ -39,7 +39,7 @@ withDefaults(defineProps<{
       </div>
     </div>
 
-    <pre class="shiki not-prose m-0 overflow-x-auto bg-zinc-950 px-6 text-zinc-800 font-mono dark:text-zinc-200">
+    <pre class="shiki not-prose flex overflow-x-auto bg-zinc-950 px-6 py-2 text-zinc-800 font-mono dark:text-zinc-200">
       <slot />
     </pre>
 
@@ -75,11 +75,13 @@ pre code .line {
   margin-left: -1rem;
 }
 
-code::before {
+p code::before {
   content: '' !important;
+  height: 0 !important;
 }
 
-code::after {
+p code::after {
   content: '' !important;
+  height: 0 !important;
 }
 </style>

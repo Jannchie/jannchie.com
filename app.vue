@@ -1,8 +1,5 @@
 <script setup>
-import { initRainy } from '@/scripts/rainy'
 import '@unocss/reset/tailwind.css'
-
-initRainy()
 
 useSeoMeta({
   title: 'Jannchie\'s Journey as Full Stack Engineer',

@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       },
       markdown: {
         highlight: {
-          langs: ['go', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'jsx', 'tsx', 'rust'],
+          langs: ['go', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'jsx', 'tsx', 'rust', 'python', 'sql'],
           theme: 'github-dark',
         },
         remarkPlugins: {

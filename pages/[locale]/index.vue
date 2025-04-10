@@ -32,7 +32,6 @@ const groupedSponsors = computed(() => {
   }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
 const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('meta', 'ASC').all()
-console.log(posts)
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -59,8 +58,6 @@ const demosDivided = computed(() => {
   }
   return divided
 })
-
-
 </script>
 
 <template>
