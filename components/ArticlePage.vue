@@ -14,6 +14,15 @@ useSeoMeta({
   title: data.value?.title ?? '404',
   description: data.value?.description ?? '404',
 })
+
+defineOgImageComponent('NuxtSeo', {
+  theme: '#000000',
+  colorMode: 'dark',
+  siteLogo: 'https://jannchie.com/imgs/jannchie.jpg',
+  title: data.value?.title ?? '404',
+  description: data.value?.description ?? '404',
+})
+
 const createdAt = computed(() => {
   const val = data.value
   if (!val) {

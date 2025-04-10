@@ -2,6 +2,11 @@
 import process from 'node:process'
 
 export default defineNuxtConfig({
+  site: {
+    url: 'https://jannchie.com',
+    name: 'Jannchie\'s Journey',
+  },
+
   imports: {
     dirs: ['./composables', './utils', './data'],
   },
@@ -26,13 +31,16 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/google-fonts',
-    '@vite-pwa/nuxt',
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
-  ],
+  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image'],
+
+  ogImage: {
+    fonts: [
+      'Noto+Sans+SC:400',
+      'Noto+Sans+SC:700',
+      'Noto+Sans+JP:400',
+      'Noto+Sans+JP:700',
+    ],
+  },
 
   content: {
     build: {

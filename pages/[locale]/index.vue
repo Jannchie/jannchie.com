@@ -2,6 +2,11 @@
 import { t } from '@/i18n'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
+defineOgImageComponent('NuxtSeo', {
+  theme: '#000000',
+  colorMode: 'dark',
+  siteLogo: 'https://jannchie.com/imgs/jannchie.jpg',
+})
 
 const projects = useProjects()
 const demos = useDemos()

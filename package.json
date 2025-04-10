@@ -1,6 +1,7 @@
 {
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -21,6 +22,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@types/node": "^22.14.0",
     "@types/three": "^0.175.0",
+    "@unhead/vue": "^2.0.0-rc.1",
     "@unocss/eslint-plugin": "66.1.0-beta.8",
     "@unocss/nuxt": "66.1.0-beta.8",
     "@vite-pwa/nuxt": "^1.0.0",
@@ -29,8 +31,10 @@
     "eslint": "^9.23.0",
     "katex": "^0.16.21",
     "nuxt": "3.16.2",
+    "nuxt-og-image": "5.1.1",
     "rehype-katex": "^7.0.1",
-    "remark-math": "6.0.0"
+    "remark-math": "6.0.0",
+    "unstorage": "^1.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
