@@ -8,7 +8,7 @@ tags:
   - SQLAlchemy
 ---
 
-::alert{type="warning" title="Warning" content="この文章は LLM で翻訳されたものです。"}
+::alert{type="warning" title="Warning" content="この記事はLLMによって翻訳されました。"}
 ::
 
 最新の構文による、シンプルな一対多関係の例です：
@@ -125,9 +125,11 @@ created_at: Mapped[datetime] = mapped_column(default=func.now())
 
 しかし、これは期待と一致しない可能性が高いです。Postgresを例にとると、ここで宣言されたデータベースフィールドはデフォルトで`TIMESTAMP`型です。これはタイムゾーン情報を含まない時間型です。
 
-私には誤解がありました。`TIMESTAMP`はグリニッジ標準時に基づいていると思っていましたが、それは「Unixタイムスタンプ」の定義です。PostgresQL の `TIMESTAMP` はタイムゾーン情報を含まないタイムスタンプです。サーバーが日本にある場合、1970年1月1日00:00:00（日本時間）から現在までの時間間隔を保存します。ほとんどの人にとって、これは望ましくない結果です。これはUnixタイムスタンプではありません。
+自分は「タイムスタンプ」がUTC（グリニッジ標準時）を基準にしていると誤解していましたが、それは「Unixタイムスタンプ」の特性です。PostgreSQLのTIMESTAMP型はタイムゾーン情報を持たないただの時刻データです。
 
-PostgresQLは`TIMESTAMP WITH TIME ZONE`型を提供しており、これはUnixタイムスタンプを保存します。SQLAlchemyで`TIMESTAMP WITH TIME ZONE`を使用するには、次のようにフィールドを定義します：
+サーバーが日本にある場合、1970年1月1日00:00:00（日本時間）から現在までの時間間隔を保存します。ほとんどの人にとって、これは望ましくない結果です。これはUnixタイムスタンプではありません。
+
+PostgreSQLは`TIMESTAMP WITH TIME ZONE`型を提供しており、これはUnixタイムスタンプを保存します。SQLAlchemyで`TIMESTAMP WITH TIME ZONE`を使用するには、次のようにフィールドを定義します：
 
 ```python
 created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), default=func.now())
@@ -138,7 +140,7 @@ created_at: Mapped[datetime] = mapped_column(TIMESTAMP(timezone=True), default=f
 ```json
 {
   "with_tz": "2025-04-12T18:32:18.420971Z", // 明確にUTC時間であることを示す
-  "without_tz": "2025-04-12T18:32:18.420971" // このまま解析すると時間が正しくないが、強引にUTC時間として扱えば正しいローカル時間を推測できる
+  "without_tz": "2025-04-12T18:32:18.420971" // このまま new Date(date) で解析すると時間が正しくないが、強引にUTC時間として扱えば正しいローカル時間を推測できる
 }
 ```
 
@@ -159,7 +161,7 @@ default_datetime_now_tz: Mapped[datetime.datetime] = mapped_column(
 
 実際、いかなる場合も引数なしの`datetime.now()`を使用すべきではありません。タイムゾーン情報のない時間を返すため、ほとんど期待通りにはなりません。Ruff(DTZ005)が有効になっている場合、タイムゾーン情報を追加するよう促されます。
 
-どうしても`datetime.now`で現在時刻を取得する必要がある場合は、次のように指定すべきです：
+どうしても`datetime.now`で現在時刻を取得する必要がある場合は、次のようにタイムゾーンを指定すべきです：
 
 ```python
 default_datetime_utcnow_tz: Mapped[datetime.datetime] = mapped_column(
@@ -669,6 +671,8 @@ session.execute(insert(Company).values(id=1, name="Google")) # executeはflush�
 assert session.get(Company, 1) is not None # executeで挿入した場合、自動flushがなくてもクエリできます
 ```
 
+``autoflush`はあまり有用な機能ではないと感じます。むしろ混乱を招く可能性があるため、無効にすることをお勧めします。
+
 ### expire_on_commit
 
 SQLAlchemyの`expire_on_commit`機能はデフォルトで有効になっています。つまり、トランザクションをコミットした後、すべてのオブジェクトは期限切れと見なされます。この機能は非常に微妙なシナリオでのみ有用です：
@@ -704,7 +708,7 @@ with session.begin():
 assert c.name == "Meta"
 ```
 
-個人的な感想として、`expire_on_commit`機能を有効にする理由はないと思います。コミット後、値が別の`session`によって変更されるかどうかを気にする必要があるでしょうか？これは保証できないものです。データを適時リフレッシュしたとしても、データをクエリした後のどの時点でも—例えばデータ転送中に、データが変更され期限切れになる可能性があります。しかも、多くの場合変更は発生せず、これは複雑さを増すだけで、クエリ速度を遅くするだけです。
+個人的には、`expire_on_commit`機能を有効にする理由はあまりないと思います。コミット後に別のセッションによる変更を常に反映する必要があるでしょうか？それに、データをリフレッシュしても、その直後（データ転送中など）に変更される可能性があり、完全な一貫性は保証できません。
 
 また、SQLAlchemyに関する多くの説明では、`expire_on_commit`を`False`に設定しています（例えば[Litestar](https://docs.litestar.dev/2/tutorials/sqlalchemy/0-introduction.html)や[公式ドキュメント](https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html)など）。
 
@@ -781,62 +785,9 @@ name = await session.run_sync(lambda _: a.company.name)
 
 この方法では基本クラスを変更する必要がありません。この方法は実際に新しいスレッドを起動してクエリを実行します。これらはほぼ同じです。
 
-## Model -> DTOについて
+## おそらくベストプラクティス
 
-SQLAlchemyのORMオブジェクトはModelと呼ばれ、APIを通じて返す場合、通常はDTO（Data Transfer Object）に変換する必要があります。FastAPIでは、Pydanticを使用してDTOを定義できます。
-
-最新のpydantic 2.xバージョンでは、`ConfigDict`を使用してSQLAlchemy ORMオブジェクトを受け入れるDTOを定義できます。
-
-```python
-from pydantic import BaseModel, ConfigDict
-
-class DTOBase(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-```
-
-ここでの`from_attributes=True`は、SQLAlchemy ORMオブジェクトから属性を取得できることを示しています。
-
-LLMが時代遅れの使用法を生成する可能性があることに注意してください。例えば：
-
-```python
-class SomeDTO(BaseModel):
-    class Config:
-        orm_mode = True
-```
-
-この方法は使用しないでください。これはpydantic 1.xの歴史的な遺物です。
-
-### DTOの使用
-
-次にDTOクラスを定義できます：
-
-```python
-class EmployeeCompany(DTOBase):
-    id: int
-    name: str
-
-class CompanyEmployee(DTOBase):
-    id: int
-    name: str
-
-class EmployeePublic(DTOBase):
-    id: int
-    name: str
-    company: EmployeeCompany
-
-class CompanyPublic(DTOBase):
-    id: int
-    name: str
-    employees: list[CompanyEmployee]
-```
-
-ここでは必要なフィールドのみを入力し、循環参照を防ぐように注意します。
-
-`employee_public = EmployeePublic.model_validate(employee)`を使用して、SQLAlchemy ORMオブジェクトをDTOオブジェクトに変換します。
-
-## おそらくこう書くべき
-
-SQLAlchemyを使用する過程、特に非同期開発では非常に苦痛を感じました。コードは予想外の場所でさまざまなエラーを報告します。これらのエラーを防ぐために、次のように書くべきかもしれません：
+SQLAlchemyの非同期APIは、慣れるまでにいくつかの困難がありました。コードは予想外の場所でさまざまなエラーを報告します。これらのエラーを防ぐために、次のように書くべきかもしれません：
 
 ### デフォルトの遅延ロードを使用しない
 
@@ -876,8 +827,10 @@ async def main():
 
 ## まとめ
 
-いつの間にか長くなりすぎました。申し訳ありませんが、これは非常に読みにくくなっているかもしれません。しかし、SQLAlchemyは実際に非常に複雑なライブラリであり、特にORM部分には数え切れないほどの魔法と落とし穴があります。
+いつの間にか文章が長くなってしまいました。読みにくくなってしまい申し訳ありません。しかし、SQLAlchemyは実際に非常に複雑なライブラリであり、特にORM部分には数多くの隠れた仕組みや落とし穴が存在します。
 
-意見の相違があるかもしれませんが、ぜひ皆さんと議論したいと思います。SQLAlchemyのすべての機能（インデックス、エイリアス、Alembic移行など）については説明していません。これらの機能はエラーが発生しにくいためです。実際、上記で説明した多くのことはSQLAlchemyのドキュメントに記載されていますが、ドキュメントの内容が非常に多く、新旧APIが混在しており、消化するのが本当に難しいです。
+異なる意見をお持ちの方もいらっしゃるかもしれませんが、ぜひ皆さんとの議論を歓迎します。なお、SQLAlchemyの全機能（インデックス、エイリアス、Alembic移行など）については触れていません。これらは比較的エラーが発生しにくい機能だからです。
 
-この記事がSQLAlchemyをより理解し、一般的なエラーを回避するのに役立つことを願っています。
+実際、上記で説明した多くの内容はSQLAlchemyの公式ドキュメントにも記載されていますが、膨大な情報量と新旧APIの混在により、適切に理解するのは難しいと思います。
+
+この記事がSQLAlchemyへの理解を深め、一般的なエラーを回避する助けになれば幸いです。

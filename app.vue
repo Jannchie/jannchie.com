@@ -81,12 +81,4 @@ useHead({
   @apply bg-bg-1 text-fg-1;
 }
 
-.page-enter-active,
-.page-leave-active {
-  @apply transition-all duration-300;
-}
-.page-enter-from,
-.page-leave-to {
-  @apply blur-2xl opacity-0;
-}
 </style>

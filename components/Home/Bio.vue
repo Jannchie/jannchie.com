@@ -21,9 +21,6 @@ const locale = useRoute('locale').params.locale
         {{ 'Preferred Networks' }}
       </NuxtLink>, hoping the company won't go bankrupt because of me.
     </p>
-    <p class="mt-2">
-      The greatest achievement is having the good fortune to have a beautiful girl artist as my wife.
-    </p>
   </div>
   <div
     v-if="locale === 'zh-CN'"
@@ -43,9 +40,6 @@ const locale = useRoute('locale').params.locale
         {{ 'Preferred Networks' }}
       </NuxtLink> 工作，希望公司别被我干倒闭。
     </p>
-    <p class="mt-2">
-      最大的成就是幸运获得美少女画师老婆。
-    </p>
   </div>
   <div
     v-if="locale === 'ja'"
@@ -64,9 +58,6 @@ const locale = useRoute('locale').params.locale
         <IconPFN />
         {{ 'Preferred Networks' }}
       </NuxtLink> で仕事をしており、会社が倒産しないように頑張っています。
-    </p>
-    <p class="mt-2">
-      最大の成果は美少女イラストレーターの妻を得たことです。
     </p>
   </div>
 </template>

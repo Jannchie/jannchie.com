@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const props = defineProps<{
   type?: 'info' | 'warning' | 'error' | 'success'
   title?: string
@@ -6,60 +8,66 @@ const props = defineProps<{
 }>()
 
 // Default values for props
-const alertType = props.type || 'info'
+const alertType = computed(() => props.type || 'info')
 
-// Computed styling based on alert type with dark mode support
-function getAlertStyles() {
-  switch (alertType) {
+// Computed styling based on alert type with dark mode support - Subtle version
+const alertStyles = computed(() => {
+  // Base styles for neutrality
+  const baseStyles = {
+    // Using a very subtle background, slightly different for dark mode
+    containerBg: 'bg-gray-50 dark:bg-zinc-900/30',
+    // Neutral text colors
+    title: 'text-gray-900 dark:text-gray-100',
+    content: 'text-gray-700 dark:text-gray-400',
+  }
+
+  switch (alertType.value) {
     case 'info':
       return {
-        container: 'bg-blue-50 border-blue-300 dark:bg-blue-900/30 dark:border-blue-800',
+        ...baseStyles,
+        // Colored left border and icon
+        containerBorder: 'border-l-blue-500 dark:border-l-blue-600',
         icon: 'text-blue-500 dark:text-blue-400',
-        title: 'text-blue-800 dark:text-blue-300',
-        content: 'text-blue-700 dark:text-blue-300/90',
       }
     case 'warning':
       return {
-        container: 'bg-yellow-50 border-yellow-300 dark:bg-yellow-900/30 dark:border-yellow-800',
+        ...baseStyles,
+        containerBorder: 'border-l-yellow-500 dark:border-l-yellow-600',
         icon: 'text-yellow-500 dark:text-yellow-400',
-        title: 'text-yellow-800 dark:text-yellow-300',
-        content: 'text-yellow-700 dark:text-yellow-300/90',
       }
     case 'error':
       return {
-        container: 'bg-red-50 border-red-300 dark:bg-red-900/30 dark:border-red-800',
+        ...baseStyles,
+        containerBorder: 'border-l-red-500 dark:border-l-red-600',
         icon: 'text-red-500 dark:text-red-400',
-        title: 'text-red-800 dark:text-red-300',
-        content: 'text-red-700 dark:text-red-300/90',
       }
     case 'success':
       return {
-        container: 'bg-green-50 border-green-300 dark:bg-green-900/30 dark:border-green-800',
+        ...baseStyles,
+        containerBorder: 'border-l-green-500 dark:border-l-green-600',
         icon: 'text-green-500 dark:text-green-400',
-        title: 'text-green-800 dark:text-green-300',
-        content: 'text-green-700 dark:text-green-300/90',
       }
-    default:
+    default: // Should technically not be reached if type is constrained, but good practice
       return {
-        container: 'bg-blue-50 border-blue-300 dark:bg-blue-900/30 dark:border-blue-800',
-        icon: 'text-blue-500 dark:text-blue-400',
-        title: 'text-blue-800 dark:text-blue-300',
-        content: 'text-blue-700 dark:text-blue-300/90',
+        ...baseStyles,
+        containerBorder: 'border-l-gray-500 dark:border-l-gray-600',
+        icon: 'text-gray-500 dark:text-gray-400',
       }
   }
-}
+})
 
-const alertStyles = getAlertStyles()
+// Combine static and dynamic classes for the container
+const containerClasses = computed(() => [
+  'not-prose my-4 flex items-start border-l-4 rounded px-4 py-3 transition-colors', // Removed 'border', added 'border-l-4', adjusted 'rounded' potentially
+  alertStyles.value.containerBg,
+  alertStyles.value.containerBorder,
+])
 </script>
 
 <template>
-  <div
-    class="not-prose my-4 flex items-start border rounded-lg p-4 transition-colors"
-    :class="alertStyles.container"
-  >
-    <!-- Alert Icon -->
+  <div :class="containerClasses">
     <div
-      class="mr-3 flex-shrink-0"
+      class="mr-3 flex-shrink-0 self-center"
       :class="alertStyles.icon"
     >
       <svg
@@ -119,19 +127,25 @@ const alertStyles = getAlertStyles()
     <div>
       <h3
         v-if="title"
-        class="mb-1 text-lg font-medium"
+        class="mb-1 text-base font-medium"
         :class="alertStyles.title"
       >
         {{ title }}
       </h3>
       <div
         v-if="content"
-        class="text-sm"
+        class="text-xs"
         :class="alertStyles.content"
       >
         {{ content }}
       </div>
-      <slot v-else />
+      <div
+        v-else
+        class="text-xs"
+        :class="alertStyles.content"
+      >
+        <slot />
+      </div>
     </div>
   </div>
 </template>

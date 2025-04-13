@@ -3,6 +3,7 @@ export default {
   'ja': '日语',
   'en': '英语',
   'otherLang': '这篇文章提供了其他语言版本：',
+  'home': '主页',
   'subtitle': '主页',
   'posts': '文章',
   'projects': '项目',

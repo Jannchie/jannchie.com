@@ -3,6 +3,7 @@ export default {
   'ja': 'Japanese',
   'en': 'English',
   'otherLang': 'This article is available in other languages:',
+  'home': 'Home',
   'subtitle': 'Home',
   'posts': 'Posts',
   'projects': 'Projects',
