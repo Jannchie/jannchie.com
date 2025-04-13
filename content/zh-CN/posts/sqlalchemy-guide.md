@@ -1,7 +1,7 @@
 ---
 title: SQLAlchemy 使用经验总结
 createdAt: 2025-04-11T01:00:05+09:00
-modifiedAt: 2025-04-11T01:00:05+09:00
+updatedAt: 2025-04-11T01:00:05+09:00
 tags:
   - ORM
   - 后端
@@ -502,6 +502,8 @@ company = Company(name="Google", id=1)
 session.add(company)
 assert session.get(Company, 1) is not None # 并没有提交更改，也没有提交事务，但是能查询到，因为在查询前进行了自动 flush
 ```
+
+而如果关闭：
 
 ```python
 session = sessionmaker(bind=engine, autoflush=False)() # 关闭自动 flush

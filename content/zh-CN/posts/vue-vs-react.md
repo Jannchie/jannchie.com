@@ -1,6 +1,6 @@
 ---
 title: React 与 Vue.js
-modifiedAt: 2023-10-17T16:55:25+09:00
+updatedAt: 2023-10-17T16:55:25+09:00
 createdAt: 2023-05-25T16:46:18+09:00
 tags: [Vue, React]
 ---
