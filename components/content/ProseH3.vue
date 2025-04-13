@@ -10,7 +10,7 @@ const generate = computed(() => props.id && (headings?.anchorLinks))
 <template>
   <h2
     :id="id"
-    class="relative"
+    class="relative mt-5"
   >
     <NuxtLink
       v-if="id && generate"

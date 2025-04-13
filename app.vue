@@ -2,14 +2,14 @@
 import '@unocss/reset/tailwind.css'
 
 useSeoMeta({
-  title: 'Jannchie\'s Journey as Full Stack Engineer',
-  description: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
-  ogTitle: 'Jannchie\'s Journey as Full Stack Engineer',
-  ogDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
+  title: 'Jannchie\'s Home',
+  description: 'I wish I could understand.',
+  ogTitle: 'Jannchie\'s Home',
+  ogDescription: 'I wish I could understand.',
   ogImage: 'https://jannchie.com/imgs/jannchie.jpg',
   ogUrl: 'https://jannchie.com',
-  twitterTitle: 'Jannchie\'s Journey as Full Stack Engineer',
-  twitterDescription: 'For heaven and earth, for the people\'s livelihood, for the wisdom of the ancients, for everlasting peace.',
+  twitterTitle: 'Jannchie\'s Home',
+  twitterDescription: 'I wish I could understand.',
   twitterImage: 'https://jannchie.com/imgs/jannchie.jpg',
   twitterCard: 'summary',
 })

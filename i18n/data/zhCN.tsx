@@ -1,5 +1,9 @@
 export default {
-  'subtitle': '的全栈工程师之旅。',
+  'zh-CN': '简体中文',
+  'ja': '日语',
+  'en': '英语',
+  'otherLang': '这篇文章提供了其他语言版本：',
+  'subtitle': '主页',
   'posts': '文章',
   'projects': '项目',
   'sponsors': '赞助者',

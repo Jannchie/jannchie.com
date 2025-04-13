@@ -1,5 +1,9 @@
 export default {
-  'subtitle': 'Journey as Full Stack Engineer.',
+  'zh-CN': 'Simplified Chinese',
+  'ja': 'Japanese',
+  'en': 'English',
+  'otherLang': 'This article is available in other languages:',
+  'subtitle': 'Home',
   'posts': 'Posts',
   'projects': 'Projects',
   'sponsors': 'Sponsors',

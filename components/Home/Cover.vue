@@ -34,7 +34,7 @@ const locale = useRoute('locale').params.locale
           </div>
         </div>
       </div>
-      <div :class="`text-fg-3 ${locale !== 'zh-CN' ? 'ml-8' : 'ml-32'}`">
+      <div :class="`text-fg-3 ${'ml-32'}`">
         {{ t('subtitle') }}
       </div>
     </h1>

@@ -1,5 +1,9 @@
 export default {
-  'subtitle': 'フルスタックエンジニアとしての旅。',
+  'zh-CN': '簡体字中国語',
+  'ja': '日本語',
+  'en': '英語',
+  'otherLang': 'この記事は他の言語でも提供されています：',
+  'subtitle': 'ホーム',
   'posts': '投稿',
   'projects': 'プロジェクト',
   'sponsors': 'スポンサー',

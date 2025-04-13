@@ -2,7 +2,7 @@
 import { t } from '@/i18n'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
-defineOgImageComponent('NuxtSeo', {
+defineOgImageComponent('Jannchie', {
   theme: '#000000',
   colorMode: 'dark',
   siteLogo: 'https://jannchie.com/imgs/jannchie.jpg',
@@ -36,7 +36,7 @@ const groupedSponsors = computed(() => {
     return result
   }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
-const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('meta', 'ASC').all()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -80,17 +80,17 @@ const demosDivided = computed(() => {
         <NuxtLink
           v-for="post in posts"
           :key="post.path"
-          class="block rounded-md p-4 transition-shadow hover:shadow-sm"
+          class="block rounded-md px-1"
           :to="post.path"
         >
-          <h3 class="mb-2 text-lg font-medium">
+          <h3 class="mb-2 text-lg font-medium hover:underline">
             {{ post.title }}
           </h3>
           <div
-            v-if="post.meta.createdAt"
+            v-if="post.createdAt"
             class="text-xs"
           >
-            {{ new Date(post.meta.createdAt as string).toDateString() }}
+            {{ new Date(post.createdAt).toDateString() }}
           </div>
         </NuxtLink>
       </div>

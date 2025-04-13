@@ -54,7 +54,7 @@ const alertStyles = getAlertStyles()
 
 <template>
   <div
-    class="not-prose mb-4 flex items-start border rounded-lg p-4 transition-colors"
+    class="not-prose my-4 flex items-start border rounded-lg p-4 transition-colors"
     :class="alertStyles.container"
   >
     <!-- Alert Icon -->
