@@ -53,13 +53,6 @@ const createdAt = computed(() => {
     console.error('createdAt', e)
   }
 })
-
-defineOgImageComponent('Jannchie', {
-  theme: '#000000',
-  avatar: 'https://jannchie.com/imgs/jannchie.jpg',
-  title: data.value?.title ?? '404',
-  subtitle: createdAt
-})
 </script>
 
 <template>

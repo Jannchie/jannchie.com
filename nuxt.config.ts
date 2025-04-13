@@ -4,7 +4,7 @@ import process from 'node:process'
 export default defineNuxtConfig({
   site: {
     url: 'https://jannchie.com',
-    name: 'Jannchie\'s Journey',
+    name: 'Jannchie\'s Home',
   },
 
   imports: {

@@ -3,15 +3,7 @@ import '@unocss/reset/tailwind.css'
 
 useSeoMeta({
   title: 'Jannchie\'s Home',
-  description: 'I wish I could understand.',
-  ogTitle: 'Jannchie\'s Home',
-  ogDescription: 'I wish I could understand.',
-  ogImage: 'https://jannchie.com/imgs/jannchie.jpg',
-  ogUrl: 'https://jannchie.com',
-  twitterTitle: 'Jannchie\'s Home',
-  twitterDescription: 'I wish I could understand.',
-  twitterImage: 'https://jannchie.com/imgs/jannchie.jpg',
-  twitterCard: 'summary',
+  description: 'If there were more time…'
 })
 useHead({
   htmlAttrs: {
