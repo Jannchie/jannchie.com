@@ -7,13 +7,13 @@ export default defineNuxtPlugin({
     app.hook('page:start', () => {
       const nuxtApp = useNuxtApp()
       running = false
-      nuxtApp.$router.beforeEach((to, _, next) => {
+      nuxtApp.$router.beforeEach((to, _) => {
         if (running) {
-          next(true)
+          return true
         }
         else {
           nextRoute = to.fullPath
-          next(false)
+          return false
         }
       })
     })

@@ -10,31 +10,32 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "better-sqlite3": "^12.2.0",
     "shiki-transformer-color-highlight": "^1.0.0",
-    "three": "^0.175.0",
+    "three": "^0.178.0",
     "vue-wf": "^0.5.0"
   },
   "devDependencies": {
-    "@iconify-json/tabler": "^1.2.17",
-    "@jannchie/eslint-config": "^3.4.4",
-    "@nuxt/content": "^3.4.0",
-    "@nuxt/devtools": "2.3.2",
+    "@iconify-json/tabler": "^1.2.20",
+    "@jannchie/eslint-config": "^3.6.1",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/devtools": "2.6.2",
     "@nuxtjs/google-fonts": "^3.2.0",
-    "@types/node": "^22.14.1",
-    "@types/three": "^0.175.0",
-    "@unhead/vue": "^2.0.5",
-    "@unocss/eslint-plugin": "66.1.0-beta.11",
-    "@unocss/nuxt": "66.1.0-beta.11",
-    "@vite-pwa/nuxt": "^1.0.0",
-    "@vueuse/nuxt": "^13.1.0",
+    "@types/node": "^24.1.0",
+    "@types/three": "^0.178.1",
+    "@unhead/vue": "^2.0.12",
+    "@unocss/eslint-plugin": "66.3.3",
+    "@unocss/nuxt": "66.3.3",
+    "@vite-pwa/nuxt": "^1.0.4",
+    "@vueuse/nuxt": "^13.6.0",
     "classnames": "^2.5.1",
-    "eslint": "^9.24.0",
+    "eslint": "^9.32.0",
     "katex": "^0.16.22",
-    "nuxt": "3.16.2",
-    "nuxt-og-image": "5.1.1",
+    "nuxt": "4.0.2",
+    "nuxt-og-image": "5.1.9",
     "rehype-katex": "^7.0.1",
     "remark-math": "6.0.0",
-    "unstorage": "^1.15.0"
+    "unstorage": "^1.16.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

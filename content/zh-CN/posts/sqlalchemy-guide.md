@@ -15,18 +15,16 @@ tags:
 ```python
 class Base(DeclarativeBase): ...
 
-
 class Company(Base):
     __tablename__ = "companies"
     id: Mapped[int] = mapped_column(primary_key=True) # 主键
     name: Mapped[str] = mapped_column()
 
-
 class Employee(Base):
     __tablename__ = "employees"
     id: Mapped[int] = mapped_column(primary_key=True) # 主键
     name: Mapped[str] = mapped_column()
-    company_id: Mapped[int] = mapped_column(ForeignKey("companies.id")) #  # 外键，关联公司表
+    company_id: Mapped[int] = mapped_column(ForeignKey("companies.id")) # 外键，关联公司表
 ```
 
 上述代码定义了公司（Company）和员工（Employee）之间的一对多关系。每个公司可以有多个员工，但每个员工只能属于一个公司。
@@ -53,7 +51,7 @@ class Employee(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column()
     company_id: Mapped[int] = mapped_column(ForeignKey("companies.id"))
-    company: Mapped["Company"] = relationship() # 关联查询 
+    company: Mapped["Company"] = relationship() # 关联查询
 ```
 
 如果双方都可能进行关联查询，可以在 `Company` 和 `Employee` 类中都定义一个 `relationship` 属性。
@@ -102,8 +100,8 @@ class Test(Base):
 
 session = Session()
 
-t1 = Test() 
-t1.default_field.append("test") 
+t1 = Test()
+t1.default_field.append("test")
 print(t1.default_field)  # ['test']
 
 t2 = Test()
@@ -208,7 +206,7 @@ class BaseWithAudit(Base):
     __abstract__ = True
     id: Mapped[int] = mapped_column(primary_key=True, init=False)
     created_at: Mapped[datetime.datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now(), init=False)
-    updated_at: Mapped[datetime.datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now(), onupdate=func.now(), init=False) 
+    updated_at: Mapped[datetime.datetime] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now(), onupdate=func.now(), init=False)
 ```
 
 这里的 `__abstract__` 属性表示这个类不会被创建为表。`id`、`created_at` 和 `updated_at` 字段会被所有继承这个类的表格所共享。
@@ -264,8 +262,8 @@ session.execute(stmt) # 执行查询语句，返回所有符合条件的公司
 ```python
 session.execute(select(Company, Company.name)).all()
 # [
-#   (<Company id=1>, 'Apple'), 
-#   (<Company id=2>, 'Google'), 
+#   (<Company id=1>, 'Apple'),
+#   (<Company id=2>, 'Google'),
 #   (<Company id=3>, 'Preferred Networks'),
 # ]
 ```
@@ -411,7 +409,7 @@ assert company.name == "New Company"  # 神奇地，之前存在的对象的值�
 ```python
 class Company(Base):
     # 省略其他代码
-    employees: Mapped[List["Employee"]] = relationship() # 默认 lazy="select"，会延迟加载 
+    employees: Mapped[List["Employee"]] = relationship() # 默认 lazy="select"，会延迟加载
 
 session = Session()
 employees = session.scalars(select(Employee)).all()
@@ -822,8 +820,6 @@ async def main():
 
 ## 总结
 
-不知不觉已经太长了。很抱歉，它可能已经变得非常难以阅读。但 SQLAlchemy 的确是一个非常复杂的库，尤其是 ORM 部分，有数不清的魔法和陷阱。
+很抱歉，不知不觉已经太长了。它可能已经变得非常难以阅读。但 SQLAlchemy 的确是一个非常复杂的库，尤其是 ORM 部分，有数不清的魔法和陷阱。
 
-其中也许有一些认知错误，欢迎大家一起讨论。我没有介绍 SQLAlchemy 的所有功能，例如索引、别名、Alembic 迁移等等，因为那些功能并不容易出错。其实上述讲的许多，在 SQLAlchemy 的文档中都有介绍，只是文档内容实在过多，而且新旧 API 混杂，实在难以消化。
-
-希望这篇文章能帮助你更好地理解 SQLAlchemy，避免一些常见的错误。
+其中也许有一些认知错误，欢迎大家一起讨论。我没有介绍 SQLAlchemy 的所有功能，例如索引、别名、Alembic 迁移等等。其实上述讲的许多，在 SQLAlchemy 的文档中都有介绍，只是文档内容实在过多，而且新旧 API 混杂，实在难以消化。

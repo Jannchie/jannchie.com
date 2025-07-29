@@ -67,12 +67,12 @@ export default defineNuxtConfig({
   },
 
   hooks: {
-    'content:file:beforeParse':(ctx)=> {
-      const {file} = ctx
+    'content:file:beforeParse': (ctx) => {
+      const { file } = ctx
       if (file.id.endsWith('.md')) {
         file.body = file.body.replace(/\r\n|\r/g, '\n')
       }
-    }
+    },
   },
 
   mdc: {
