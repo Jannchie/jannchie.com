@@ -39,6 +39,8 @@ export default defineNuxtConfig({
       'Noto+Sans+SC:700',
       'Noto+Sans+JP:400',
       'Noto+Sans+JP:700',
+      'Domine:400',
+      'Domine:700',
     ],
   },
 
@@ -70,7 +72,7 @@ export default defineNuxtConfig({
     'content:file:beforeParse': (ctx) => {
       const { file } = ctx
       if (file.id.endsWith('.md')) {
-        file.body = file.body.replace(/\r\n|\r/g, '\n')
+        file.body = file.body.replaceAll(/\r\n|\r/g, '\n')
       }
     },
   },

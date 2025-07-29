@@ -5,8 +5,11 @@ withDefaults(defineProps<{
   avatar?: string
   image?: string
   socials?: { name: string, icon: string }[]
-}>(), {
-})
+  topLeft?: string
+  topRight?: string
+  bottomLeft?: string
+  bottomRight?: string
+}>(), {})
 </script>
 
 <template>
@@ -20,18 +23,38 @@ withDefaults(defineProps<{
   >
     <div
       v-if="image"
-      class="absolute inset-0 w-full h-full bg-center opacity-10"
+      class="absolute inset-0 h-full w-full bg-center opacity-10"
       :style="{ backgroundImage: `url(${image})` }"
     />
-    <div class="flex flex-row justify-center gap-4 items-center -ml-61">
+    <!-- Top Left Corner -->
+    <div v-if="topLeft" class="absolute left-8 top-8 text-2xl font-mono">
+      {{ topLeft }}
+    </div>
+
+    <!-- Top Right Corner -->
+    <div v-if="topRight" class="absolute right-8 top-8 text-2xl font-mono">
+      {{ topRight }}
+    </div>
+
+    <!-- Bottom Left Corner -->
+    <div v-if="bottomLeft" class="absolute bottom-8 left-8 text-2xl font-mono">
+      {{ bottomLeft }}
+    </div>
+
+    <!-- Bottom Right Corner -->
+    <div v-if="bottomRight" class="absolute bottom-8 right-8 text-2xl font-mono">
+      {{ bottomRight }}
+    </div>
+
+    <div class="flex flex-row items-center justify-center gap-10 -ml-61">
       <div v-if="avatar">
-        <img :src="avatar" class="rounded-full w-16 h-16" />
+        <img :src="avatar" class="h-20 w-20 rounded-full">
       </div>
-      <div class="flex flex-col">
-        <div class="text-lg op-50">
+      <div class="flex flex-col gap-4">
+        <div class="text-2xl op-75">
           {{ subtitle }}
         </div>
-        <div class="text-2xl max-w-3xl">
+        <div class="max-w-3xl text-4xl">
           {{ title }}
         </div>
       </div>

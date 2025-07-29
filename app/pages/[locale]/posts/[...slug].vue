@@ -24,16 +24,17 @@ const createdAt = computed(() => {
       day: 'numeric',
     }).format(new Date(val.createdAt))
   }
-  catch (e) {
-    console.error('createdAt', e)
+  catch (error) {
+    console.error('createdAt', error)
+    return ''
   }
 })
 
 defineOgImageComponent('Jannchie', {
   theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',
-  title: data.value?.title ?? '404',
-  subtitle: createdAt
+  title: data.value?.title,
+  subtitle: createdAt,
 })
 </script>
 

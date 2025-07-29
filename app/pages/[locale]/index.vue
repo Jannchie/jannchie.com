@@ -2,10 +2,12 @@
 import { t } from '@/i18n'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
-defineOgImageComponent('Jannchie', {
+defineOgImageComponent('Meishi', {
   theme: '#000000',
-  colorMode: 'dark',
-  siteLogo: 'https://jannchie.com/imgs/jannchie.jpg',
+  avatar: 'https://jannchie.com/imgs/jannchie.jpg',
+  title: 'Jianqi Pan / Jannchie',
+  subtitle: 'Full Stack Engineer',
+  bottomRight: 'jannchie.com',
 })
 
 const projects = useProjects()
@@ -27,14 +29,15 @@ const groupedSponsors = computed(() => {
   if (!sponsorsRaw.value) {
     return [] as any
   }
-  return Object.values(sponsorsRaw.value.reduce((result: any, sponsor: any) => {
-    const { user_name, order_price } = sponsor
+  const result: { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } } = {}
+  for (const sponsor of sponsorsRaw.value) {
+    const { user_name, order_price, user_avatar } = sponsor
     if (!result[user_name]) {
-      result[user_name] = { user_name, total_order_price: 0, user_avatar: sponsor.user_avatar }
+      result[user_name] = { user_name, total_order_price: 0, user_avatar }
     }
     result[user_name].total_order_price += order_price
-    return result
-  }, {} as { [user_name: string]: { user_name: string, total_order_price: number, user_avatar: string } })).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
+  }
+  return Object.values(result).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
 const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
@@ -58,8 +61,8 @@ const demosDivided = computed(() => {
   for (let i = 0; i < cols.value; i++) {
     divided[i] = []
   }
-  for (let i = 0; i < demos.length; i++) {
-    divided[i % cols.value].push(demos[i])
+  for (const [i, demo] of demos.entries()) {
+    divided[i % cols.value].push(demo)
   }
   return divided
 })
