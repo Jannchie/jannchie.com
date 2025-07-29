@@ -100,7 +100,7 @@ Performance 更好的地方在于，它可以通过火焰图，分析哪些函�
 ```jsx
 // 试图使用 memo 记忆组件
 const Comp = memo(({ a, b, c }) => {
-  const t = Number(new Date())
+  const t = Date.now()
   return <div>{`${t} ${a} ${b} ${c}`}</div>
 })
 
