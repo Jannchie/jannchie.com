@@ -1,8 +1,11 @@
-const locales = ['en', 'zh-CN', 'ja']
+const locales = new Set(['en', 'zh-CN', 'ja'])
 export default defineNuxtRouteMiddleware((to, from) => {
   try {
     const locale = to.path.split('/')[1]
-    if (locales.includes(locale)) {
+    if (!locale) {
+      return navigateTo(`/en${to.path}`, { redirectCode: 302 })
+    }
+    if (locales.has(locale)) {
       return
     }
     if (from.path !== to.path) {
@@ -10,19 +13,19 @@ export default defineNuxtRouteMiddleware((to, from) => {
     }
 
     const cookie = useCookie('locale')
-    if (cookie.value && locales.includes(cookie.value)) {
+    if (cookie.value && locales.has(cookie.value)) {
       return navigateTo(`/${cookie.value}${to.path}`, { redirectCode: 302 })
     }
 
     const headers = useRequestHeaders()
-    let preferredLanguages = ['en']
+    let preferredLanguages: string[] = ['en']
     try {
       if (headers['accept-language']) {
-        preferredLanguages = headers['accept-language'].split(',').map(d => d.split(';')[0])
+        preferredLanguages = headers['accept-language'].split(',').map(d => d.split(';')[0]).filter(d => d !== undefined)
       }
     }
-    catch (e) {
-      console.error(e)
+    catch (error) {
+      console.error(error)
     }
 
     for (const preferredLanguage of preferredLanguages) {
@@ -34,14 +37,14 @@ export default defineNuxtRouteMiddleware((to, from) => {
         trueLanguage = 'ja'
       }
 
-      if (trueLanguage !== 'en' && locales.includes(trueLanguage)) {
+      if (trueLanguage !== 'en' && locales.has(trueLanguage)) {
         return navigateTo(`/${trueLanguage}${to.path}`, { redirectCode: 302 })
       }
     }
     return navigateTo(`/en${to.path}`, { redirectCode: 302 })
   }
-  catch (e) {
-    console.error(e)
+  catch (error) {
+    console.error(error)
     return navigateTo(`/en${to.path}`, { redirectCode: 302 })
   }
 })
