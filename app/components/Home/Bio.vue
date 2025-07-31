@@ -5,7 +5,7 @@ const locale = useRoute('locale').params.locale
 <template>
   <div
     v-if="locale === 'en'"
-    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
+    class="p-2 text-fg-3 children:my-4"
   >
     <p>
       Love programming, researching front-end and AIGC.
@@ -24,7 +24,7 @@ const locale = useRoute('locale').params.locale
   </div>
   <div
     v-if="locale === 'zh-CN'"
-    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
+    class="p-2 text-fg-3 children:my-4"
   >
     <p>
       热爱编程，研究前端、AIGC。
@@ -43,7 +43,7 @@ const locale = useRoute('locale').params.locale
   </div>
   <div
     v-if="locale === 'ja'"
-    class="max-w-[60ch] p-2 text-fg-3 children:my-4"
+    class="p-2 text-fg-3 children:my-4"
   >
     <p>
       プログラミングが好き、フロントエンド、AIGCを研究しています。
