@@ -22,6 +22,9 @@ export default defineConfig({
       include: [/\.(vue|svelte|[jt]sx?|mdx?|astro|elm|php|phtml|html)($|\?)/],
     },
   },
+  shortcuts: [
+    ['border-default', 'border-zinc-300 dark:border-zinc-700'],
+  ],
   presets: [
     presetWind3({
       dark: {
@@ -48,4 +51,5 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
+
 })

@@ -9,19 +9,17 @@ defineProps<{
 
 <template>
   <NuxtLink
-    data-cursor="block"
     :href="link"
     target="_blank"
-    class="w-72 flex flex-col items-center p-4"
+    class="w-72 flex flex-col items-center p-2 p-4 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
   >
     <i
       :class="icon"
-      class="opacity-75"
     />
     <div class="text-base font-bold">
       {{ title }}
     </div>
-    <div class="text-sm opacity-50">
+    <div class="text-sm opacity-75">
       {{ description }}
     </div>
   </NuxtLink>

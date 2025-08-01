@@ -126,7 +126,8 @@ const demosDivided = computed(() => {
     <HomeSectionTitle class="justify-center">
       {{ t('projects') }}
     </HomeSectionTitle>
-    <div class="m-auto flex flex-wrap justify-center gap-4 p-8">
+    <div class="border-default h-8 w-full flex justify-center border-b" />
+    <div class="border-default m-8 m-auto flex flex-wrap justify-center gap-4 border-x">
       <HomeProjectCard
         v-for="project in projects"
         :key="project.title"

@@ -50,6 +50,7 @@ const createdAt = computed(() => {
   }
   catch (error) {
     console.error('createdAt', error)
+    return ''
   }
 })
 </script>
