@@ -10,6 +10,11 @@ export const socialLinks = [
     iconClass: 'i-tabler-brand-x',
   },
   {
+    label: 'photos',
+    href: 'https://photos.jannchie.com',
+    iconClass: 'i-tabler-camera',
+  },
+  {
     label: 'github',
     href: 'https://github.com/Jannchie',
     iconClass: 'i-tabler-brand-github',

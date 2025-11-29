@@ -2,7 +2,7 @@
 import { t } from '~/i18n'
 import 'katex/dist/katex.min.css'
 
-const { title } = defineProps<{
+defineProps<{
   title: string
 }>()
 
