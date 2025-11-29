@@ -16,8 +16,8 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="relative overflow-hidden border rounded-xl text-sm font-mono dark:border-zinc-700">
-    <div class="flex items-center justify-between border-b border-zinc-300 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900">
+  <div class="relative overflow-hidden border border-zinc-200 rounded-xl text-sm font-mono dark:border-zinc-600">
+    <div class="flex items-center justify-between border-b border-zinc-200 bg-zinc-50 px-4 py-2 dark:border-zinc-600 dark:bg-zinc-900">
       <div
         v-if="filename"
         class="text-zinc-700 dark:text-zinc-300"
@@ -45,7 +45,7 @@ withDefaults(defineProps<{
 
     <div
       v-if="meta"
-      class="border-t border-zinc-200 bg-zinc-100 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
+      class="border-t border-zinc-200 bg-zinc-100 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-400"
     >
       {{ meta }}
     </div>

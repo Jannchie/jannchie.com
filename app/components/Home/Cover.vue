@@ -14,14 +14,14 @@ const locale = useRoute('locale').params.locale
 
 <template>
   <div class="h-screen w-full flex flex-col items-center justify-center">
-    <div class="hidden h-16 w-full shrink-0 justify-center border-t border-zinc-300 sm:flex dark:border-zinc-700">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-300 sm:border-x dark:border-zinc-700" />
+    <div class="hidden h-16 w-full shrink-0 justify-center border-t border-zinc-200 sm:flex dark:border-zinc-600">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-200 sm:border-x dark:border-zinc-600" />
     </div>
-    <div class="w-full flex flex-grow justify-center border-t border-zinc-300 dark:border-zinc-700">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-300 sm:border-x dark:border-zinc-700" />
+    <div class="w-full flex flex-grow justify-center border-t border-zinc-200 dark:border-zinc-600">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-200 sm:border-x dark:border-zinc-600" />
     </div>
-    <div class="w-full flex justify-center border-y border-zinc-300 dark:border-zinc-700">
-      <h1 class="mx-16 max-w-[1120px] w-full flex flex-col items-center justify-center border-x-0 border-zinc-300 py-32 text-center sm:border-x dark:border-zinc-700">
+    <div class="w-full flex justify-center border-y border-zinc-200 dark:border-zinc-600">
+      <h1 class="mx-16 max-w-[1120px] w-full flex flex-col items-center justify-center border-x-0 border-zinc-200 py-32 text-center sm:border-x dark:border-zinc-600">
         <div class="flex items-end">
           <div
             class="relative text-center text-4xl lg:text-6xl"
@@ -46,8 +46,8 @@ const locale = useRoute('locale').params.locale
         </div>
       </h1>
     </div>
-    <div class="w-full flex justify-center border-b border-zinc-300 dark:border-zinc-700">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-300 text-center sm:border-x dark:border-zinc-700">
+    <div class="w-full flex justify-center border-b border-zinc-200 dark:border-zinc-600">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-200 text-center sm:border-x dark:border-zinc-600">
         <NuxtLink
           v-for="link in socialLinks"
           :key="link.label"
@@ -61,8 +61,8 @@ const locale = useRoute('locale').params.locale
         </NuxtLink>
       </div>
     </div>
-    <div class="w-full flex justify-center border-b border-zinc-300 dark:border-zinc-700">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-300 text-center sm:border-x dark:border-zinc-700">
+    <div class="w-full flex justify-center border-b border-zinc-200 dark:border-zinc-600">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-200 text-center sm:border-x dark:border-zinc-600">
         <div class="flex gap-2">
           <NuxtLink
             :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
@@ -91,8 +91,8 @@ const locale = useRoute('locale').params.locale
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center border-b border-zinc-300 dark:border-zinc-700">
-      <div class="max-w-[1120px] w-full flex justify-center border-x-0 border-zinc-300 sm:mx-16 sm:border-x dark:border-zinc-700">
+    <div class="w-full flex justify-center border-b border-zinc-200 dark:border-zinc-600">
+      <div class="max-w-[1120px] w-full flex justify-center border-x-0 border-zinc-200 sm:mx-16 sm:border-x dark:border-zinc-600">
         <HomeBio />
       </div>
     </div>
@@ -106,8 +106,8 @@ const locale = useRoute('locale').params.locale
         </div>
       </TransitionFade>
     </ClientOnly>
-    <div class="hidden h-16 w-full flex-grow justify-center border-zinc-300 sm:flex dark:border-zinc-700">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-300 sm:border-x dark:border-zinc-700" />
+    <div class="hidden h-16 w-full flex-grow justify-center border-zinc-200 sm:flex dark:border-zinc-600">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-zinc-200 sm:border-x dark:border-zinc-600" />
     </div>
   </div>
 </template>
