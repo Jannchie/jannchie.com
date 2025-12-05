@@ -23,7 +23,7 @@ export default defineConfig({
     },
   },
   shortcuts: [
-    ['border-default', 'border-zinc-200 dark:border-zinc-600'],
+    ['border-default', 'border-[var(--j-bd)]'],
   ],
   presets: [
     presetWind3({

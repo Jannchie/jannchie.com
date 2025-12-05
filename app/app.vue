@@ -3,7 +3,7 @@ import '@unocss/reset/tailwind.css'
 
 useSeoMeta({
   title: 'Jannchie\'s Home',
-  description: 'If there were more time…'
+  description: 'If there were more time…',
 })
 useHead({
   htmlAttrs: {
@@ -39,7 +39,7 @@ useHead({
   --j-fg-1: #100F0F;
   --j-fg-2: #222;
   --j-fg-3: #2f2f2f;
-  --j-bd: #ccc;
+  --j-bd: #dfdfdf;
   color: var(--j-fg-2);
 }
 
@@ -62,7 +62,7 @@ useHead({
   --j-fg-1: #fff;
   --j-fg-2: #ddd;
   --j-fg-3: #aaa;
-  --j-bd: #333;
+  --j-bd: #292929;
 }
 
 [data-cursor="block"] {
@@ -72,5 +72,4 @@ useHead({
 ::selection {
   @apply bg-bg-1 text-fg-1;
 }
-
 </style>
