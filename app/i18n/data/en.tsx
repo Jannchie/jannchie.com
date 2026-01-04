@@ -5,6 +5,7 @@ export default {
   'otherLang': 'This article is available in other languages:',
   'home': 'Home',
   'subtitle': 'Home',
+  'use': 'Use',
   'posts': 'Posts',
   'projects': 'Projects',
   'sponsors': 'Sponsors',

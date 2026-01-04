@@ -5,6 +5,7 @@ export default {
   'otherLang': 'この記事は他の言語でも提供されています：',
   'home': 'ホーム',
   'subtitle': 'ホーム',
+  'use': 'Use',
   'posts': '投稿',
   'projects': 'プロジェクト',
   'sponsors': 'スポンサー',

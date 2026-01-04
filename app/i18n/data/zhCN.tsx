@@ -5,6 +5,7 @@ export default {
   'otherLang': '这篇文章提供了其他语言版本：',
   'home': '主页',
   'subtitle': '主页',
+  'use': 'Use',
   'posts': '文章',
   'projects': '项目',
   'sponsors': '赞助者',

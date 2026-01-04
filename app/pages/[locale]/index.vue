@@ -39,7 +39,7 @@ const groupedSponsors = computed(() => {
   }
   return Object.values(result).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
-const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/%`).order('createdAt', 'DESC').all()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/posts/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -71,31 +71,29 @@ const demosDivided = computed(() => {
 <template>
   <main class="flex flex-col">
     <HomeCover />
-    <div
-      v-if="posts.length > 0"
-      class="m-auto mb-12 max-w-full w-[60ch]"
-    >
-      <HomeSectionTitle class="mb-6">
+    <div v-if="posts.length > 0" class="w-full">
+      <HomeSectionTitle class="justify-center">
         {{ t('posts') }}
       </HomeSectionTitle>
-
-      <div class="flex flex-col gap-6">
-        <NuxtLink
-          v-for="post in posts"
-          :key="post.path"
-          class="block rounded-md px-1"
-          :to="post.path"
-        >
-          <h3 class="mb-2 text-lg font-medium hover:underline">
-            {{ post.title }}
-          </h3>
-          <div
-            v-if="post.createdAt"
-            class="text-xs"
+      <div class="m-auto mb-12 max-w-full w-[60ch]">
+        <div class="flex flex-col gap-6">
+          <NuxtLink
+            v-for="post in posts"
+            :key="post.path"
+            class="block rounded-md px-1"
+            :to="post.path"
           >
-            {{ new Date(post.createdAt).toDateString() }}
-          </div>
-        </NuxtLink>
+            <h3 class="mb-2 text-lg font-medium hover:underline">
+              {{ post.title }}
+            </h3>
+            <div
+              v-if="post.createdAt"
+              class="text-xs"
+            >
+              {{ new Date(post.createdAt).toDateString() }}
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     </div>
     <ClientOnly>

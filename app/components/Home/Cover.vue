@@ -92,7 +92,17 @@ const locale = useRoute('locale').params.locale
       </div>
     </div>
     <div class="w-full flex justify-center border-bd border-b">
-      <div class="max-w-[1120px] w-full flex justify-center border-bd border-x-0 sm:mx-16 sm:border-x">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 text-center sm:border-x">
+        <NuxtLink
+          :to="`/${locale}/use`"
+          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+        >
+          {{ t('use') }}
+        </NuxtLink>
+      </div>
+    </div>
+    <div class="w-full flex justify-center border-bd border-b">
+      <div class="mx-16 max-w-[1120px] w-full flex justify-center border-bd border-x-0 sm:border-x">
         <HomeBio />
       </div>
     </div>
