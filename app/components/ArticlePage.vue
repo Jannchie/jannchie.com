@@ -59,7 +59,7 @@ const createdAt = computed(() => {
   <main v-if="data" class="w-full">
     <div class="w-full flex justify-center border-b border-t border-bd">
       <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
-        <div class="m-auto w-full px-4 pb-6 pt-3 text-start sm:px-8">
+        <div class="m-auto w-full px-4 py-4 text-start sm:px-8">
           <div class="text-lg">
             <NuxtLink
               :to="`/${locale}`"
@@ -133,7 +133,7 @@ const createdAt = computed(() => {
               <div class="px-4 py-3 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
                 <ContentLicense />
               </div>
-              <div class="px-4 py-3 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
+              <div class="border-b border-bd px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
                 <span>$ </span>
                 <NuxtLink
                   :to="`/${locale}`"

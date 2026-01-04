@@ -25,9 +25,9 @@ useSeoMeta({
 
 <template>
   <main v-if="data" class="w-full">
-    <div class="w-full flex justify-center border-bd border-b border-t">
-      <div class="mx-16 max-w-[1120px] w-full border-bd border-x-0 sm:border-x">
-        <div class="m-auto w-full px-4 pb-6 pt-3 text-start sm:px-8">
+    <div class="w-full flex justify-center border-b border-t border-bd">
+      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+        <div class="m-auto w-full px-4 py-4 text-start sm:px-8">
           <div class="text-lg">
             <NuxtLink
               :to="`/${locale}`"
@@ -43,13 +43,23 @@ useSeoMeta({
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center border-bd border-b">
-      <div class="mx-16 max-w-[1120px] w-full border-bd border-x-0 sm:border-x">
+    <div class="w-full flex justify-center border-b border-bd">
+      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
         <article class="text-md m-auto w-full px-4 py-2 sm:px-8">
           <h1 class="mb-6 text-center text-2xl!">
             {{ data.title }}
           </h1>
           <ContentRenderer :value="data" class="max-w-none prose prose-zinc dark:prose-invert" />
+          <div class="mt-16 border-t border-bd -mx-4 sm:-mx-8">
+            <div class="border-b border-bd px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
+              <span>$ </span>
+              <NuxtLink
+                :to="`/${locale}`"
+              >
+                cd ..
+              </NuxtLink>
+            </div>
+          </div>
         </article>
       </div>
     </div>
