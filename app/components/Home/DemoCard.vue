@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { t } from '@/i18n'
 import { useElementVisibility } from '@vueuse/core'
+import { t } from '@/i18n'
 
 const { title, desc, link } = defineProps<{
   title: string

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {} from 'shiki'
-
 withDefaults(defineProps<{
   code: string
   language?: string
@@ -16,36 +14,36 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="relative overflow-hidden border border-zinc-200 rounded-xl text-sm font-mono dark:border-zinc-600">
-    <div class="flex items-center justify-between border-b border-zinc-200 bg-zinc-50 px-4 py-2 dark:border-zinc-600 dark:bg-zinc-900">
+  <div class="relative overflow-hidden border-b border-t border-bd text-sm font-mono -mx-4 sm:-mx-8">
+    <div class="flex items-center justify-between border-b border-bd px-4 py-2 sm:px-8">
       <div
         v-if="filename"
-        class="text-zinc-700 dark:text-zinc-300"
+        class="text-fg-2"
       >
         {{ filename }}
       </div>
       <div
         v-else
-        class="text-zinc-500 dark:text-zinc-400"
+        class="text-fg-3"
       >
         &lt;/&gt;
       </div>
 
       <div
         v-if="language"
-        class="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+        class="text-xs text-fg-3"
       >
         {{ language }}
       </div>
     </div>
 
-    <pre class="shiki not-prose flex overflow-x-auto bg-zinc-950 px-6 py-2 text-zinc-800 font-mono dark:text-zinc-200">
+    <pre class="shiki not-prose flex overflow-x-auto px-4 py-3 text-zinc-800 font-mono !bg-bg-2 sm:px-8 dark:text-zinc-200">
       <slot />
     </pre>
 
     <div
       v-if="meta"
-      class="border-t border-zinc-200 bg-zinc-100 px-4 py-2 text-xs text-zinc-500 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-400"
+      class="border-t border-bd px-4 py-2 text-xs text-fg-3 sm:px-8"
     >
       {{ meta }}
     </div>
@@ -70,9 +68,6 @@ pre code .line {
 /* 高亮行样式 */
 .highlighted-line {
   background-color: rgba(59, 130, 246, 0.1);
-  border-left: 3px solid #3b82f6;
-  padding-left: calc(1rem - 3px);
-  margin-left: -1rem;
 }
 
 p code::before {

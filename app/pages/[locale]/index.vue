@@ -12,7 +12,7 @@ defineOgImageComponent('Meishi', {
 
 const projects = useProjects()
 const demos = useDemos()
-const locale = useRoute('locale').params.locale
+const locale = String(useRoute('locale').params.locale || 'en')
 
 useHead({
   htmlAttrs: {
@@ -37,7 +37,12 @@ const groupedSponsors = computed(() => {
     }
     result[user_name].total_order_price += order_price
   }
-  return Object.values(result).sort((a: any, b: any) => b.total_order_price - a.total_order_price) as any
+  return Object.values(result).toSorted((a: any, b: any) => b.total_order_price - a.total_order_price) as any
+})
+const postDateFormatter = new Intl.DateTimeFormat(locale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
 })
 const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/posts/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
@@ -75,24 +80,28 @@ const demosDivided = computed(() => {
       <HomeSectionTitle class="justify-center">
         {{ t('posts') }}
       </HomeSectionTitle>
-      <div class="m-auto mb-12 max-w-full w-[60ch]">
-        <div class="flex flex-col gap-6">
-          <NuxtLink
-            v-for="post in posts"
-            :key="post.path"
-            class="block rounded-md px-1"
-            :to="post.path"
-          >
-            <h3 class="mb-2 text-lg font-medium hover:underline">
-              {{ post.title }}
-            </h3>
-            <div
-              v-if="post.createdAt"
-              class="text-xs"
+      <div class="mb-12">
+        <div
+          v-for="post in posts"
+          :key="post.path"
+          class="w-full flex justify-center border-b border-bd"
+        >
+          <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+            <NuxtLink
+              class="group block px-4 py-6 transition-colors hover:bg-bg-2 sm:px-8"
+              :to="post.path"
             >
-              {{ new Date(post.createdAt).toDateString() }}
-            </div>
-          </NuxtLink>
+              <h3 class="mb-2 text-lg font-medium group-hover:underline">
+                {{ post.title }}
+              </h3>
+              <div
+                v-if="post.createdAt"
+                class="text-xs text-fg-3"
+              >
+                {{ postDateFormatter.format(new Date(post.createdAt)) }}
+              </div>
+            </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -124,8 +133,8 @@ const demosDivided = computed(() => {
     <HomeSectionTitle class="justify-center">
       {{ t('projects') }}
     </HomeSectionTitle>
-    <div class="border-default h-8 w-full flex justify-center border-b" />
-    <div class="border-default m-8 m-auto flex flex-wrap justify-center gap-4 border-x">
+    <div class="h-8 w-full flex justify-center border-b border-default" />
+    <div class="m-8 m-auto flex flex-wrap justify-center gap-4 border-x border-default">
       <HomeProjectCard
         v-for="project in projects"
         :key="project.title"

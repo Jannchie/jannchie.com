@@ -39,11 +39,11 @@ useSeoMeta({
         </span>
       </div>
     </div>
-    <article class="text-md m-auto max-w-65ch p-2 sm:px-0">
+    <article class="text-md m-auto w-full px-4 py-2 sm:px-8">
       <h1 class="mb-6 text-center text-2xl!">
         {{ data.title }}
       </h1>
-      <ContentRenderer :value="data" class="prose prose-zinc dark:prose-invert" />
+      <ContentRenderer :value="data" class="max-w-none prose prose-zinc dark:prose-invert" />
     </article>
   </main>
 </template>

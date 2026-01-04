@@ -6,7 +6,7 @@ function scrollToTop() {
   })
 }
 const isTop = ref(true)
-if (typeof window !== 'undefined') {
+if (globalThis.window !== undefined) {
   useEventListener('scroll', () => {
     isTop.value = window.scrollY < 200
   }, {

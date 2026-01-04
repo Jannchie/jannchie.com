@@ -10,62 +10,61 @@ const props = defineProps<{
 // Default values for props
 const alertType = computed(() => props.type || 'info')
 
-// Computed styling based on alert type with dark mode support - Subtle version
+// Computed styling based on alert type with dark mode support
 const alertStyles = computed(() => {
-  // Base styles for neutrality
   const baseStyles = {
-    // Using a very subtle background, slightly different for dark mode
-    containerBg: 'bg-gray-50 dark:bg-zinc-900/30',
-    // Neutral text colors
-    title: 'text-gray-900 dark:text-gray-100',
-    content: 'text-gray-700 dark:text-gray-400',
+    title: 'text-fg-1',
+    content: 'text-fg-3',
   }
 
   switch (alertType.value) {
-    case 'info':
+    case 'info': {
       return {
         ...baseStyles,
-        // Colored left border and icon
-        containerBorder: 'border-l-blue-500 dark:border-l-blue-600',
         icon: 'text-blue-500 dark:text-blue-400',
+        bar: 'bg-blue-500 dark:bg-blue-400',
       }
-    case 'warning':
+    }
+    case 'warning': {
       return {
         ...baseStyles,
-        containerBorder: 'border-l-yellow-500 dark:border-l-yellow-600',
         icon: 'text-yellow-500 dark:text-yellow-400',
+        bar: 'bg-yellow-500 dark:bg-yellow-400',
       }
-    case 'error':
+    }
+    case 'error': {
       return {
         ...baseStyles,
-        containerBorder: 'border-l-red-500 dark:border-l-red-600',
         icon: 'text-red-500 dark:text-red-400',
+        bar: 'bg-red-500 dark:bg-red-400',
       }
-    case 'success':
+    }
+    case 'success': {
       return {
         ...baseStyles,
-        containerBorder: 'border-l-green-500 dark:border-l-green-600',
         icon: 'text-green-500 dark:text-green-400',
+        bar: 'bg-green-500 dark:bg-green-400',
       }
-    default: // Should technically not be reached if type is constrained, but good practice
+    }
+    default: { // Should technically not be reached if type is constrained, but good practice
       return {
         ...baseStyles,
-        containerBorder: 'border-l-gray-500 dark:border-l-gray-600',
         icon: 'text-gray-500 dark:text-gray-400',
+        bar: 'bg-gray-500 dark:bg-gray-400',
       }
+    }
   }
 })
 
 // Combine static and dynamic classes for the container
 const containerClasses = computed(() => [
-  'not-prose my-4 flex items-start border-l-4 rounded px-4 py-3 transition-colors', // Removed 'border', added 'border-l-4', adjusted 'rounded' potentially
-  alertStyles.value.containerBg,
-  alertStyles.value.containerBorder,
+  'not-prose my-4 flex items-start border-b border-t border-bd -mx-4 py-3 pl-6 pr-4 transition-colors sm:-mx-8 sm:pl-8 sm:pr-8 relative',
 ])
 </script>
 
 <template>
   <div :class="containerClasses">
+    <div class="absolute left-0 top-0 h-full w-1" :class="alertStyles.bar" />
     <div
       class="mr-3 flex-shrink-0 self-center"
       :class="alertStyles.icon"

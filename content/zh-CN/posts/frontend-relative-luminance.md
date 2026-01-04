@@ -86,12 +86,7 @@ function calculateRelativeLuminance(rgb: RGBColor): number {
     gL,
     bL,
   ] = sRGB.map((c) => {
-    if (c <= 0.03928) {
-      return c / 12.92
-    }
-    else {
-      return ((c + 0.055) / 1.055) ** 2.4
-    }
+    return c <= 0.039_28 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4
   })
   const l = 0.2126 * rL + 0.7152 * gL + 0.0722 * bL
   return l

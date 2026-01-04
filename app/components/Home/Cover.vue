@@ -14,14 +14,14 @@ const locale = useRoute('locale').params.locale
 
 <template>
   <div class="h-screen w-full flex flex-col items-center justify-center">
-    <div class="hidden h-16 w-full shrink-0 justify-center border-bd border-t sm:flex">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 sm:border-x" />
+    <div class="hidden h-16 w-full shrink-0 justify-center border-t border-bd sm:flex">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
     </div>
-    <div class="w-full flex flex-grow justify-center border-bd border-t">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 sm:border-x" />
+    <div class="w-full flex flex-grow justify-center border-t border-bd">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
     </div>
-    <div class="w-full flex justify-center border-bd border-y">
-      <h1 class="mx-16 max-w-[1120px] w-full flex flex-col items-center justify-center border-bd border-x-0 py-32 text-center sm:border-x">
+    <div class="w-full flex justify-center border-y border-bd">
+      <h1 class="mx-16 max-w-[1120px] w-full flex flex-col items-center justify-center border-x-0 border-bd py-32 text-center sm:border-x">
         <div class="flex items-end">
           <div
             class="relative text-center text-4xl lg:text-6xl"
@@ -46,8 +46,8 @@ const locale = useRoute('locale').params.locale
         </div>
       </h1>
     </div>
-    <div class="w-full flex justify-center border-bd border-b">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 text-center sm:border-x">
+    <div class="w-full flex justify-center border-b border-bd">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
         <NuxtLink
           v-for="link in socialLinks"
           :key="link.label"
@@ -61,8 +61,8 @@ const locale = useRoute('locale').params.locale
         </NuxtLink>
       </div>
     </div>
-    <div class="w-full flex justify-center border-bd border-b">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 text-center sm:border-x">
+    <div class="w-full flex justify-center border-b border-bd">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
         <div class="flex gap-2">
           <NuxtLink
             :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
@@ -91,8 +91,8 @@ const locale = useRoute('locale').params.locale
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center border-bd border-b">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 text-center sm:border-x">
+    <div class="w-full flex justify-center border-b border-bd">
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
         <NuxtLink
           :to="`/${locale}/use`"
           class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
@@ -101,8 +101,8 @@ const locale = useRoute('locale').params.locale
         </NuxtLink>
       </div>
     </div>
-    <div class="w-full flex justify-center border-bd border-b">
-      <div class="mx-16 max-w-[1120px] w-full flex justify-center border-bd border-x-0 sm:border-x">
+    <div class="w-full flex justify-center border-b border-bd">
+      <div class="mx-16 max-w-[1120px] w-full flex justify-center border-x-0 border-bd sm:border-x">
         <HomeBio />
       </div>
     </div>
@@ -117,7 +117,7 @@ const locale = useRoute('locale').params.locale
       </TransitionFade>
     </ClientOnly>
     <div class="hidden h-16 w-full flex-grow justify-center border-bd sm:flex">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-bd border-x-0 sm:border-x" />
+      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
     </div>
   </div>
 </template>
