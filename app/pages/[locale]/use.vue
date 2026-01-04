@@ -24,26 +24,34 @@ useSeoMeta({
 </script>
 
 <template>
-  <main v-if="data">
-    <div class="m-auto w-65ch pb-8 pt-3 text-start">
-      <div class="text-lg">
-        <NuxtLink
-          :to="`/${locale}`"
-          class="text-sm text-fg-3"
-        >
-          {{ t('home') }}
-        </NuxtLink>
-        <span class="text-sm text-fg-3"> / </span>
-        <span class="text-sm text-fg-3">
-          {{ data.title }}
-        </span>
+  <main v-if="data" class="w-full">
+    <div class="w-full flex justify-center border-bd border-b border-t">
+      <div class="mx-16 max-w-[1120px] w-full border-bd border-x-0 sm:border-x">
+        <div class="m-auto w-full px-4 pb-6 pt-3 text-start sm:px-8">
+          <div class="text-lg">
+            <NuxtLink
+              :to="`/${locale}`"
+              class="text-sm text-fg-3"
+            >
+              {{ t('home') }}
+            </NuxtLink>
+            <span class="text-sm text-fg-3"> / </span>
+            <span class="text-sm text-fg-3">
+              {{ data.title }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-    <article class="text-md m-auto w-full px-4 py-2 sm:px-8">
-      <h1 class="mb-6 text-center text-2xl!">
-        {{ data.title }}
-      </h1>
-      <ContentRenderer :value="data" class="max-w-none prose prose-zinc dark:prose-invert" />
-    </article>
+    <div class="w-full flex justify-center border-bd border-b">
+      <div class="mx-16 max-w-[1120px] w-full border-bd border-x-0 sm:border-x">
+        <article class="text-md m-auto w-full px-4 py-2 sm:px-8">
+          <h1 class="mb-6 text-center text-2xl!">
+            {{ data.title }}
+          </h1>
+          <ContentRenderer :value="data" class="max-w-none prose prose-zinc dark:prose-invert" />
+        </article>
+      </div>
+    </div>
   </main>
 </template>
