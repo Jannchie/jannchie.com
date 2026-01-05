@@ -51,18 +51,24 @@ withDefaults(defineProps<{
 </template>
 
 <style>
+pre code {
+  counter-reset: line;
+}
+
 pre code .line {
   display: block;
   min-height: 1rem;
+  counter-increment: line;
 }
 
-/* 添加行号样式 */
-.line-number {
+pre code .line::before {
+  content: counter(line);
   display: inline-block;
   width: 1.5rem;
-  text-align: right;
   margin-right: 1rem;
+  text-align: right;
   color: #9ca3af;
+  user-select: none;
 }
 
 /* 高亮行样式 */
