@@ -15,13 +15,13 @@ const locale = useRoute('locale').params.locale
 <template>
   <div class="h-screen w-full flex flex-col items-center justify-center">
     <div class="hidden h-16 w-full shrink-0 justify-center border-t border-bd sm:flex">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x" />
     </div>
     <div class="w-full flex flex-grow justify-center border-t border-bd">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x" />
     </div>
     <div class="w-full flex justify-center border-y border-bd">
-      <h1 class="mx-16 max-w-[1120px] w-full flex flex-col items-center justify-center border-x-0 border-bd py-32 text-center sm:border-x">
+      <h1 class="mx-4 max-w-[1120px] w-full flex flex-col items-center justify-center border-x-0 border-bd py-32 text-center lg:mx-16 sm:mx-8 sm:border-x">
         <div class="flex items-end">
           <div
             class="relative text-center text-4xl lg:text-6xl"
@@ -47,13 +47,13 @@ const locale = useRoute('locale').params.locale
       </h1>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <NuxtLink
           v-for="link in socialLinks"
           :key="link.label"
           :aria-label="link.label"
           target="_blank"
-          class="p-3 leading-0 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+          class="hover:text-bg-base p-3 leading-0 transition-colors hover:border-fg-1 hover:bg-fg-1"
           :href="link.href"
           :rel="link.rel || ''"
         >
@@ -62,13 +62,13 @@ const locale = useRoute('locale').params.locale
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <div class="flex gap-2">
           <NuxtLink
             :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="en"
             to="/en"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
           >
             English
           </NuxtLink>
@@ -76,7 +76,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="zh"
             to="/zh-CN"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
           >
             中文
           </NuxtLink>
@@ -84,7 +84,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="ja"
             to="/ja"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
           >
             日本語
           </NuxtLink>
@@ -92,17 +92,17 @@ const locale = useRoute('locale').params.locale
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <NuxtLink
           :to="`/${locale}/use`"
-          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-1"
+          class="hover:text-bg-base p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1"
         >
           {{ t('use') }}
         </NuxtLink>
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full flex justify-center border-x-0 border-bd sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full flex justify-center border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <HomeBio />
       </div>
     </div>
@@ -117,7 +117,7 @@ const locale = useRoute('locale').params.locale
       </TransitionFade>
     </ClientOnly>
     <div class="hidden h-16 w-full flex-grow justify-center border-bd sm:flex">
-      <div class="mx-16 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd sm:border-x" />
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x" />
     </div>
   </div>
 </template>

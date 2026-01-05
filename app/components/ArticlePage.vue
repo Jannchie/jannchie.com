@@ -58,7 +58,7 @@ const createdAt = computed(() => {
 <template>
   <main v-if="data" class="w-full">
     <div class="w-full flex justify-center border-b border-t border-bd">
-      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="m-auto w-full px-4 py-4 text-start sm:px-8">
           <div class="text-lg">
             <NuxtLink
@@ -79,42 +79,54 @@ const createdAt = computed(() => {
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <article
           data-cursor="text"
           class="text-md m-auto w-full px-4 py-2 sm:px-8"
         >
-          <h1 class="text-center text-2xl!">
-            {{ data.title }}
-          </h1>
-          <div class="text-center text-sm text-fg-3">
-            {{ createdAt }}
-          </div>
-
-          <div
-            v-if="otherLangMap && otherLangMap.size > 0"
-            class="flex flex-col items-center justify-center py-4"
-          >
-            <div class="mb-2 px-2 text-center text-sm text-zinc-500 dark:text-zinc-400">
-              {{ t('otherLang') }}
+          <header class="my-6 border-y border-bd">
+            <div class="py-6 sm:py-8">
+              <div class="flex items-center gap-3 text-xs text-fg-3">
+                <span class="h-1px flex-1 bg-bd" />
+                <span class="px-2 font-mono">
+                  {{ createdAt }}
+                </span>
+                <span class="h-1px flex-1 bg-bd" />
+              </div>
+              <h1 class="mt-4 text-center text-2xl! leading-tight sm:text-3xl">
+                {{ data.title }}
+              </h1>
             </div>
 
-            <div class="flex flex-wrap items-center justify-center gap-1">
-              <NuxtLink
-                v-for="lang in otherLangMap.keys()"
-                :key="lang.locale" :to="otherLangMap.get(lang).path"
-                target="_blank"
-                class="rounded-md px-2 py-1 text-sm transition-colors duration-150 ease-in-out" :class="[
-                  locale === lang.locale
-                    ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-semibold cursor-default' // 激活链接样式：背景色、更深的文本颜色、加粗、默认光标
-                    : 'text-zinc-600 dark:text-zinc-300 dark:bg-zinc-900 bg-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-800 dark:hover:text-zinc-100', // 非激活链接样式：基础颜色 + 悬停效果
-                ]"
-                :aria-current="locale === lang.locale ? 'page' : undefined"
-              >
-                {{ t(lang) }}
-              </NuxtLink>
+            <div
+              v-if="otherLangMap && otherLangMap.size > 0"
+              class="border-t border-bd py-4"
+            >
+              <div class="flex items-center gap-3 text-xs text-fg-3">
+                <span class="h-1px flex-1 bg-bd" />
+                <span class="px-2 font-mono">
+                  {{ t('otherLang', locale) }}
+                </span>
+                <span class="h-1px flex-1 bg-bd" />
+              </div>
+
+              <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
+                <NuxtLink
+                  v-for="lang in otherLangMap.keys()"
+                  :key="lang" :to="otherLangMap.get(lang).path"
+                  target="_blank"
+                  class="rounded-sm border border-bd px-2 py-1 text-xs text-fg-2 transition-colors duration-150 ease-in-out" :class="[
+                    locale === lang
+                      ? 'border-fg-1 text-fg-1 cursor-default'
+                      : 'text-fg-3 hover:border-fg-1 hover:text-fg-1',
+                  ]"
+                  :aria-current="locale === lang ? 'page' : undefined"
+                >
+                  {{ t(lang, locale) }}
+                </NuxtLink>
+              </div>
             </div>
-          </div>
+          </header>
 
           <ContentRenderer :value="data" class="m-auto max-w-none prose prose-zinc dark:prose-invert" />
           <div class="mt-32 border-b border-t border-bd -mx-4 sm:-mx-8">

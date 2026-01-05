@@ -15,7 +15,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-base decoration-offset-4 transition-background-color hover:bg-bg-variant"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}
@@ -34,7 +34,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-base decoration-offset-4 transition-background-color hover:bg-bg-variant"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}
@@ -53,7 +53,7 @@ const locale = useRoute('locale').params.locale
       <NuxtLink
         target="_blank"
         href="https://www.preferred.jp/ja/"
-        class="items-center gap-2 px-2 py-1 underline decoration-bg-1 decoration-offset-4 transition-background-color hover:bg-bg-2"
+        class="items-center gap-2 px-2 py-1 underline decoration-bg-base decoration-offset-4 transition-background-color hover:bg-bg-variant"
       >
         <IconPFN />
         {{ 'Preferred Networks' }}

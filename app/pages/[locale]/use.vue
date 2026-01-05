@@ -26,7 +26,7 @@ useSeoMeta({
 <template>
   <main v-if="data" class="w-full">
     <div class="w-full flex justify-center border-b border-t border-bd">
-      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="m-auto w-full px-4 py-4 text-start sm:px-8">
           <div class="text-lg">
             <NuxtLink
@@ -44,7 +44,7 @@ useSeoMeta({
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <article class="text-md m-auto w-full px-4 py-2 sm:px-8">
           <h1 class="mb-6 text-center text-2xl!">
             {{ data.title }}

@@ -86,9 +86,9 @@ const demosDivided = computed(() => {
           :key="post.path"
           class="w-full flex justify-center border-b border-bd"
         >
-          <div class="mx-16 max-w-[1120px] w-full border-x-0 border-bd sm:border-x">
+          <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
-              class="group block px-4 py-6 transition-colors hover:bg-bg-2 sm:px-8"
+              class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
               :to="post.path"
             >
               <h3 class="mb-2 text-lg font-medium group-hover:underline">

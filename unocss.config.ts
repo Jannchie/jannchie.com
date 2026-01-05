@@ -5,16 +5,15 @@ export default defineConfig({
     colors: {
       primary: '#03ae67',
       bg: {
-        1: 'var(--j-bg-1)',
-        2: 'var(--j-bg-2)',
-        3: 'var(--j-bg-3)',
+        base: 'var(--j-bg-base)',
+        variant: 'var(--j-bg-variant)',
       },
       fg: {
         1: 'var(--j-fg-1)',
         2: 'var(--j-fg-2)',
         3: 'var(--j-fg-3)',
       },
-      bd: 'var(--j-bd)',
+      bd: 'var(--j-border)',
     },
   },
   content: {
@@ -23,7 +22,7 @@ export default defineConfig({
     },
   },
   shortcuts: [
-    ['border-default', 'border-[var(--j-bd)]'],
+    ['border-default', 'border-[var(--j-border)]'],
   ],
   presets: [
     presetWind3({

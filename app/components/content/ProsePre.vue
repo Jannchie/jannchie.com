@@ -37,7 +37,7 @@ withDefaults(defineProps<{
       </div>
     </div>
 
-    <pre class="shiki not-prose flex overflow-x-auto px-4 py-3 text-zinc-800 font-mono !bg-bg-2 sm:px-8 dark:text-zinc-200">
+    <pre class="shiki not-prose flex overflow-x-auto bg-black px-4 py-3 text-zinc-800 font-mono sm:px-8 dark:text-zinc-200">
       <slot />
     </pre>
 

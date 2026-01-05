@@ -48,15 +48,14 @@ useHead({
 
 :root {
   color-scheme: light dark;
-  background: var(--j-bg-3);
-  --j-bg-1: #fff;
-  --j-bg-2: #f9f9f9;
-  --j-bg-3: #f9f9f9;
+  background: var(--j-bg-base);
+  --j-bg-base: #fff;
+  --j-bg-variant: #fdfdfd;
   --j-fg-1: #100F0F;
   --j-fg-2: #222;
   --j-fg-3: #2f2f2f;
-  --j-bd: #dfdfdf;
-  --font-display-latin: 'Berkeley Mono', 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --j-border: #dfdfdf;
+  --font-display-latin: 'Berkeley Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --font-display-zh: 'Berkeley Mono', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', sans-serif;
   --font-display-ja: 'Berkeley Mono', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
   --font-title-latin: 'Berkeley Mono', 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -71,6 +70,10 @@ useHead({
 
 [lang="zh-CN"] *:not(.font-mono):not(.font-mono *) {
   font-family: 'HarmonyOS Sans SC', 'Microsoft YaHei UI', 'Segoe UI', 'Inter', system-ui, sans-serif;
+}
+
+[lang|="en"] *:not(.font-mono):not(.font-mono *) {
+  font-family: var(--font-display-latin);
 }
 
 *:not(.font-mono):not(.font-mono *) {
@@ -89,13 +92,12 @@ code, kbd, samp, pre {
 }
 
 [data-scheme="dark"] {
-  --j-bg-1: #333;
-  --j-bg-2: #222;
-  --j-bg-3: #100F0F;
+  --j-bg-base: #100F0F;
+  --j-bg-variant: #161515;
   --j-fg-1: #fff;
   --j-fg-2: #ddd;
   --j-fg-3: #aaa;
-  --j-bd: #292929;
+  --j-border: #292929;
 }
 
 [data-cursor="block"] {
@@ -103,6 +105,6 @@ code, kbd, samp, pre {
 }
 
 ::selection {
-  @apply bg-bg-1 text-fg-1;
+  @apply bg-bg-variant text-fg-1;
 }
 </style>
