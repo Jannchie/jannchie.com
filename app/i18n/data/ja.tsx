@@ -6,6 +6,8 @@ export default {
   'home': 'ホーム',
   'subtitle': 'ホーム',
   'use': 'Use',
+  'game': 'ゲーム',
+  'anime': 'アニメ',
   'posts': '投稿',
   'projects': 'プロジェクト',
   'sponsors': 'スポンサー',

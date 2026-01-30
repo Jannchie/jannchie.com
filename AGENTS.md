@@ -20,6 +20,11 @@
 - Keep 2-space indentation, avoid unused exports/imports, and rely on the configured auto-imports before adding manual globals.
 - Prefer UnoCSS utilities and theme tokens (`text-primary`, `bg-bg-base`, `border-default`) over ad-hoc inline styles; align with the green `primary` palette defined in `unocss.config.ts`.
 
+## Content Localization
+
+- When editing content pages with locale variants (e.g. `content/en`, `content/zh-CN`, `content/ja`), update all relevant languages in the same change.
+- Keep `updatedAt` synchronized across locales when the content change is the same.
+
 ## Testing Guidelines
 
 - No automated test suite yet; add Vitest specs for new composables, content rendering, or critical UI flows.

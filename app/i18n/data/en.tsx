@@ -6,6 +6,8 @@ export default {
   'home': 'Home',
   'subtitle': 'Home',
   'use': 'Use',
+  'game': 'Game',
+  'anime': 'Anime',
   'posts': 'Posts',
   'projects': 'Projects',
   'sponsors': 'Sponsors',

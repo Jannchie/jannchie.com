@@ -2,7 +2,7 @@
 title: Use
 description: Gear and software I use day to day.
 createdAt: 2026-01-04T15:23:55+09:00
-updatedAt: 2026-01-04T19:12:20+09:00
+updatedAt: 2026-01-31T00:17:03+09:00
 tags:
   - Use
   - Tools
@@ -23,7 +23,9 @@ A quick list of the tools I use for work and personal projects.
 ## Camera
 
 - Body: Sony A7C Mark II
-- Lens: Tamron 28-200mm
+- Lenses:
+  - Tamron 28-200mm
+  - Sony FE 50-150mm F2 GM
 
 ## Software
 

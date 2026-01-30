@@ -2,7 +2,7 @@
 title: Use
 description: 我日常使用的设备与软件清单。
 createdAt: 2026-01-04T15:23:55+09:00
-updatedAt: 2026-01-04T19:12:20+09:00
+updatedAt: 2026-01-31T00:17:03+09:00
 tags:
   - Use
   - Tools
@@ -23,7 +23,9 @@ tags:
 ## 摄影
 
 - 相机: Sony A7C Mark II
-- 镜头: 腾龙 28-200mm
+- 镜头:
+  - 腾龙 28-200mm
+  - 索尼 FE 50-150mm F2 GM
 
 ## 软件
 

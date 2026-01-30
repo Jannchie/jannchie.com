@@ -93,7 +93,7 @@ const createdAt = computed(() => {
                 </span>
                 <span class="h-1px flex-1 bg-bd" />
               </div>
-              <h1 class="mt-4 text-center text-2xl! leading-tight sm:text-3xl">
+              <h1 class="mt-4 text-center leading-tight sm:text-3xl text-2xl!">
                 {{ data.title }}
               </h1>
             </div>
@@ -115,7 +115,7 @@ const createdAt = computed(() => {
                   v-for="lang in otherLangMap.keys()"
                   :key="lang" :to="otherLangMap.get(lang).path"
                   target="_blank"
-                  class="rounded-sm border border-bd px-2 py-1 text-xs text-fg-2 transition-colors duration-150 ease-in-out" :class="[
+                  class="border border-bd rounded-sm px-2 py-1 text-xs text-fg-2 transition-colors duration-150 ease-in-out" :class="[
                     locale === lang
                       ? 'border-fg-1 text-fg-1 cursor-default'
                       : 'text-fg-3 hover:border-fg-1 hover:text-fg-1',

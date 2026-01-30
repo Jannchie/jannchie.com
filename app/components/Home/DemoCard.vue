@@ -33,7 +33,7 @@ const style = computed(() => {
     :style="style"
     target="_blank"
     :href="href"
-    class="bg-bg-base hover:bg-bg-variant inline-block border-bd pr-0.3px transition-all duration-1000 !border"
+    class="inline-block border-bd bg-bg-base pr-0.3px transition-all duration-1000 !border hover:bg-bg-variant"
   >
     <video
 

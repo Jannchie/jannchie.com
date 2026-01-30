@@ -53,7 +53,7 @@ const locale = useRoute('locale').params.locale
           :key="link.label"
           :aria-label="link.label"
           target="_blank"
-          class="hover:text-bg-base p-3 leading-0 transition-colors hover:border-fg-1 hover:bg-fg-1"
+          class="p-3 leading-0 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           :href="link.href"
           :rel="link.rel || ''"
         >
@@ -68,7 +68,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="en"
             to="/en"
-            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
+            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             English
           </NuxtLink>
@@ -76,7 +76,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="zh"
             to="/zh-CN"
-            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
+            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             中文
           </NuxtLink>
@@ -84,7 +84,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="ja"
             to="/ja"
-            class="hover:text-bg-base transition-colors hover:border-fg-1 hover:bg-fg-1"
+            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             日本語
           </NuxtLink>
@@ -92,12 +92,24 @@ const locale = useRoute('locale').params.locale
       </div>
     </div>
     <div class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[1120px] w-full flex items-center justify-center gap-2 border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <NuxtLink
           :to="`/${locale}/use`"
-          class="hover:text-bg-base p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1"
+          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
         >
           {{ t('use') }}
+        </NuxtLink>
+        <NuxtLink
+          :to="`/${locale}/game`"
+          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+        >
+          {{ t('game') }}
+        </NuxtLink>
+        <NuxtLink
+          :to="`/${locale}/anime`"
+          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+        >
+          {{ t('anime') }}
         </NuxtLink>
       </div>
     </div>

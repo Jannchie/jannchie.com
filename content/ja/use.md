@@ -2,7 +2,7 @@
 title: Use
 description: 日常使っている機材とソフトの一覧。
 createdAt: 2026-01-04T15:23:55+09:00
-updatedAt: 2026-01-04T19:12:20+09:00
+updatedAt: 2026-01-31T00:17:03+09:00
 tags:
   - Use
   - Tools
@@ -23,7 +23,9 @@ tags:
 ## カメラ
 
 - ボディ: Sony A7C Mark II
-- レンズ: Tamron 28-200mm
+- レンズ:
+  - Tamron 28-200mm
+  - Sony FE 50-150mm F2 GM
 
 ## ソフトウェア
 
