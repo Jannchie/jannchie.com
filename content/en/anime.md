@@ -2,7 +2,7 @@
 title: Anime
 description: Personal anime recommendations.
 createdAt: 2026-01-31T00:17:03+09:00
-updatedAt: 2026-01-31T02:28:50+09:00
+updatedAt: 2026-01-31T23:35:28+09:00
 tags:
   - Anime
   - Recommendations
@@ -19,6 +19,9 @@ Below are some anime I recommend. They may not suit everyone and only reflect my
 - Chiikawa
 - Monogatari Series
 - Re:ZERO -Starting Life in Another World- (Season 1)
+- Look Back
+- Chainsaw Man: Reze Arc
+- Made in Abyss
 
 ## SS
 
@@ -35,3 +38,11 @@ Below are some anime I recommend. They may not suit everyone and only reflect my
 - Saki
 - Heaven's Lost Property
 - Omamori Himari
+- Mushoku Tensei: Jobless Reincarnation
+- Cyberpunk: Edgerunners
+- Arcane
+- PSYCHO-PASS
+- Kakegurui
+- Food Wars! Shokugeki no Soma
+- A Certain Scientific Railgun
+- Oshi no Ko

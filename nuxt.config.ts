@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image'],
+  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap'],
 
   ogImage: {
     fonts: [
@@ -96,6 +96,19 @@ export default defineNuxtConfig({
 
   appConfig: {
     buildDate: new Date().toISOString(),
+  },
+
+  runtimeConfig: {
+    public: {
+      siteUrl: 'https://jannchie.com',
+      ogImage: 'https://jannchie.com/imgs/jannchie.jpg',
+    },
+  },
+
+  sitemap: {
+    autoLastmod: true,
+    excludeAppSources: true,
+    sources: ['/api/_sitemap-urls'],
   },
 
   pwa: {

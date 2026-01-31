@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { t } from '@/i18n'
+import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '~/utils/seo'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
 defineOgImageComponent('Meishi', {
@@ -13,11 +14,29 @@ defineOgImageComponent('Meishi', {
 const projects = useProjects()
 const demos = useDemos()
 const locale = String(useRoute('locale').params.locale || 'en')
+const seoLocale = ensureSeoLocale(locale)
+const siteUrl = normalizeSiteUrl(useRuntimeConfig().public.siteUrl || 'https://jannchie.com')
+const canonicalUrl = computed(() => `${siteUrl}/${seoLocale}`)
+const ogImage = `${siteUrl}/imgs/jannchie.jpg`
 
-useHead({
-  htmlAttrs: {
-    lang: locale,
-  },
+useHead(() => {
+  return {
+    htmlAttrs: {
+      lang: locale,
+    },
+    link: buildSeoLinks(`/${seoLocale}`, seoLocale, siteUrl),
+  }
+})
+
+useSeoMeta(() => {
+  return buildSeoMeta({
+    title: 'Jannchie\'s Home',
+    description: 'If there were more time…',
+    url: canonicalUrl.value,
+    type: 'website',
+    image: ogImage,
+    siteName: 'Jannchie\'s Home',
+  })
 })
 
 const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string, user_name: string, order_price: number }]>('https://api.zeroroku.com/sponsor', {

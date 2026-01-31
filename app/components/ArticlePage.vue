@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { t } from '~/i18n'
+import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '~/utils/seo'
 import 'katex/dist/katex.min.css'
 
 defineProps<{
@@ -12,6 +13,10 @@ const locales = [
   'ja',
 ]
 const { params: { locale }, path } = useRoute('locale')
+const seoLocale = ensureSeoLocale(locale)
+const siteUrl = normalizeSiteUrl(useRuntimeConfig().public.siteUrl || 'https://jannchie.com')
+const canonicalUrl = computed(() => `${siteUrl}${path}`)
+const ogImage = path.includes('/posts/') ? undefined : `${siteUrl}/imgs/jannchie.jpg`
 const { data } = await useAsyncData(path, () => {
   return queryCollection('content').path(path).first()
 })
@@ -31,9 +36,47 @@ const { data: otherLangMap } = await useAsyncData(`${path}/${locale}other`, asyn
   return localeToPostMap
 })
 
-useSeoMeta({
-  title: data.value?.title ?? '404',
-  description: data.value?.description ?? '404',
+const publishedTime = computed(() => {
+  const value = data.value?.createdAt
+  if (!value) {
+    return
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return
+  }
+  return date.toISOString()
+})
+
+const modifiedTime = computed(() => {
+  const value = data.value?.updatedAt
+  if (!value) {
+    return
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return
+  }
+  return date.toISOString()
+})
+
+useHead(() => {
+  return {
+    link: buildSeoLinks(path, seoLocale, siteUrl),
+  }
+})
+
+useSeoMeta(() => {
+  return buildSeoMeta({
+    title: data.value?.title ?? '404',
+    description: data.value?.description ?? '404',
+    url: canonicalUrl.value,
+    type: 'article',
+    image: ogImage,
+    siteName: 'Jannchie\'s Home',
+    publishedTime: publishedTime.value,
+    modifiedTime: modifiedTime.value,
+  })
 })
 
 const createdAt = computed(() => {

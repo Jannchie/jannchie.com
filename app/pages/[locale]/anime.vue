@@ -1,25 +1,39 @@
 <script setup lang="ts">
 import { t } from '~/i18n'
+import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '~/utils/seo'
 
 definePageMeta({ middleware: ['i18n'] })
 
 const route = useRoute('locale')
 const locale = String(route.params.locale || 'en')
+const seoLocale = ensureSeoLocale(locale)
 const contentPath = route.path.replace(`/${locale}/`, `/${locale.toLowerCase()}/`)
+const siteUrl = normalizeSiteUrl(useRuntimeConfig().public.siteUrl || 'https://jannchie.com')
+const canonicalUrl = computed(() => `${siteUrl}${route.path}`)
+const ogImage = `${siteUrl}/imgs/jannchie.jpg`
 
-useHead({
-  htmlAttrs: {
-    lang: locale,
-  },
+useHead(() => {
+  return {
+    htmlAttrs: {
+      lang: locale,
+    },
+    link: buildSeoLinks(route.path, seoLocale, siteUrl),
+  }
 })
 
 const { data } = await useAsyncData(contentPath, () => {
   return queryCollection('content').path(contentPath).first()
 })
 
-useSeoMeta({
-  title: data.value?.title ?? 'Anime',
-  description: data.value?.description ?? '',
+useSeoMeta(() => {
+  return buildSeoMeta({
+    title: data.value?.title ?? 'Anime',
+    description: data.value?.description ?? '',
+    url: canonicalUrl.value,
+    type: 'website',
+    image: ogImage,
+    siteName: 'Jannchie\'s Home',
+  })
 })
 </script>
 
