@@ -2,7 +2,7 @@
 title: Anime
 description: 個人的なアニメおすすめリスト。
 createdAt: 2026-01-31T00:17:03+09:00
-updatedAt: 2026-01-31T23:35:28+09:00
+updatedAt: 2026-02-01T04:39:25+09:00
 tags:
   - Anime
   - Recommendations
@@ -22,6 +22,8 @@ tags:
 - ルックバック
 - チェンソーマン レゼ編
 - メイドインアビス
+- 魔法少女まどか☆マギカ
+- ピンポン THE ANIMATION
 
 ## SS
 
@@ -31,10 +33,18 @@ tags:
 - Fate/Zero
 - Fate/stay night [Unlimited Blade Works]
 - かぐや様は告らせたい
+- オッドタクシー
+- BEASTARS
+- 俺の妹がこんなに可愛いわけがない
+- 干物妹！うまるちゃん
 
 ## S
 
 - 葬送のフリーレン
+- 負けヒロインが多すぎる！
+- さんかれあ
+- チ。-地球の運動について-
+- ひゃくえむ。
 - 咲-Saki-
 - そらのおとしもの
 - おまもりひまり

@@ -2,7 +2,7 @@
 title: Anime
 description: Personal anime recommendations.
 createdAt: 2026-01-31T00:17:03+09:00
-updatedAt: 2026-01-31T23:35:28+09:00
+updatedAt: 2026-02-01T04:39:25+09:00
 tags:
   - Anime
   - Recommendations
@@ -22,6 +22,8 @@ Below are some anime I recommend. They may not suit everyone and only reflect my
 - Look Back
 - Chainsaw Man: Reze Arc
 - Made in Abyss
+- Puella Magi Madoka Magica
+- Ping Pong the Animation
 
 ## SS
 
@@ -31,10 +33,18 @@ Below are some anime I recommend. They may not suit everyone and only reflect my
 - Fate/Zero
 - Fate/stay night: Unlimited Blade Works
 - Kaguya-sama: Love Is War
+- Odd Taxi
+- BEASTARS
+- My Little Sister Can't Be This Cute
+- Himouto! Umaru-chan
 
 ## S
 
 - Frieren: Beyond Journey's End
+- Too Many Losing Heroines!
+- Sankarea: Undying Love
+- Orb: On the Movements of the Earth
+- 100 Meters
 - Saki
 - Heaven's Lost Property
 - Omamori Himari
