@@ -1,0 +1,67 @@
+{
+  "title": "Game",
+  "description": "Personal game recommendations.",
+  "intro": "Below are some games I recommend. They may not suit everyone and only reflect my personal taste. These are all games I like, just to different degrees. The list is split into SSS, SS, and S tiers. This list is mainly for checking whether our vibes match. The list is not complete; I add items as I think of them, and it will be updated anytime.",
+  "updatedAt": "2026-04-18",
+  "tags": ["Game", "Recommendations"],
+  "groups": [
+    {
+      "name": "SSS",
+      "items": [
+        { "name": "Factorio" },
+        { "name": "GTA 5" },
+        { "name": "Dark Souls III" },
+        { "name": "Sekiro" },
+        { "name": "Black Myth: Wukong" },
+        { "name": "Dyson Sphere Program" },
+        { "name": "Sengoku Rance" },
+        { "name": "Rance 10: The Final Battle" },
+        { "name": "Metal Slug 1, 2, X, 3, 4, 5" },
+        { "name": "HELLDIVERS 2" },
+        { "name": "Plants vs. Zombies" },
+        { "name": "White Album 2" }
+      ]
+    },
+    {
+      "name": "SS",
+      "items": [
+        { "name": "HELLDIVERS 1" },
+        { "name": "Divinity: Original Sin 2" },
+        { "name": "Silent Hill f" },
+        { "name": "Story of Seasons: Rune Factory 3" },
+        { "name": "The Legend of Heroes: Trails from Zero / Trails to Azure" },
+        { "name": "Danganronpa 2" },
+        { "name": "Ace Attorney 4" },
+        { "name": "Wonderful Everyday" },
+        { "name": "Song of Syx" },
+        { "name": "Umineko When They Cry" }
+      ]
+    },
+    {
+      "name": "S",
+      "items": [
+        { "name": "Valkyria Chronicles 3" },
+        { "name": "To the Moon" },
+        { "name": "428: Shibuya Scramble" },
+        { "name": "Kingdom Come: Deliverance" },
+        { "name": "Terraria" },
+        { "name": "RimWorld" },
+        { "name": "Crusader Kings III" },
+        { "name": "Hearts of Iron IV" },
+        { "name": "Victoria 3" },
+        { "name": "Stellaris" },
+        { "name": "Undertale" },
+        { "name": "Ghost Trick: Phantom Detective" },
+        { "name": "Monster Hunter Portable 3rd" },
+        { "name": "Monster Hunter Generations Ultimate" },
+        { "name": "Monster Hunter: World" },
+        { "name": "Animal Well" },
+        { "name": "Zero Escape: 999" },
+        { "name": "Zero Escape: Virtue's Last Reward" },
+        { "name": "Mysterious Journey to Immortality" },
+        { "name": "Steins;Gate" },
+        { "name": "The Song of Saya" }
+      ]
+    }
+  ]
+}

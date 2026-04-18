@@ -1,0 +1,39 @@
+{
+  "title": "Use",
+  "description": "我日常使用的设备与软件清单。",
+  "intro": "这是我日常使用的设备与软件清单，按类别简单整理。",
+  "updatedAt": "2026-01-31",
+  "tags": ["Use", "Tools"],
+  "groups": [
+    {
+      "name": "桌面与硬件",
+      "items": [
+        { "name": "椅子", "detail": "Herman Miller Sayl" },
+        { "name": "笔记本电脑", "detail": "MacBook Pro 13 英寸 M1" },
+        { "name": "键盘", "detail": "Realforce R3 Keyboard" },
+        { "name": "鼠标", "detail": "罗技 G102" },
+        { "name": "话筒", "detail": "森海塞尔 MK4" },
+        { "name": "耳机", "detail": "AKG K712" },
+        { "name": "音响", "detail": "铁三角 AT-SP95" }
+      ]
+    },
+    {
+      "name": "摄影",
+      "items": [
+        { "name": "相机", "detail": "Sony A7C Mark II" },
+        { "name": "镜头", "detail": "腾龙 28-200mm" },
+        { "name": "镜头", "detail": "索尼 FE 50-150mm F2 GM" }
+      ]
+    },
+    {
+      "name": "软件",
+      "items": [
+        { "name": "字体", "detail": "Berkeley Mono" },
+        { "name": "编辑器", "detail": "Visual Studio Code" },
+        { "name": "AI 辅助", "detail": "CodeX AI" },
+        { "name": "视频剪辑", "detail": "Adobe Premiere Pro" },
+        { "name": "后期", "detail": "Adobe Lightroom" }
+      ]
+    }
+  ]
+}

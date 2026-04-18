@@ -3,7 +3,7 @@ import { t } from '@/i18n'
 import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '~/utils/seo'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
-defineOgImageComponent('Meishi', {
+defineOgImage('Meishi', {
   theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',
   title: 'Jianqi Pan / Jannchie',
@@ -63,7 +63,7 @@ const postDateFormatter = new Intl.DateTimeFormat(locale, {
   month: 'long',
   day: 'numeric',
 })
-const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/posts/%`).order('createdAt', 'DESC').all()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale.toLowerCase()}/posts/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -105,10 +105,10 @@ const demosDivided = computed(() => {
           :key="post.path"
           class="w-full flex justify-center border-b border-bd"
         >
-          <div class="mx-4 max-w-[1120px] w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+          <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
               class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
-              :to="post.path"
+              :to="post.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
             >
               <h3 class="mb-2 text-lg font-medium group-hover:underline">
                 {{ post.title }}

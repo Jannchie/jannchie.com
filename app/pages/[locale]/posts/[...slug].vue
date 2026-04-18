@@ -8,8 +8,9 @@ useHead({
 })
 
 const { params: { locale }, path } = useRoute('locale')
-const { data } = await useAsyncData(path, () => {
-  return queryCollection('content').path(path).first()
+const contentPath = path.replace(`/${locale}/`, `/${String(locale).toLowerCase()}/`)
+const { data } = await useAsyncData(`${path}:meta`, () => {
+  return queryCollection('content').path(contentPath).first()
 })
 
 const createdAt = computed(() => {
@@ -30,7 +31,7 @@ const createdAt = computed(() => {
   }
 })
 
-defineOgImageComponent('Jannchie', {
+defineOgImage('Jannchie', {
   theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',
   title: data.value?.title,

@@ -1,0 +1,39 @@
+{
+  "title": "Use",
+  "description": "Gear and software I use day to day.",
+  "intro": "A quick list of the tools I use for work and personal projects.",
+  "updatedAt": "2026-01-31",
+  "tags": ["Use", "Tools"],
+  "groups": [
+    {
+      "name": "Desk & Hardware",
+      "items": [
+        { "name": "Chair", "detail": "Herman Miller Sayl" },
+        { "name": "Laptop", "detail": "MacBook Pro 13-inch M1" },
+        { "name": "Keyboard", "detail": "Realforce R3 Keyboard" },
+        { "name": "Mouse", "detail": "Logitech G102" },
+        { "name": "Microphone", "detail": "Sennheiser MK4" },
+        { "name": "Headphones", "detail": "AKG K712" },
+        { "name": "Speakers", "detail": "Audio-Technica AT-SP95" }
+      ]
+    },
+    {
+      "name": "Camera",
+      "items": [
+        { "name": "Body", "detail": "Sony A7C Mark II" },
+        { "name": "Lens", "detail": "Tamron 28-200mm" },
+        { "name": "Lens", "detail": "Sony FE 50-150mm F2 GM" }
+      ]
+    },
+    {
+      "name": "Software",
+      "items": [
+        { "name": "Font", "detail": "Berkeley Mono" },
+        { "name": "Editor", "detail": "Visual Studio Code" },
+        { "name": "AI assistant", "detail": "CodeX AI" },
+        { "name": "Video editing", "detail": "Adobe Premiere Pro" },
+        { "name": "Photo editing", "detail": "Adobe Lightroom" }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,13 @@ export default defineNuxtRouteMiddleware((to, from) => {
     if (locales.has(locale)) {
       return
     }
+
+    const normalized = [...locales].find(l => l.toLowerCase() === locale.toLowerCase())
+    if (normalized) {
+      const rest = to.path.slice(locale.length + 1)
+      return navigateTo(`/${normalized}${rest || ''}`, { redirectCode: 301 })
+    }
+
     if (from.path !== to.path) {
       return
     }

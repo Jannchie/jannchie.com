@@ -33,17 +33,6 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap'],
 
-  ogImage: {
-    fonts: [
-      'Noto+Sans+SC:400',
-      'Noto+Sans+SC:700',
-      'Noto+Sans+JP:400',
-      'Noto+Sans+JP:700',
-      'Domine:400',
-      'Domine:700',
-    ],
-  },
-
   content: {
     build: {
       pathMeta: {

@@ -1,0 +1,39 @@
+{
+  "title": "Use",
+  "description": "日常使っている機材とソフトの一覧。",
+  "intro": "日々の開発や制作で使っているツールのメモです。",
+  "updatedAt": "2026-01-31",
+  "tags": ["Use", "Tools"],
+  "groups": [
+    {
+      "name": "デスク・ハードウェア",
+      "items": [
+        { "name": "椅子", "detail": "Herman Miller Sayl" },
+        { "name": "ノートPC", "detail": "MacBook Pro 13-inch M1" },
+        { "name": "キーボード", "detail": "Realforce R3 Keyboard" },
+        { "name": "マウス", "detail": "Logitech G102" },
+        { "name": "マイク", "detail": "Sennheiser MK4" },
+        { "name": "ヘッドホン", "detail": "AKG K712" },
+        { "name": "スピーカー", "detail": "Audio-Technica AT-SP95" }
+      ]
+    },
+    {
+      "name": "カメラ",
+      "items": [
+        { "name": "ボディ", "detail": "Sony A7C Mark II" },
+        { "name": "レンズ", "detail": "Tamron 28-200mm" },
+        { "name": "レンズ", "detail": "Sony FE 50-150mm F2 GM" }
+      ]
+    },
+    {
+      "name": "ソフトウェア",
+      "items": [
+        { "name": "フォント", "detail": "Berkeley Mono" },
+        { "name": "エディタ", "detail": "Visual Studio Code" },
+        { "name": "AI 補助", "detail": "CodeX AI" },
+        { "name": "動画編集", "detail": "Adobe Premiere Pro" },
+        { "name": "写真編集", "detail": "Adobe Lightroom" }
+      ]
+    }
+  ]
+}

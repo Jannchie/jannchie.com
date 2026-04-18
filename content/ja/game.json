@@ -1,0 +1,67 @@
+{
+  "title": "Game",
+  "description": "個人的なゲームおすすめリスト。",
+  "intro": "以下は私がすすめたいゲームです。好みに合わない人もいるかもしれませんが、あくまで個人の好みです。どれも好きな作品で、好き度合いが違うだけです。SSS、SS、S の 3 段階に分けています。このリストは主に電波が合うかどうかを確認するためのものです。リストは未完成で、思いついたら随時追加します。",
+  "updatedAt": "2026-04-18",
+  "tags": ["Game", "Recommendations"],
+  "groups": [
+    {
+      "name": "SSS",
+      "items": [
+        { "name": "Factorio" },
+        { "name": "GTA 5" },
+        { "name": "ダークソウル III" },
+        { "name": "SEKIRO: SHADOWS DIE TWICE" },
+        { "name": "黒神話：悟空" },
+        { "name": "Dyson Sphere Program" },
+        { "name": "戦国ランス" },
+        { "name": "ランス10 決戦" },
+        { "name": "メタルスラッグ 1、2、X、3、4、5" },
+        { "name": "HELLDIVERS 2" },
+        { "name": "プラント vs. ゾンビ" },
+        { "name": "WHITE ALBUM 2" }
+      ]
+    },
+    {
+      "name": "SS",
+      "items": [
+        { "name": "HELLDIVERS 1" },
+        { "name": "Divinity: Original Sin 2" },
+        { "name": "サイレントヒル f" },
+        { "name": "牧場物語 ルーンファクトリー3" },
+        { "name": "零の軌跡／碧の軌跡" },
+        { "name": "ダンガンロンパ2" },
+        { "name": "逆転裁判4" },
+        { "name": "素晴らしき日々" },
+        { "name": "Song of Syx" },
+        { "name": "うみねこのなく頃に" }
+      ]
+    },
+    {
+      "name": "S",
+      "items": [
+        { "name": "戦場のヴァルキュリア3" },
+        { "name": "To the Moon" },
+        { "name": "428 〜封鎖された渋谷で〜" },
+        { "name": "Kingdom Come: Deliverance" },
+        { "name": "Terraria" },
+        { "name": "RimWorld" },
+        { "name": "Crusader Kings III" },
+        { "name": "Hearts of Iron IV" },
+        { "name": "Victoria 3" },
+        { "name": "Stellaris" },
+        { "name": "Undertale" },
+        { "name": "ゴースト トリック" },
+        { "name": "モンスターハンターポータブル 3rd" },
+        { "name": "モンスターハンターダブルクロス" },
+        { "name": "モンスターハンター：ワールド" },
+        { "name": "Animal Well" },
+        { "name": "極限脱出 9時間9人9の扉" },
+        { "name": "極限脱出 善人シボウデス" },
+        { "name": "覓長生" },
+        { "name": "STEINS;GATE" },
+        { "name": "沙耶の唄" }
+      ]
+    }
+  ]
+}
