@@ -9,6 +9,7 @@ export default {
   'game': '游戏',
   'anime': '动画',
   'posts': '文章',
+  'essays': '杂文',
   'projects': '项目',
   'sponsors': '赞助者',
   'demos': '演示',

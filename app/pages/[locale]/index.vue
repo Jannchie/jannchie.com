@@ -58,12 +58,13 @@ const groupedSponsors = computed(() => {
   }
   return Object.values(result).toSorted((a: any, b: any) => b.total_order_price - a.total_order_price) as any
 })
-const postDateFormatter = new Intl.DateTimeFormat(locale, {
+const contentDateFormatter = new Intl.DateTimeFormat(locale, {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 })
 const posts = await queryCollection('content').where('path', 'LIKE', `/${locale.toLowerCase()}/posts/%`).order('createdAt', 'DESC').all()
+const essays = await queryCollection('content').where('path', 'LIKE', `/${locale.toLowerCase()}/essays/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -117,7 +118,36 @@ const demosDivided = computed(() => {
                 v-if="post.createdAt"
                 class="text-xs text-fg-3"
               >
-                {{ postDateFormatter.format(new Date(post.createdAt)) }}
+                {{ contentDateFormatter.format(new Date(post.createdAt)) }}
+              </div>
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="essays.length > 0" class="w-full">
+      <HomeSectionTitle class="justify-center">
+        {{ t('essays') }}
+      </HomeSectionTitle>
+      <div class="mb-12">
+        <div
+          v-for="essay in essays"
+          :key="essay.path"
+          class="w-full flex justify-center border-b border-bd"
+        >
+          <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+            <NuxtLink
+              class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
+              :to="essay.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
+            >
+              <h3 class="mb-2 text-lg font-medium group-hover:underline">
+                {{ essay.title }}
+              </h3>
+              <div
+                v-if="essay.createdAt"
+                class="text-xs text-fg-3"
+              >
+                {{ contentDateFormatter.format(new Date(essay.createdAt)) }}
               </div>
             </NuxtLink>
           </div>

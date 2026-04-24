@@ -9,6 +9,7 @@ export default {
   'game': 'Game',
   'anime': 'Anime',
   'posts': 'Posts',
+  'essays': 'Essays',
   'projects': 'Projects',
   'sponsors': 'Sponsors',
   'demos': 'Demos',

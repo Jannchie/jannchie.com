@@ -9,6 +9,7 @@ export default {
   'game': 'ゲーム',
   'anime': 'アニメ',
   'posts': '投稿',
+  'essays': '随筆',
   'projects': 'プロジェクト',
   'sponsors': 'スポンサー',
   'demos': 'デモ',
