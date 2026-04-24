@@ -1,4 +1,20 @@
 type SeoType = 'website' | 'article'
+type SeoMeta = {
+  title: string
+  description: string
+  ogTitle: string
+  ogDescription: string
+  ogUrl: string
+  ogType: SeoType
+  twitterTitle: string
+  twitterDescription: string
+  twitterCard: 'summary' | 'summary_large_image'
+  ogSiteName?: string
+  ogImage?: string
+  twitterImage?: string
+  articlePublishedTime?: string
+  articleModifiedTime?: string
+}
 
 export const SEO_LOCALES = ['en', 'zh-CN', 'ja'] as const
 export type SeoLocale = (typeof SEO_LOCALES)[number]
@@ -68,8 +84,8 @@ export function buildSeoMeta(params: {
   siteName?: string
   publishedTime?: string
   modifiedTime?: string
-}): Record<string, string> {
-  const meta: Record<string, string> = {
+}): SeoMeta {
+  const meta: SeoMeta = {
     title: params.title,
     description: params.description,
     ogTitle: params.title,

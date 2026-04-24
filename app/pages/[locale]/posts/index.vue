@@ -27,7 +27,7 @@ useHead(() => ({
   link: buildSeoLinks(route.path, seoLocale, siteUrl),
 }))
 
-useSeoMeta(() => buildSeoMeta({
+useSeoMeta(buildSeoMeta({
   title: t('posts'),
   description: '',
   url: canonicalUrl.value,

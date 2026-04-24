@@ -32,7 +32,6 @@ const createdAt = computed(() => {
 })
 
 defineOgImage('Jannchie', {
-  theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',
   title: data.value?.title,
   subtitle: createdAt,

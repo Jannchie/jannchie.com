@@ -28,16 +28,14 @@ useHead(() => {
   }
 })
 
-useSeoMeta(() => {
-  return buildSeoMeta({
-    title: 'Jannchie\'s Home',
-    description: 'If there were more time…',
-    url: canonicalUrl.value,
-    type: 'website',
-    image: ogImage,
-    siteName: 'Jannchie\'s Home',
-  })
-})
+useSeoMeta(buildSeoMeta({
+  title: 'Jannchie\'s Home',
+  description: 'If there were more time…',
+  url: canonicalUrl.value,
+  type: 'website',
+  image: ogImage,
+  siteName: 'Jannchie\'s Home',
+}))
 
 const { data: sponsorsRaw } = await useFetch<[{ user_avatar: string, user_name: string, order_price: number }]>('https://api.zeroroku.com/sponsor', {
   headers: {

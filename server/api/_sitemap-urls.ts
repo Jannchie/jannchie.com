@@ -34,7 +34,11 @@ function extractUpdatedAt(content: string): string | undefined {
   if (!frontMatterMatch) {
     return undefined
   }
-  const frontMatter = frontMatterMatch[1].split('\n')
+  const frontMatterRaw = frontMatterMatch[1]
+  if (!frontMatterRaw) {
+    return undefined
+  }
+  const frontMatter = frontMatterRaw.split('\n')
   const updatedLine = frontMatter.find(line => line.startsWith('updatedAt:'))
   if (!updatedLine) {
     return undefined

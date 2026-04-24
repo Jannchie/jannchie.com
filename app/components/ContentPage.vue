@@ -29,16 +29,14 @@ const { data } = await useAsyncData(contentPath, () => {
   return queryCollection('content').path(contentPath).first()
 })
 
-useSeoMeta(() => {
-  return buildSeoMeta({
-    title: data.value?.title ?? props.fallbackTitle,
-    description: data.value?.description ?? '',
-    url: canonicalUrl.value,
-    type: 'website',
-    image: ogImage,
-    siteName: 'Jannchie\'s Home',
-  })
-})
+useSeoMeta(buildSeoMeta({
+  title: data.value?.title ?? props.fallbackTitle,
+  description: data.value?.description ?? '',
+  url: canonicalUrl.value,
+  type: 'website',
+  image: ogImage,
+  siteName: 'Jannchie\'s Home',
+}))
 
 const dateFormatter = new Intl.DateTimeFormat(locale, {
   year: 'numeric',
