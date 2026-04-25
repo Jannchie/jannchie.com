@@ -68,10 +68,8 @@ const siblings = computed(() => {
 
 <template>
   <main v-if="data" class="w-full">
-    <SiteNav />
-
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-10 sm:px-8 sm:py-16">
           <div class="mb-4 text-xs text-fg-3 font-mono">
             <span class="text-fg-1">$</span>
@@ -105,7 +103,7 @@ const siblings = computed(() => {
     </section>
 
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <article class="px-4 py-10 sm:px-8 sm:py-14">
           <ContentRenderer :value="data" class="max-w-none prose prose-zinc dark:prose-invert" />
         </article>
@@ -116,7 +114,7 @@ const siblings = computed(() => {
       v-if="siblings.length > 0"
       class="w-full flex justify-center border-b border-bd"
     >
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 font-mono sm:px-8">
           <span class="text-fg-3/70">
             →
@@ -134,7 +132,7 @@ const siblings = computed(() => {
     </section>
 
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
           <span class="text-fg-1">$ </span>
           <NuxtLink :to="`/${locale}`">

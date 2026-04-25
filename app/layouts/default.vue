@@ -1,6 +1,6 @@
 <template>
+  <SiteNav />
   <div class="min-h-[calc(100vh-16rem-2rem*2)]">
-    <Settings />
     <VitePwaManifest />
     <NuxtLoadingIndicator color="#23a1c0" />
     <slot />

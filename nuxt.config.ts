@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import process from 'node:process'
+import { jannchieDark, jannchieLight } from '@jannchie/shiki-theme'
 
 export default defineNuxtConfig({
   site: {
@@ -44,7 +45,11 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           langs: ['go', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'jsx', 'tsx', 'rust', 'python', 'sql'],
-          theme: 'github-dark',
+          theme: {
+            light: jannchieLight,
+            default: jannchieDark,
+            dark: jannchieDark,
+          },
         },
         remarkPlugins: {
           'remark-math': {},
@@ -70,10 +75,11 @@ export default defineNuxtConfig({
   mdc: {
     highlight: {
       theme: {
-        light: 'material-theme-lighter',
-        default: 'material-theme',
-        dark: 'material-theme-palenight',
+        light: jannchieLight.name,
+        default: jannchieDark.name,
+        dark: jannchieDark.name,
       },
+      themes: [jannchieLight, jannchieDark],
     },
   },
   googleFonts: {
@@ -86,6 +92,10 @@ export default defineNuxtConfig({
 
   appConfig: {
     buildDate: new Date().toISOString(),
+    shikiTheme: {
+      lightBg: jannchieLight.bg,
+      darkBg: jannchieDark.bg,
+    },
   },
 
   runtimeConfig: {

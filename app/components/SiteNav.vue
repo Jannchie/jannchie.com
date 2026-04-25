@@ -10,6 +10,12 @@ const segments = computed(() => {
 })
 
 const topSegment = computed(() => segments.value[0])
+const headerWidthClass = computed(() => {
+  if (['posts', 'essays', 'notes', 'use', 'game', 'anime'].includes(topSegment.value || '')) {
+    return 'max-w-[52rem]'
+  }
+  return 'max-w-[1120px]'
+})
 
 const pages = computed(() => [
   { key: 'use', to: `/${locale.value}/use` },
@@ -30,12 +36,13 @@ function localeHref(target: string) {
 </script>
 
 <template>
-  <nav
-    class="sticky top-0 z-20 w-full border-b border-bd bg-bg-base/75 backdrop-blur"
-  >
-    <div class="w-full flex justify-center">
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
-        <div class="flex items-center gap-1 px-4 py-3 text-xs text-fg-3 font-mono sm:gap-2 sm:px-8">
+  <header class="sticky top-0 z-30 w-full border-b border-bd bg-bg-base/75 backdrop-blur">
+    <nav class="w-full flex justify-center">
+      <div
+        class="relative mx-4 min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x"
+        :class="headerWidthClass"
+      >
+        <div class="h-12 flex items-center gap-1 px-2 text-xs text-fg-3 font-mono sm:gap-2 sm:px-3">
           <div class="min-w-0 flex flex-1 items-center gap-1 overflow-hidden whitespace-nowrap sm:gap-2">
             <NuxtLink
               :to="`/${locale}`"
@@ -85,8 +92,22 @@ function localeHref(target: string) {
               </NuxtLink>
             </template>
           </div>
+
+          <div class="ml-1 flex shrink-0 items-center border-l border-bd pl-2 sm:ml-2 sm:pl-3">
+            <ClientOnly>
+              <ToggleDarkBtn />
+              <template #fallback>
+                <span
+                  class="size-8 inline-flex items-center justify-center text-fg-2 leading-0"
+                  aria-hidden="true"
+                >
+                  <i class="i-tabler-moon text-base" />
+                </span>
+              </template>
+            </ClientOnly>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>

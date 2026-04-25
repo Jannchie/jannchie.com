@@ -39,10 +39,8 @@ useSeoMeta(buildSeoMeta({
 
 <template>
   <main class="w-full">
-    <SiteNav />
-
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-10 sm:px-8 sm:py-14">
           <div class="mb-4 text-xs text-fg-3 font-mono">
             <span class="text-fg-1">$</span>
@@ -56,7 +54,7 @@ useSeoMeta(buildSeoMeta({
     </section>
 
     <section v-if="posts.length > 0" class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div>
           <NuxtLink
             v-for="post in posts"
@@ -79,7 +77,7 @@ useSeoMeta(buildSeoMeta({
     </section>
 
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
           <span class="text-fg-1">$ </span>
           <NuxtLink :to="`/${locale}`">

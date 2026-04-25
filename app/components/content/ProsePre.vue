@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+})
+
 withDefaults(defineProps<{
   code: string
   language?: string
@@ -11,10 +15,25 @@ withDefaults(defineProps<{
   highlights: () => [],
   meta: undefined,
 })
+
+const attrs = useAttrs()
+const preAttrs = computed(() => {
+  const { class: _class, style: _style, ...rest } = attrs
+  return rest
+})
+const { shikiTheme } = useAppConfig()
+const shikiBackgroundStyle = computed(() => ({
+  '--shiki-light-bg': shikiTheme.lightBg,
+  '--shiki-default-bg': shikiTheme.darkBg,
+  '--shiki-dark-bg': shikiTheme.darkBg,
+}))
 </script>
 
 <template>
-  <div class="relative overflow-hidden border-b border-t border-bd text-sm font-mono -mx-4 sm:-mx-8">
+  <div
+    class="code-block relative overflow-hidden border-b border-t border-bd text-sm font-mono -mx-4 sm:-mx-8"
+    :style="shikiBackgroundStyle"
+  >
     <div class="flex items-center justify-between border-b border-bd px-4 py-2 sm:px-8">
       <div
         v-if="filename"
@@ -37,7 +56,12 @@ withDefaults(defineProps<{
       </div>
     </div>
 
-    <pre class="shiki not-prose flex overflow-x-auto bg-black px-4 py-3 text-zinc-800 font-mono sm:px-8 dark:text-zinc-200">
+    <pre
+      v-bind="preAttrs"
+      class="shiki not-prose flex overflow-x-auto px-4 py-3 font-mono sm:px-8"
+      :class="attrs.class"
+      :style="attrs.style"
+    >
       <slot />
     </pre>
 
@@ -51,6 +75,47 @@ withDefaults(defineProps<{
 </template>
 
 <style>
+.code-block,
+.code-block pre.shiki {
+  background-color: var(--shiki-light-bg);
+}
+
+html:not([data-scheme="dark"]) pre.shiki code span {
+  color: var(--shiki-light);
+  background: var(--shiki-light-bg);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+html[data-scheme="dark"] .code-block,
+html[data-scheme="dark"] .code-block pre.shiki {
+  background-color: var(--shiki-dark-bg);
+}
+
+html[data-scheme="dark"] pre.shiki code span {
+  color: var(--shiki-dark);
+  background: var(--shiki-dark-bg);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-scheme="light"]) .code-block,
+  html:not([data-scheme="light"]) .code-block pre.shiki {
+    background-color: var(--shiki-dark-bg);
+  }
+
+  html:not([data-scheme="light"]) pre.shiki code span {
+    color: var(--shiki-dark);
+    background: var(--shiki-dark-bg);
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
+}
+
 pre code {
   counter-reset: line;
 }

@@ -110,7 +110,6 @@ const createdAt = computed(() => {
 
 <template>
   <main v-if="data" class="w-full">
-    <SiteNav />
     <div class="w-full flex justify-center border-b border-bd">
       <div class="mx-0 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <article

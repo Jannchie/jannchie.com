@@ -47,7 +47,8 @@ useHead({
 }
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
+  scrollbar-color: var(--j-border) var(--j-bg-base);
   background: var(--j-bg-base);
   --j-bg-base: #fff;
   --j-bg-variant: #fdfdfd;
@@ -91,13 +92,24 @@ code, kbd, samp, pre {
   font-size: 1em;
 }
 
+[data-scheme="light"] {
+  color-scheme: light;
+}
+
 [data-scheme="dark"] {
+  color-scheme: dark;
   --j-bg-base: #100F0F;
   --j-bg-variant: #161515;
   --j-fg-1: #fff;
   --j-fg-2: #ddd;
   --j-fg-3: #aaa;
   --j-border: #292929;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme="light"]) {
+    color-scheme: dark;
+  }
 }
 
 [data-cursor="block"] {

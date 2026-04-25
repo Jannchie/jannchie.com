@@ -74,10 +74,8 @@ const hasAnyDetail = computed(() => {
 
 <template>
   <main v-if="data" class="w-full">
-    <SiteNav />
-
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-10 sm:px-8 sm:py-14">
           <div class="mb-4 text-xs text-fg-3 font-mono">
             <span class="text-fg-1">$</span>
@@ -114,7 +112,7 @@ const hasAnyDetail = computed(() => {
       v-if="data.intro"
       class="w-full flex justify-center border-b border-bd"
     >
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <p class="mx-auto max-w-3xl px-4 py-8 text-sm text-fg-3 leading-relaxed sm:px-8 sm:py-10 sm:text-base">
           {{ data.intro }}
         </p>
@@ -126,7 +124,7 @@ const hasAnyDetail = computed(() => {
       :key="group.name"
       class="w-full flex justify-center border-b border-bd"
     >
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="md:grid md:grid-cols-[10rem_1fr]">
           <div class="flex items-start border-x border-b border-bd px-4 py-3 md:border-x-0 md:border-b-0 md:border-r md:px-6 md:py-6">
             <span class="text-sm text-fg-1 tracking-wider font-mono md:text-base">
@@ -171,7 +169,7 @@ const hasAnyDetail = computed(() => {
       v-if="siblings.length > 0"
       class="w-full flex justify-center border-b border-bd"
     >
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 font-mono sm:px-8">
           <span class="text-fg-3/70">→</span>
           <NuxtLink
@@ -187,7 +185,7 @@ const hasAnyDetail = computed(() => {
     </section>
 
     <section class="w-full flex justify-center border-b border-bd">
-      <div class="mx-4 max-w-[52rem] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+      <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
           <span class="text-fg-1">$ </span>
           <NuxtLink :to="`/${locale}`">
