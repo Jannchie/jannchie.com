@@ -1,0 +1,138 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Jannchie API",
+    "description": "Jannchie developer and agent integration API. Provides endpoints for accessing content, documentation, and developer resources.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Jannchie",
+      "url": "https://jannchie.com",
+      "email": "jannchie@gmail.com"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://jannchie.com",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Returns the health status of the API.",
+        "operationId": "healthCheck",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/_sitemap-urls": {
+      "get": {
+        "summary": "Sitemap URLs",
+        "description": "Returns all content URLs for the sitemap.",
+        "operationId": "sitemapUrls",
+        "responses": {
+          "200": {
+            "description": "Array of URL entries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "loc": {
+                        "type": "string"
+                      },
+                      "lastmod": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "LLMs.txt",
+        "description": "Returns llms.txt - a machine-readable summary of the site for AI agents.",
+        "operationId": "llmsTxt",
+        "responses": {
+          "200": {
+            "description": "Plain text file",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "summary": "LLMs Full Documentation",
+        "description": "Returns llms-full.txt with complete documentation for AI agents.",
+        "operationId": "llmsFullTxt",
+        "responses": {
+          "200": {
+            "description": "Plain text file",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "summary": "OpenAPI Specification",
+        "description": "Returns the OpenAPI 3.1.0 specification for Jannchie API.",
+        "operationId": "openApiSpec",
+        "responses": {
+          "200": {
+            "description": "OpenAPI JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

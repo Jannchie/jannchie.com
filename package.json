@@ -12,7 +12,10 @@
   "dependencies": {
     "@nuxtjs/sitemap": "^8.0.13",
     "better-sqlite3": "^12.9.0",
+    "nuxt-llms": "^0.2.0",
+    "nuxt-schema-org": "^6.0.4",
     "satori": "^0.26.0",
+    "sharp": "^0.34.5",
     "shiki-transformer-color-highlight": "^1.1.0",
     "three": "^0.184.0",
     "vue-wf": "^0.8.2"

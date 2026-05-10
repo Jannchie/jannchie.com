@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Jannchie Developer Resources",
+  "name_for_model": "jannchie",
+  "description_for_human": "Developer resources, API documentation, and AI agent integration guides for Jannchie.",
+  "description_for_model": "Provides developer resources, API documentation, integration guides, and content from jannchie.com. Use it for discovering how to integrate with Jannchie services, accessing API references, and reading developer documentation.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://jannchie.com/openapi.json"
+  },
+  "logo_url": "https://jannchie.com/imgs/jannchie.jpg",
+  "contact_email": "jannchie@gmail.com",
+  "legal_info_url": "https://jannchie.com"
+}

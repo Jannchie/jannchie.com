@@ -3,6 +3,28 @@ import { t } from '@/i18n'
 import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '~/utils/seo'
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
+
+useSchemaOrg([
+  defineOrganization({
+    name: 'Jannchie',
+    url: 'https://jannchie.com',
+    logo: 'https://jannchie.com/imgs/jannchie.jpg',
+    sameAs: [
+      'https://github.com/jannchie',
+    ],
+  }),
+  defineSoftwareApp({
+    name: 'Jannchie',
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Web',
+    offers: {
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description:
+      'Jannchie provides developer resources, APIs, and AI-agent-friendly integration documentation.',
+  }),
+])
 defineOgImage('Meishi', {
   theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',
@@ -104,7 +126,7 @@ const demosDivided = computed(() => {
           :key="post.path"
           class="w-full flex justify-center border-b border-bd"
         >
-          <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+          <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
               class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
               :to="post.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
@@ -133,7 +155,7 @@ const demosDivided = computed(() => {
           :key="essay.path"
           class="w-full flex justify-center border-b border-bd"
         >
-          <div class="mx-4 max-w-[1120px] w-full min-w-0 border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
+          <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
               class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
               :to="essay.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"

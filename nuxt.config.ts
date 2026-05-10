@@ -21,6 +21,16 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      titleTemplate: '%s · Jannchie',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Jannchie developer resources, API documentation, and AI agent integration guides.',
+        },
+      ],
+    },
   },
 
   experimental: {
@@ -33,7 +43,11 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap', 'nuxt-schema-org', 'nuxt-llms'],
+
+  ogImage: {
+    zeroRuntime: true,
+  },
 
   content: {
     build: {
@@ -153,6 +167,18 @@ export default defineNuxtConfig({
     devOptions: {
       enabled: false,
       navigateFallback: '/',
+    },
+  },
+
+  llms: {
+    domain: 'https://jannchie.com',
+    title: 'Jannchie Developer Resources',
+    description:
+      'Developer resources, API documentation, integration guides, and agent-readable documentation for Jannchie.',
+    full: {
+      title: 'Jannchie Full Documentation',
+      description:
+        'Complete documentation for Jannchie, including product overview, use cases, API references, limitations, and integration guides.',
     },
   },
 
