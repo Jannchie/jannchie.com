@@ -8,6 +8,11 @@ export default defineNuxtRouteMiddleware((to, from) => {
     if (locales.has(locale)) {
       return
     }
+    // A dotted first segment (e.g. sitemap.md, llms.txt) is a server-handled
+    // resource, not a locale-less app route — never prefix a locale onto it.
+    if (locale.includes('.')) {
+      throw createError({ statusCode: 404, statusMessage: 'Page not found' })
+    }
 
     const normalized = [...locales].find(l => l.toLowerCase() === locale.toLowerCase())
     if (normalized) {

@@ -9,6 +9,9 @@ const TOP_SECTIONS = ['posts', 'essays', 'notes', 'docs', 'anime', 'game', 'use'
 
 const SKIP_PREFIXES = [
   '/api/',
+  // @nuxt/content's llms feature serves raw markdown at /raw/<path>.md and
+  // llms.txt links point there — let those requests reach its own route.
+  '/raw/',
   '/_nuxt',
   '/_payload',
   '/_ipx',

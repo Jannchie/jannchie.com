@@ -156,7 +156,14 @@ export default defineNuxtConfig({
     writePlugin: true,
     workbox: {
       navigateFallback: '/',
-      navigateFallbackDenylist: [/^\/api\//],
+      navigateFallbackDenylist: [
+        /^\/api\//,
+        /\.md$/,
+        /^\/sitemap/,
+        /^\/llms/,
+        /^\/robots\.txt$/,
+        /^\/openapi\.json$/,
+      ],
       cleanupOutdatedCaches: true,
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
