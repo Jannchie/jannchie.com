@@ -1,6 +1,20 @@
 <script setup>
 import '@unocss/reset/tailwind.css'
 
+const route = useRoute()
+const siteUrl = 'https://jannchie.com'
+const markdownAlternateHref = computed(() => {
+  const path = route.path || '/'
+  if (path.endsWith('.md')) {
+    return `${siteUrl}${path}`
+  }
+  if (path === '/') {
+    return `${siteUrl}/index.md`
+  }
+  const trimmed = path.endsWith('/') ? path.slice(0, -1) : path
+  return `${siteUrl}${trimmed}.md`
+})
+
 useSeoMeta({
   title: 'Jannchie\'s Home',
   description: 'If there were more time…',
@@ -18,6 +32,53 @@ useHead({
       rel: 'icon',
       type: 'image/png',
       href: '/favicon.ico',
+    },
+    {
+      rel: 'alternate',
+      type: 'text/markdown',
+      href: markdownAlternateHref,
+    },
+  ],
+}, { mode: 'server' })
+
+const websiteJsonLd = computed(() => {
+  const url = `${siteUrl}${route.path || '/'}`
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${siteUrl}/#organization`,
+        'name': 'Jannchie',
+        'url': siteUrl,
+        'logo': `${siteUrl}/imgs/jannchie.jpg`,
+        'sameAs': ['https://github.com/jannchie'],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        'name': 'Jannchie\'s Home',
+        'url': siteUrl,
+        'description': 'Jannchie developer resources, API documentation, and AI agent integration guides.',
+        'inLanguage': ['en', 'zh-CN', 'ja'],
+        'publisher': { '@id': `${siteUrl}/#organization` },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        'url': url,
+        'isPartOf': { '@id': `${siteUrl}/#website` },
+      },
+    ],
+  })
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'jannchie-jsonld',
+      innerHTML: websiteJsonLd,
     },
   ],
 }, { mode: 'server' })

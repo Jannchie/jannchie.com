@@ -3,6 +3,7 @@ import path from 'node:path'
 
 const contentRoot = path.resolve(process.cwd(), 'content')
 const localeRoots = ['/en', '/zh-CN', '/ja']
+const buildLastmod = new Date().toISOString()
 
 async function collectMarkdownFiles(dir: string): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true })
@@ -51,9 +52,23 @@ function extractUpdatedAt(content: string): string | undefined {
   return date.toISOString()
 }
 
+async function resolveLastmod(filePath: string, content: string): Promise<string> {
+  const fromFrontMatter = extractUpdatedAt(content)
+  if (fromFrontMatter) {
+    return fromFrontMatter
+  }
+  try {
+    const stat = await fs.stat(filePath)
+    return stat.mtime.toISOString()
+  }
+  catch {
+    return buildLastmod
+  }
+}
+
 export default defineEventHandler(async () => {
   const files = await collectMarkdownFiles(contentRoot)
-  const urls = new Map<string, string | undefined>()
+  const urls = new Map<string, string>()
 
   for (const filePath of files) {
     const loc = toRoutePath(filePath)
@@ -61,7 +76,7 @@ export default defineEventHandler(async () => {
       continue
     }
     const content = await fs.readFile(filePath, 'utf8')
-    const lastmod = extractUpdatedAt(content)
+    const lastmod = await resolveLastmod(filePath, content)
     if (!urls.has(loc)) {
       urls.set(loc, lastmod)
     }
@@ -69,14 +84,9 @@ export default defineEventHandler(async () => {
 
   for (const loc of localeRoots) {
     if (!urls.has(loc)) {
-      urls.set(loc, undefined)
+      urls.set(loc, buildLastmod)
     }
   }
 
-  return [...urls.entries()].map(([loc, lastmod]) => {
-    if (lastmod) {
-      return { loc, lastmod }
-    }
-    return { loc }
-  })
+  return [...urls.entries()].map(([loc, lastmod]) => ({ loc, lastmod }))
 })

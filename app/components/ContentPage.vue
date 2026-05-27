@@ -38,6 +38,68 @@ useSeoMeta(buildSeoMeta({
   siteName: 'Jannchie\'s Home',
 }))
 
+const publishedTime = computed(() => {
+  const value = data.value?.createdAt
+  if (!value) {
+    return
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return
+  }
+  return date.toISOString()
+})
+
+const modifiedTime = computed(() => {
+  const value = data.value?.updatedAt
+  if (!value) {
+    return
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return
+  }
+  return date.toISOString()
+})
+
+const techArticleJsonLd = computed(() => JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': `${canonicalUrl.value}#article`,
+  'headline': data.value?.title ?? props.fallbackTitle,
+  'description': data.value?.description ?? '',
+  'url': canonicalUrl.value,
+  'image': ogImage,
+  ...(publishedTime.value ? { datePublished: publishedTime.value } : {}),
+  ...((modifiedTime.value ?? publishedTime.value) ? { dateModified: modifiedTime.value ?? publishedTime.value } : {}),
+  'inLanguage': seoLocale,
+  'mainEntityOfPage': { '@type': 'WebPage', '@id': canonicalUrl.value },
+  'author': {
+    '@type': 'Person',
+    'name': 'Jannchie',
+    'url': siteUrl,
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Jannchie',
+    'url': siteUrl,
+    'logo': {
+      '@type': 'ImageObject',
+      'url': `${siteUrl}/imgs/jannchie.jpg`,
+    },
+  },
+}))
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'content-page-jsonld',
+      innerHTML: techArticleJsonLd,
+    },
+  ],
+}, { mode: 'server' })
+
 const dateFormatter = new Intl.DateTimeFormat(locale, {
   year: 'numeric',
   month: 'short',

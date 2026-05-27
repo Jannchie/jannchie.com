@@ -1,5 +1,5 @@
 type SeoType = 'website' | 'article'
-type SeoMeta = {
+interface SeoMeta {
   title: string
   description: string
   ogTitle: string

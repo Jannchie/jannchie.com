@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap', 'nuxt-schema-org', 'nuxt-llms'],
+  modules: ['@nuxt/content', '@nuxtjs/google-fonts', '@vite-pwa/nuxt', '@unocss/nuxt', '@vueuse/nuxt', 'nuxt-og-image', '@nuxtjs/sitemap', 'nuxt-llms'],
 
   ogImage: {
     zeroRuntime: true,

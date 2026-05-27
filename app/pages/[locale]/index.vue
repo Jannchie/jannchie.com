@@ -4,27 +4,41 @@ import { buildSeoLinks, buildSeoMeta, ensureSeoLocale, normalizeSiteUrl } from '
 
 definePageMeta({ middleware: ['i18n'], layout: 'default' })
 
-useSchemaOrg([
-  defineOrganization({
-    name: 'Jannchie',
-    url: 'https://jannchie.com',
-    logo: 'https://jannchie.com/imgs/jannchie.jpg',
-    sameAs: [
-      'https://github.com/jannchie',
-    ],
-  }),
-  defineSoftwareApp({
-    name: 'Jannchie',
-    applicationCategory: 'DeveloperApplication',
-    operatingSystem: 'Web',
-    offers: {
-      price: '0',
-      priceCurrency: 'USD',
+const homeJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://jannchie.com/#organization',
+      'name': 'Jannchie',
+      'url': 'https://jannchie.com',
+      'logo': 'https://jannchie.com/imgs/jannchie.jpg',
+      'sameAs': ['https://github.com/jannchie'],
     },
-    description:
-      'Jannchie provides developer resources, APIs, and AI-agent-friendly integration documentation.',
-  }),
-])
+    {
+      '@type': 'SoftwareApplication',
+      'name': 'Jannchie',
+      'applicationCategory': 'DeveloperApplication',
+      'operatingSystem': 'Web',
+      'offers': {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'USD',
+      },
+      'description': 'Jannchie provides developer resources, APIs, and AI-agent-friendly integration documentation.',
+    },
+  ],
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'home-jsonld',
+      innerHTML: homeJsonLd,
+    },
+  ],
+}, { mode: 'server' })
 defineOgImage('Meishi', {
   theme: '#000000',
   avatar: 'https://jannchie.com/imgs/jannchie.jpg',

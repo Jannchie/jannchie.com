@@ -89,6 +89,44 @@ useSeoMeta(buildSeoMeta({
   modifiedTime: modifiedTime.value,
 }))
 
+const articleJsonLd = computed(() => JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': `${canonicalUrl.value}#article`,
+  'headline': data.value?.title ?? '',
+  'description': data.value?.description ?? '',
+  'url': canonicalUrl.value,
+  ...(ogImage ? { image: ogImage } : {}),
+  ...(publishedTime.value ? { datePublished: publishedTime.value } : {}),
+  ...((modifiedTime.value ?? publishedTime.value) ? { dateModified: modifiedTime.value ?? publishedTime.value } : {}),
+  'inLanguage': seoLocale,
+  'mainEntityOfPage': { '@type': 'WebPage', '@id': canonicalUrl.value },
+  'author': {
+    '@type': 'Person',
+    'name': 'Jannchie',
+    'url': siteUrl,
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Jannchie',
+    'url': siteUrl,
+    'logo': {
+      '@type': 'ImageObject',
+      'url': `${siteUrl}/imgs/jannchie.jpg`,
+    },
+  },
+}))
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      key: 'article-jsonld',
+      innerHTML: articleJsonLd,
+    },
+  ],
+}, { mode: 'server' })
+
 const createdAt = computed(() => {
   const val = data.value
   if (!val) {
