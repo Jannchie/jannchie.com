@@ -2,17 +2,20 @@
 title: Anime
 description: Personal anime recommendations.
 createdAt: 2026-01-31T00:17:03+09:00
-updatedAt: 2026-02-01T04:39:25+09:00
+updatedAt: 2026-05-27T00:00:00+09:00
 tags:
   - Anime
   - Recommendations
 ---
 
-Below are some anime I recommend. They may not suit everyone and only reflect my personal taste. These are all anime I like, just to different degrees. The list is split into SSS, SS, and S tiers. This list is mainly for checking whether our vibes match. The list is not complete; I add items as I think of them, and it will be updated anytime.
+Below are some anime I recommend. They may not suit everyone and only reflect my personal taste. These are all anime I like, just to different degrees. The list is split into EX, SSS, SS, and S tiers. This list is mainly for checking whether our vibes match. The list is not complete; I add items as I think of them, and it will be updated anytime.
+
+## EX
+
+- Attack on Titan
 
 ## SSS
 
-- Attack on Titan
 - Steins;Gate
 - Kaiji: Ultimate Survivor
 - Akagi
