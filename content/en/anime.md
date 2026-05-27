@@ -40,6 +40,7 @@ Below are some anime I recommend. They may not suit everyone and only reflect my
 - BEASTARS
 - My Little Sister Can't Be This Cute
 - Himouto! Umaru-chan
+- You and I Are Polar Opposites
 
 ## S
 
