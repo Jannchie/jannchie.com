@@ -2,7 +2,7 @@
   <SiteNav />
   <div class="min-h-[calc(100vh-16rem-2rem*2)]">
     <VitePwaManifest />
-    <NuxtLoadingIndicator color="#23a1c0" />
+    <NuxtLoadingIndicator color="#03ae67" />
     <slot />
     <ToTopFab />
   </div>

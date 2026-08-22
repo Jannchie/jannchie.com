@@ -9,7 +9,7 @@ const toggleDark = useToggle(isDark)
     ref="darkBtnRef"
     type="button"
     :aria-label="isDark ? 'Switch to light color scheme' : 'Switch to dark color scheme'"
-    class="size-8 inline-flex items-center justify-center text-fg-2 leading-0 transition-colors hover:bg-bg-variant hover:text-fg-1"
+    class="size-8 inline-flex items-center justify-center text-fg-2 leading-none transition-colors hover:bg-bg-variant hover:text-fg-1"
     tabindex="0"
     @click="toggleDark()"
   >

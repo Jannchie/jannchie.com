@@ -28,12 +28,12 @@ const locale = useRoute('locale').params.locale
           >
             <div
               style="font-family: 'My Soul', cursive;"
-              class="pointer-events-none select-none after:absolute after:top-0 after:filter"
+              class="pointer-events-none relative z-1 select-none"
             >
               {{ `Jannchie's` }}
             </div>
             <div
-              class="absolute top-0 blur-3xl filter"
+              class="pointer-events-none absolute inset-0 select-none blur-3xl filter"
               style="font-family: 'My Soul', cursive;"
               aria-hidden="true"
             >
@@ -41,7 +41,7 @@ const locale = useRoute('locale').params.locale
             </div>
           </div>
         </div>
-        <div :class="`text-fg-3 ${'ml-32'}`">
+        <div class="ml-32 text-fg-3">
           {{ t('subtitle') }}
         </div>
       </h1>
@@ -53,7 +53,7 @@ const locale = useRoute('locale').params.locale
           :key="link.label"
           :aria-label="link.label"
           target="_blank"
-          class="p-3 leading-0 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+          class="p-3 leading-none transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           :href="link.href"
           :rel="link.rel || ''"
         >
@@ -68,7 +68,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="en"
             to="/en"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             English
           </NuxtLink>
@@ -76,7 +76,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="zh"
             to="/zh-CN"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             中文
           </NuxtLink>
@@ -84,7 +84,7 @@ const locale = useRoute('locale').params.locale
             :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`"
             aria-label="ja"
             to="/ja"
-            class="transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           >
             日本語
           </NuxtLink>
@@ -95,19 +95,19 @@ const locale = useRoute('locale').params.locale
       <div class="mx-4 max-w-[1120px] min-w-0 w-full flex items-center justify-center gap-2 border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <NuxtLink
           :to="`/${locale}/use`"
-          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+          class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
         >
           {{ t('use') }}
         </NuxtLink>
         <NuxtLink
           :to="`/${locale}/game`"
-          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+          class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
         >
           {{ t('game') }}
         </NuxtLink>
         <NuxtLink
           :to="`/${locale}/anime`"
-          class="p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+          class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
         >
           {{ t('anime') }}
         </NuxtLink>
@@ -122,7 +122,7 @@ const locale = useRoute('locale').params.locale
       <TransitionFade>
         <div
           v-if="isTop"
-          class="absolute bottom-0 bottom-20 flex flex-col animate-bounce items-center text-base"
+          class="absolute bottom-20 flex flex-col animate-bounce items-center text-base"
         >
           <i class="i-tabler-chevron-down" />
         </div>

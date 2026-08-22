@@ -152,7 +152,7 @@ const createdAt = computed(() => {
       <div class="mx-0 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <article
           data-cursor="text"
-          class="text-md m-auto px-4 sm:px-8"
+          class="m-auto px-4 text-base sm:px-8"
         >
           <header class="border-b border-bd px-4 py-10 -mx-4 sm:px-8 sm:py-14 sm:-mx-8">
             <div class="mx-auto max-w-3xl">

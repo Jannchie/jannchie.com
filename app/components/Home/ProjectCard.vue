@@ -11,7 +11,7 @@ defineProps<{
   <NuxtLink
     :href="link"
     target="_blank"
-    class="w-72 flex flex-col items-center p-2 p-4 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+    class="w-72 flex flex-col items-center gap-2 border border-transparent p-4 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
   >
     <i
       :class="icon"

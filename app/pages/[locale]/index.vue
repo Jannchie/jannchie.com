@@ -230,7 +230,7 @@ const demosDivided = computed(() => {
     <HomeSectionTitle class="justify-center">
       {{ t('sponsors') }}
     </HomeSectionTitle>
-    <div class="text-center text-sm text-sm opacity-75">
+    <div class="text-center text-sm opacity-75">
       <div class="p-2">
         <NuxtLink
           aria-label="github sponsor"
@@ -258,7 +258,7 @@ const demosDivided = computed(() => {
         </NuxtLink>
       </div>
     </div>
-    <div class="m-auto max-w-[100vw] flex flex-wrap items-start justify-center gap-2 p-y px-2 text-xs">
+    <div class="mx-auto max-w-[100vw] flex flex-wrap items-start justify-center gap-2 px-2 py-2 text-xs">
       <div
         v-for="sponsor in groupedSponsors"
         :key="sponsor.user_name"
