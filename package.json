@@ -24,7 +24,7 @@
     "@iconify-json/tabler": "^1.2.38",
     "@jannchie/eslint-config": "^3.7.9",
     "@jannchie/shiki-theme": "^3.2.0",
-    "@nuxt/content": "~3.13.0",
+    "@nuxt/content": "^3.15.2",
     "@nuxt/devtools": "4.0.0-alpha.15",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@types/node": "^26.2.0",

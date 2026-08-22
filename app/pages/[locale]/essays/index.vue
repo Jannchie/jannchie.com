@@ -12,7 +12,7 @@ const canonicalUrl = computed(() => `${siteUrl}${route.path}`)
 const ogImage = `${siteUrl}/imgs/jannchie.jpg`
 
 const essays = await queryCollection('content')
-  .where('path', 'LIKE', `/${locale.toLowerCase()}/essays/%`)
+  .where('path', 'LIKE', `/${locale}/essays/%`)
   .order('createdAt', 'DESC')
   .all()
 
@@ -60,7 +60,7 @@ useSeoMeta(buildSeoMeta({
             v-for="essay in essays"
             :key="essay.path"
             class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
-            :to="essay.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
+            :to="essay.path"
           >
             <h3 class="mb-2 text-lg font-medium group-hover:underline">
               {{ essay.title }}

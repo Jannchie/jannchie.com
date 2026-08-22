@@ -97,8 +97,8 @@ const contentDateFormatter = new Intl.DateTimeFormat(locale, {
   month: 'long',
   day: 'numeric',
 })
-const posts = await queryCollection('content').where('path', 'LIKE', `/${locale.toLowerCase()}/posts/%`).order('createdAt', 'DESC').all()
-const essays = await queryCollection('content').where('path', 'LIKE', `/${locale.toLowerCase()}/essays/%`).order('createdAt', 'DESC').all()
+const posts = await queryCollection('content').where('path', 'LIKE', `/${locale}/posts/%`).order('createdAt', 'DESC').all()
+const essays = await queryCollection('content').where('path', 'LIKE', `/${locale}/essays/%`).order('createdAt', 'DESC').all()
 const { width } = useWindowSize()
 
 const cols = computed(() => {
@@ -143,7 +143,7 @@ const demosDivided = computed(() => {
           <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
               class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
-              :to="post.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
+              :to="post.path"
             >
               <h3 class="mb-2 text-lg font-medium group-hover:underline">
                 {{ post.title }}
@@ -172,7 +172,7 @@ const demosDivided = computed(() => {
           <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
             <NuxtLink
               class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
-              :to="essay.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
+              :to="essay.path"
             >
               <h3 class="mb-2 text-lg font-medium group-hover:underline">
                 {{ essay.title }}

@@ -9,7 +9,6 @@ const props = defineProps<{
 const route = useRoute('locale')
 const locale = String(route.params.locale || 'en')
 const seoLocale = ensureSeoLocale(locale)
-const contentPath = route.path.replace(`/${locale}/`, `/${locale.toLowerCase()}/`)
 const siteUrl = normalizeSiteUrl(useRuntimeConfig().public.siteUrl || 'https://jannchie.com')
 const canonicalUrl = computed(() => `${siteUrl}${route.path}`)
 const ogImage = `${siteUrl}/imgs/jannchie.jpg`
@@ -25,8 +24,8 @@ useHead(() => {
   }
 })
 
-const { data } = await useAsyncData(contentPath, () => {
-  return queryCollection('content').path(contentPath).first()
+const { data } = await useAsyncData(route.path, () => {
+  return queryCollection('content').path(route.path).first()
 })
 
 useSeoMeta(buildSeoMeta({

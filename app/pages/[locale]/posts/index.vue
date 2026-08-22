@@ -12,7 +12,7 @@ const canonicalUrl = computed(() => `${siteUrl}${route.path}`)
 const ogImage = `${siteUrl}/imgs/jannchie.jpg`
 
 const posts = await queryCollection('content')
-  .where('path', 'LIKE', `/${locale.toLowerCase()}/posts/%`)
+  .where('path', 'LIKE', `/${locale}/posts/%`)
   .order('createdAt', 'DESC')
   .all()
 
@@ -60,7 +60,7 @@ useSeoMeta(buildSeoMeta({
             v-for="post in posts"
             :key="post.path"
             class="group block px-4 py-6 transition-colors hover:bg-bg-variant sm:px-8"
-            :to="post.path.replace(`/${locale.toLowerCase()}/`, `/${locale}/`)"
+            :to="post.path"
           >
             <h3 class="mb-2 text-lg font-medium group-hover:underline">
               {{ post.title }}

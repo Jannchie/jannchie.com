@@ -8,9 +8,8 @@ useHead({
 })
 
 const { params: { locale }, path } = useRoute('locale')
-const contentPath = path.replace(`/${locale}/`, `/${String(locale).toLowerCase()}/`)
 const { data } = await useAsyncData(`${path}:meta`, () => {
-  return queryCollection('content').path(contentPath).first()
+  return queryCollection('content').path(path).first()
 })
 
 const createdAt = computed(() => {

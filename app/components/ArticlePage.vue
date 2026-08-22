@@ -17,9 +17,8 @@ const seoLocale = ensureSeoLocale(locale)
 const siteUrl = normalizeSiteUrl(useRuntimeConfig().public.siteUrl || 'https://jannchie.com')
 const canonicalUrl = computed(() => `${siteUrl}${path}`)
 const ogImage = path.includes('/posts/') ? undefined : `${siteUrl}/imgs/jannchie.jpg`
-const contentPath = path.replace(`/${locale}/`, `/${locale.toLowerCase()}/`)
 const { data } = await useAsyncData(path, () => {
-  return queryCollection('content').path(contentPath).first()
+  return queryCollection('content').path(path).first()
 })
 if (!data.value) {
   throw createError({
@@ -31,19 +30,17 @@ if (!data.value) {
 const { data: otherLangMap } = await useAsyncData(`${path}/${locale}other`, async () => {
   const otherLocales = locales.filter(l => l !== locale)
   const otherlocalePath = otherLocales.map((l) => {
-    return path.replace(`/${locale}/`, `/${l.toLowerCase()}/`)
+    return path.replace(`/${locale}/`, `/${l}/`)
   })
 
   const otherLangs = await queryCollection('content').where('path', 'IN', otherlocalePath).all()
   const localeToPostMap = new Map()
   for (const post of otherLangs) {
-    const postLocaleRaw = post.path.split('/')[1]
-    if (!postLocaleRaw) {
+    const postLocale = post.path.split('/')[1]
+    if (!postLocale) {
       continue
     }
-    const postLocale = locales.find(l => l.toLowerCase() === postLocaleRaw.toLowerCase()) || postLocaleRaw
-    const normalizedPath = `/${postLocale}${post.path.slice(postLocaleRaw.length + 1)}`
-    localeToPostMap.set(postLocale, { ...post, path: normalizedPath })
+    localeToPostMap.set(postLocale, post)
   }
   return localeToPostMap
 })
