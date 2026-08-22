@@ -6,7 +6,7 @@ const locale = useRoute('locale').params.locale
   <div v-if="locale === 'en'">
     {{ 'This content is licensed under ' }}
     <NuxtLink
-      href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en"
     >
       {{ 'CC BY-NC-SA 4.0' }}
     </NuxtLink>
@@ -24,7 +24,7 @@ const locale = useRoute('locale').params.locale
   <div v-if="locale === 'ja'">
     {{ 'このコンテンツは ' }}
     <NuxtLink
-      href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja"
     >
       {{ 'CC BY-NC-SA 4.0' }}
     </NuxtLink>
