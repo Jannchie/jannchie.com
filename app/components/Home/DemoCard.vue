@@ -10,22 +10,19 @@ const { title, desc, link } = defineProps<{
 }>()
 
 const target = ref()
-const isVisiable = useElementVisibility(target)
-const alreadyLoaded = ref(false)
-watchOnce(isVisiable, () => {
-  if (!alreadyLoaded.value) {
-    alreadyLoaded.value = true
-  }
-})
-const show = computed(() => isVisiable.value || alreadyLoaded.value)
+// once: true keeps the ref latched after the card first appears and
+// disconnects the observer, so the entrance animation never replays.
+const show = useElementVisibility(target, { once: true })
+const transitionDelay = `${Math.random() * 0.2}s`
 const style = computed(() => {
   return {
     opacity: show.value ? 1 : 0,
     transform: `translateY(${show.value ? 0 : 100}px)`,
-    transitionDelay: `${Math.random() * 0.2}s`,
+    transitionDelay,
   }
 })
-// 只在卡片进入视口后才加载视频，避免首页 10 个 demo 同时拉取/播放
+// Only fetch the video once the card is in view, so the home page does not
+// pull every demo at once.
 const videoSrc = computed(() => show.value ? link : undefined)
 </script>
 
