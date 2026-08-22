@@ -30,15 +30,16 @@ const pages = ['use', 'game', 'anime']
     <div class="w-full flex justify-center border-y border-bd">
       <h1 class="mx-4 max-w-[1120px] min-w-0 w-full flex flex-col items-center justify-center border-x-0 border-bd py-16 text-center lg:mx-16 sm:mx-8 sm:border-x sm:py-32">
         <div class="flex items-end">
-          <div
-            class="relative text-center text-4xl lg:text-6xl"
-            style="font-family: 'My Soul', cursive;"
-          >
-            <div class="pointer-events-none relative z-1 select-none">
+          <div class="relative text-center text-4xl lg:text-6xl">
+            <div
+              class="pointer-events-none relative z-1 select-none"
+              style="font-family: 'My Soul', cursive;"
+            >
               {{ `Jannchie's` }}
             </div>
             <div
               class="pointer-events-none absolute inset-0 select-none blur-3xl"
+              style="font-family: 'My Soul', cursive;"
               aria-hidden="true"
             >
               {{ `Jannchie's` }}
