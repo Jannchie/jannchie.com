@@ -10,6 +10,13 @@ if (globalThis.window !== undefined) {
   })
 }
 const locale = useRoute('locale').params.locale
+
+const locales = [
+  { code: 'en', ariaLabel: 'en', label: 'English' },
+  { code: 'zh-CN', ariaLabel: 'zh', label: '中文' },
+  { code: 'ja', ariaLabel: 'ja', label: '日本語' },
+]
+const pages = ['use', 'game', 'anime']
 </script>
 
 <template>
@@ -25,16 +32,13 @@ const locale = useRoute('locale').params.locale
         <div class="flex items-end">
           <div
             class="relative text-center text-4xl lg:text-6xl"
+            style="font-family: 'My Soul', cursive;"
           >
-            <div
-              style="font-family: 'My Soul', cursive;"
-              class="pointer-events-none relative z-1 select-none"
-            >
+            <div class="pointer-events-none relative z-1 select-none">
               {{ `Jannchie's` }}
             </div>
             <div
-              class="pointer-events-none absolute inset-0 select-none blur-3xl filter"
-              style="font-family: 'My Soul', cursive;"
+              class="pointer-events-none absolute inset-0 select-none blur-3xl"
               aria-hidden="true"
             >
               {{ `Jannchie's` }}
@@ -53,9 +57,9 @@ const locale = useRoute('locale').params.locale
           :key="link.label"
           :aria-label="link.label"
           target="_blank"
-          class="p-3 leading-none transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+          class="border border-transparent p-3 leading-none transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
           :href="link.href"
-          :rel="link.rel || ''"
+          :rel="link.rel"
         >
           <i :class="link.iconClass" />
         </NuxtLink>
@@ -65,28 +69,15 @@ const locale = useRoute('locale').params.locale
       <div class="mx-4 max-w-[1120px] min-w-0 w-full flex items-center justify-center border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <div class="flex gap-2">
           <NuxtLink
-            :class="`${locale === 'en' ? 'text-fg-1' : 'text-fg-3'} p-2`"
-            aria-label="en"
-            to="/en"
-            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
+            v-for="l in locales"
+            :key="l.code"
+            :aria-label="l.ariaLabel"
+            :to="`/${l.code}`"
+            class="border border-transparent p-2 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base" :class="[
+              locale === l.code ? 'text-fg-1' : 'text-fg-3',
+            ]"
           >
-            English
-          </NuxtLink>
-          <NuxtLink
-            :class="`${locale === 'zh-CN' ? 'text-fg-1' : 'text-fg-3'} p-2`"
-            aria-label="zh"
-            to="/zh-CN"
-            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
-          >
-            中文
-          </NuxtLink>
-          <NuxtLink
-            :class="`${locale === 'ja' ? 'text-fg-1' : 'text-fg-3'} p-2`"
-            aria-label="ja"
-            to="/ja"
-            class="border border-transparent transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
-          >
-            日本語
+            {{ l.label }}
           </NuxtLink>
         </div>
       </div>
@@ -94,22 +85,12 @@ const locale = useRoute('locale').params.locale
     <div class="w-full flex justify-center border-b border-bd">
       <div class="mx-4 max-w-[1120px] min-w-0 w-full flex items-center justify-center gap-2 border-x-0 border-bd text-center lg:mx-16 sm:mx-8 sm:border-x">
         <NuxtLink
-          :to="`/${locale}/use`"
+          v-for="page in pages"
+          :key="page"
+          :to="`/${locale}/${page}`"
           class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
         >
-          {{ t('use') }}
-        </NuxtLink>
-        <NuxtLink
-          :to="`/${locale}/game`"
-          class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
-        >
-          {{ t('game') }}
-        </NuxtLink>
-        <NuxtLink
-          :to="`/${locale}/anime`"
-          class="border border-transparent p-2 text-fg-3 transition-colors hover:border-fg-1 hover:bg-fg-1 hover:text-bg-base"
-        >
-          {{ t('anime') }}
+          {{ t(page) }}
         </NuxtLink>
       </div>
     </div>
