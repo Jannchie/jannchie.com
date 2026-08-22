@@ -2,6 +2,19 @@
 import process from 'node:process'
 import { jannchieDark, jannchieLight } from '@jannchie/shiki-theme'
 
+const isDev = process.env.NODE_ENV === 'development'
+
+// Packages that must stay outside nitro's dev bundle: native CJS addons plus
+// Emscripten builds that rely on CJS globals (`require`, `__dirname`).
+const NITRO_DEV_EXTERNALS = [
+  'sharp',
+  '@img/sharp-wasm32',
+  '@img/sharp-libvips-dev',
+  'better-sqlite3',
+  'harfbuzzjs',
+  'source-map',
+]
+
 export default defineNuxtConfig({
   site: {
     url: 'https://jannchie.com',
@@ -186,6 +199,17 @@ export default defineNuxtConfig({
       title: 'Jannchie Full Documentation',
       description:
         'Complete documentation for Jannchie, including product overview, use cases, API references, limitations, and integration guides.',
+    },
+  },
+
+  nitro: {
+    rollupConfig: {
+      // Nitro's dev build inlines everything (`noExternals`), which breaks these
+      // packages: sharp's optional `@img/*` requires cannot be resolved,
+      // better-sqlite3's binding loader needs a real `require`, and harfbuzzjs
+      // and source-map locate their wasm through `__dirname`. Let Node load
+      // them at runtime.
+      external: id => isDev && NITRO_DEV_EXTERNALS.some(name => id === name || id.startsWith(`${name}/`)),
     },
   },
 
