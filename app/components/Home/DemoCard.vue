@@ -17,14 +17,16 @@ watchOnce(isVisiable, () => {
     alreadyLoaded.value = true
   }
 })
+const show = computed(() => isVisiable.value || alreadyLoaded.value)
 const style = computed(() => {
-  const show = isVisiable.value || alreadyLoaded.value
   return {
-    opacity: show ? 1 : 0,
-    transform: `translateY(${show ? 0 : 100}px)`,
+    opacity: show.value ? 1 : 0,
+    transform: `translateY(${show.value ? 0 : 100}px)`,
     transitionDelay: `${Math.random() * 0.2}s`,
   }
 })
+// 只在卡片进入视口后才加载视频，避免首页 10 个 demo 同时拉取/播放
+const videoSrc = computed(() => show.value ? link : undefined)
 </script>
 
 <template>
@@ -33,17 +35,17 @@ const style = computed(() => {
     :style="style"
     target="_blank"
     :href="href"
-    class="inline-block border-bd bg-bg-base pr-0.3px transition-all duration-1000 !border hover:bg-bg-variant"
+    class="inline-block border border-bd bg-bg-base pr-px transition-all duration-1000 hover:bg-bg-variant"
   >
     <video
-
       autoplay
       loop
       muted
       playsinline
+      preload="none"
       class="w-full border-b border-bd"
       controlslist="nodownload"
-      :src="link"
+      :src="videoSrc"
     />
     <div class="p-4">
       <h3 class="mb-2 font-bold">
