@@ -33,4 +33,6 @@ export default {
   'demo-gemini-chat-desc': '酷炫的 Google Gemini 风格聊天 UI，支持文字渐隐动画，使用 Vue.js 开发，支持 OpenAI、Open Router、Plamo 等 OpenAI SDK 兼容服务提供商。',
   'demo-furi-title': '振り仮名 - 日语假名注音',
   'demo-furi-desc': '「振り仮名」是一个日语假名注音工具。用于快速给出剪贴板中的日语文本的假名注音。基于 LLM。',
+  'demo-arthash-title': 'Arthash - 艺术化的图片占位符哈希',
+  'demo-arthash-desc': 'Arthash 可以把图片编码成 17B ~ 400B 的紧凑哈希，用作加载时的占位图。核心由 Rust 实现，支持 DCT、几何图形与像素等多种风格，并提供 Python 与 TypeScript（WASM）绑定。',
 }

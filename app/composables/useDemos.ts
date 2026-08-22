@@ -1,6 +1,12 @@
 export function useDemos() {
   return [
     {
+      title: 'demo-arthash-title',
+      desc: 'demo-arthash-desc',
+      href: 'https://arthash.jannchie.com',
+      link: '/videos/demo-arthash.mp4',
+    },
+    {
       title: 'demo-cake47-title',
       desc: 'demo-cake47-desc',
       href: 'https://cake47.art',

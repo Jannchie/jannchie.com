@@ -33,4 +33,6 @@ export default {
   'demo-gemini-chat-desc': 'クールな Gemini スタイルのチャット UI で、テキストのフェードイン/アウト アニメーションをサポートし、Vue.js で開発されており、OpenAI、Open Router、Plamo などの OpenAI SDK 互換サービス プロバイダーをサポートしています。',
   'demo-furi-title': '振り仮名',
   'demo-furi-desc': '「振り仮名」でクリップボード内の日本語テキストにふりがなを素早く付けることができます。LLMを基にしています。',
+  'demo-arthash-title': 'Arthash - アート風の画像プレースホルダーハッシュ',
+  'demo-arthash-desc': 'Arthash は画像を 17B〜400B のコンパクトなハッシュに符号化し、読み込み中のプレースホルダーとして利用できます。コアは Rust 製で、DCT・図形・ピクセルなど複数のスタイルに対応し、Python と TypeScript（WASM）のバインディングを提供します。',
 }

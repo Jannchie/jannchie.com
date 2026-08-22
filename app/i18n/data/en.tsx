@@ -33,4 +33,6 @@ export default {
   'demo-gemini-chat-desc': 'A cool Gemini-style chat UI with text fade-in/out animations, developed with Vue.js, supporting OpenAI, Open Router, Plamo, and other OpenAI SDK-compatible service providers.',
   'demo-furi-title': 'Furi - Japanese Furigana Annotation',
   'demo-furi-desc': 'Furi is a tool for quickly annotating Japanese text in the clipboard with furigana. It is based on LLM.',
+  'demo-arthash-title': 'Arthash - Artistic Image Placeholder Hash',
+  'demo-arthash-desc': 'Arthash encodes an image into a compact 17B–400B hash to use as a placeholder while the full image loads. Written in Rust, it supports DCT, shape and pixel styles, with Python and TypeScript (WASM) bindings.',
 }
