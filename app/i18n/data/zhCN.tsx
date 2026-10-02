@@ -35,4 +35,12 @@ export default {
   'demo-furi-desc': '「振り仮名」是一个日语假名注音工具。用于快速给出剪贴板中的日语文本的假名注音。基于 LLM。',
   'demo-arthash-title': 'Arthash - 艺术化的图片占位符哈希',
   'demo-arthash-desc': 'Arthash 可以把图片编码成 17B ~ 400B 的紧凑哈希，用作加载时的占位图。核心由 Rust 实现，支持 DCT、几何图形与像素等多种风格，并提供 Python 与 TypeScript（WASM）绑定。',
+  'demo-cartographer-title': 'Cartographer - 程序化幻想世界地图',
+  'demo-cartographer-desc': '由一个种子生成完整的虚构世界：板块造山、侵蚀、气候与水系塑造大陆，可渲染为 3D 沙盘或六种纸质地图；点开任意城镇即可生成街区级平面图，人口可从小村连续增长为大都市。',
+  'demo-danbooru-tag-index-title': 'Danbooru 标签指数',
+  'demo-danbooru-tag-index-desc': '类似 Google Trends 的 Danbooru 标签热度指数，覆盖 2005 年至今 5 万多个标签的逐月投稿量，支持相对指数、占比与投稿数三种口径，可用五种语言检索。整个指数打包为单个二进制文件，由零依赖的静态站点绘制。',
+  'demo-danbooru-tags-tree-title': 'Danbooru 标签树',
+  'demo-danbooru-tags-tree-desc': '将两万多个 Danbooru 标签整理为分层分类体系，并提供树形与图谱两种浏览方式，支持中、英、日三语标签与全文搜索。',
+  'demo-shader-gradient-title': 'Shader Gradient - 动态着色器渐变背景',
+  'demo-shader-gradient-desc': '受 ruucm/shadergradient 启发、围绕框架无关核心重写的动态着色器渐变背景。核心基于 Three.js，可直接在 DOM 中使用，并提供 React 与 Vue 绑定，附带可调参、分享与导出配置的 Playground。',
 }

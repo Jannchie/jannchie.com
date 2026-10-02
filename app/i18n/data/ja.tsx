@@ -35,4 +35,12 @@ export default {
   'demo-furi-desc': '「振り仮名」でクリップボード内の日本語テキストにふりがなを素早く付けることができます。LLMを基にしています。',
   'demo-arthash-title': 'Arthash - アート風の画像プレースホルダーハッシュ',
   'demo-arthash-desc': 'Arthash は画像を 17B〜400B のコンパクトなハッシュに符号化し、読み込み中のプレースホルダーとして利用できます。コアは Rust 製で、DCT・図形・ピクセルなど複数のスタイルに対応し、Python と TypeScript（WASM）のバインディングを提供します。',
+  'demo-cartographer-title': 'Cartographer - 手続き型ファンタジー世界地図',
+  'demo-cartographer-desc': 'ひとつのシードから架空の世界をまるごと生成します。プレート造山・侵食・気候・水系が大陸を形づくり、3D ジオラマや 6 種類の紙地図として描画。町を選ぶと街区レベルの平面図が生成され、小さな村から大都市まで連続的に成長します。',
+  'demo-danbooru-tag-index-title': 'Danbooru タグ指数',
+  'demo-danbooru-tag-index-desc': 'Google トレンドのような Danbooru タグの人気指数。2005 年以降の 5 万以上のタグの月別投稿数を 3 通りに正規化し、5 言語で検索できます。指数全体をひとつのバイナリにまとめ、依存ゼロの静的サイトで描画します。',
+  'demo-danbooru-tags-tree-title': 'Danbooru タグツリー',
+  'demo-danbooru-tags-tree-desc': '2 万以上の Danbooru タグを階層的な分類体系に整理し、ツリーとグラフの 2 通りで閲覧できるビューア。中・英・日の 3 言語ラベルと全文検索に対応。',
+  'demo-shader-gradient-title': 'Shader Gradient - アニメーションするシェーダーグラデーション背景',
+  'demo-shader-gradient-desc': 'ruucm/shadergradient に着想を得て、フレームワーク非依存のコアで作り直したアニメーションするシェーダーグラデーション背景。Three.js ベースのコアを DOM で直接使え、React と Vue のバインディング、調整・共有・エクスポートができるプレイグラウンドも付属します。',
 }

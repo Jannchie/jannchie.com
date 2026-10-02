@@ -35,4 +35,12 @@ export default {
   'demo-furi-desc': 'Furi is a tool for quickly annotating Japanese text in the clipboard with furigana. It is based on LLM.',
   'demo-arthash-title': 'Arthash - Artistic Image Placeholder Hash',
   'demo-arthash-desc': 'Arthash encodes an image into a compact 17B–400B hash to use as a placeholder while the full image loads. Written in Rust, it supports DCT, shape and pixel styles, with Python and TypeScript (WASM) bindings.',
+  'demo-cartographer-title': 'Cartographer - Procedural Fantasy World Maps',
+  'demo-cartographer-desc': 'Generates a complete fictional world from a single seed: plate tectonics, erosion, climate and drainage shape the continents, rendered as a 3D diorama or six paper-map styles. Pick any town to get a street-level plan that grows continuously from a hamlet to a city.',
+  'demo-danbooru-tag-index-title': 'Danbooru Tag Index',
+  'demo-danbooru-tag-index-desc': 'A Google-Trends-style popularity index for Danbooru tags: monthly post counts for 50k+ tags since 2005, normalised three ways and searchable in five languages. The whole index ships as one binary, charted by a zero-dependency static site.',
+  'demo-danbooru-tags-tree-title': 'Danbooru Tags Tree',
+  'demo-danbooru-tags-tree-desc': 'A hierarchical taxonomy of 20k+ Danbooru tags, explorable as a tree or a graph, with Chinese, English and Japanese labels and full-text search.',
+  'demo-shader-gradient-title': 'Shader Gradient - Animated Shader Gradient Backgrounds',
+  'demo-shader-gradient-desc': 'Animated shader gradients inspired by ruucm/shadergradient, rebuilt around a framework-agnostic Three.js core with thin React and Vue bindings, plus a playground for tuning, sharing and exporting configurations.',
 }

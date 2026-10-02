@@ -1,10 +1,34 @@
 export function useDemos() {
   return [
     {
+      title: 'demo-cartographer-title',
+      desc: 'demo-cartographer-desc',
+      href: 'https://jannchie.github.io/cartographer/',
+      link: '/videos/demo-cartographer.mp4',
+    },
+    {
+      title: 'demo-shader-gradient-title',
+      desc: 'demo-shader-gradient-desc',
+      href: 'https://jannchie.github.io/shader-gradient',
+      link: '/videos/demo-shader-gradient.mp4',
+    },
+    {
       title: 'demo-arthash-title',
       desc: 'demo-arthash-desc',
       href: 'https://arthash.jannchie.com',
       link: '/videos/demo-arthash.mp4',
+    },
+    {
+      title: 'demo-danbooru-tag-index-title',
+      desc: 'demo-danbooru-tag-index-desc',
+      href: 'https://di.jannchie.com',
+      link: '/videos/demo-danbooru-tag-index.mp4',
+    },
+    {
+      title: 'demo-danbooru-tags-tree-title',
+      desc: 'demo-danbooru-tags-tree-desc',
+      href: 'https://github.com/Jannchie/danbooru-tags-tree',
+      link: '/videos/demo-danbooru-tags-tree.mp4',
     },
     {
       title: 'demo-cake47-title',
