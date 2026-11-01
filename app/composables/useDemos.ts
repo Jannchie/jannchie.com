@@ -1,6 +1,12 @@
 export function useDemos() {
   return [
     {
+      title: 'demo-telemetry-hud-title',
+      desc: 'demo-telemetry-hud-desc',
+      href: 'https://github.com/Jannchie/telemetry-hud',
+      link: '/videos/demo-telemetry-hud.mp4',
+    },
+    {
       title: 'demo-cartographer-title',
       desc: 'demo-cartographer-desc',
       href: 'https://jannchie.github.io/cartographer/',

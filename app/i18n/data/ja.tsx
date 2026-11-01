@@ -35,6 +35,8 @@ export default {
   'demo-furi-desc': '「振り仮名」でクリップボード内の日本語テキストにふりがなを素早く付けることができます。LLMを基にしています。',
   'demo-arthash-title': 'Arthash - アート風の画像プレースホルダーハッシュ',
   'demo-arthash-desc': 'Arthash は画像を 17B〜400B のコンパクトなハッシュに符号化し、読み込み中のプレースホルダーとして利用できます。コアは Rust 製で、DCT・図形・ピクセルなど複数のスタイルに対応し、Python と TypeScript（WASM）のバインディングを提供します。',
+  'demo-telemetry-hud-title': 'Telemetry HUD - サイバーパンク風システムモニター壁紙',
+  'demo-telemetry-hud-desc': '実際のハードウェア情報をサイバーパンク風の HUD として表示するデスクトップ壁紙。CPU の P / E コア、GPU、メモリモジュール、ディスク、ネットワーク、マザーボードのスロット、バッテリーまで表示します。センサーは小さな Rust 製ヘルパーが読み取り、Wallpaper Engine なしでデスクトップアイコンの後ろに単体で表示することも、Wallpaper Engine の壁紙として使うこともできます。マウス視差、CRT 風ポストエフェクト、9 種類のカラーテーマ付き。',
   'demo-cartographer-title': 'Cartographer - 手続き型ファンタジー世界地図',
   'demo-cartographer-desc': 'ひとつのシードから架空の世界をまるごと生成します。プレート造山・侵食・気候・水系が大陸を形づくり、3D ジオラマや 6 種類の紙地図として描画。町を選ぶと街区レベルの平面図が生成され、小さな村から大都市まで連続的に成長します。',
   'demo-danbooru-tag-index-title': 'Danbooru タグ指数',
