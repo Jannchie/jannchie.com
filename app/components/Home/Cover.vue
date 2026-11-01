@@ -106,7 +106,7 @@ const pages = ['use', 'game', 'anime']
           v-if="isTop"
           class="absolute bottom-20 flex flex-col animate-bounce items-center text-base"
         >
-          <i class="i-tabler-chevron-down" />
+          <i class="i-jannchie-chevron-down" />
         </div>
       </TransitionFade>
     </ClientOnly>

@@ -49,7 +49,7 @@ function localeHref(target: string) {
               :aria-label="t('home')"
               class="inline-flex shrink-0 items-center gap-1.5 px-2 py-1 transition-colors -my-1.5 hover:bg-bg-variant hover:text-fg-1"
             >
-              <i class="i-tabler-home text-sm" />
+              <i class="i-jannchie-home text-sm" />
               <span>~</span>
             </NuxtLink>
             <template v-for="(seg, i) in segments" :key="i">
@@ -101,7 +101,7 @@ function localeHref(target: string) {
                   class="size-8 inline-flex items-center justify-center text-fg-2 leading-0"
                   aria-hidden="true"
                 >
-                  <i class="i-tabler-moon text-base" />
+                  <i class="i-jannchie-moon text-base" />
                 </span>
               </template>
             </ClientOnly>

@@ -34,6 +34,9 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({
       scale: 1.2,
+      collections: {
+        jannchie: () => import('@jannchie/iconify-json/bold.json').then(m => m.default),
+      },
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',

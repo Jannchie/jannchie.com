@@ -251,7 +251,7 @@ const demosDivided = computed(() => {
           data-cursor="block"
           class="inline-block inline-flex items-center gap-2 p-2"
         >
-          <i class="i-tabler-pig-money" />
+          <i class="i-jannchie-piggy-bank" />
           <span>
             爱赞助
           </span>

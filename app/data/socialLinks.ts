@@ -12,7 +12,7 @@ export const socialLinks = [
   {
     label: 'photos',
     href: 'https://photos.jannchie.com',
-    iconClass: 'i-tabler-camera',
+    iconClass: 'i-jannchie-camera',
   },
   {
     label: 'github',
@@ -27,7 +27,7 @@ export const socialLinks = [
   {
     label: 'gmail',
     href: 'mailto:jannchie@gmail.com',
-    iconClass: 'i-tabler-brand-gmail',
+    iconClass: 'i-jannchie-mail',
   },
   {
     label: 'steam',

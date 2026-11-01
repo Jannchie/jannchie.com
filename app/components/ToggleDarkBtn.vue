@@ -15,12 +15,12 @@ const toggleDark = useToggle(isDark)
   >
     <i
       v-if="isDark"
-      class="i-tabler-sun text-base"
+      class="i-jannchie-sun text-base"
       aria-hidden="true"
     />
     <i
       v-else
-      class="i-tabler-moon text-base"
+      class="i-jannchie-moon text-base"
       aria-hidden="true"
     />
   </button>

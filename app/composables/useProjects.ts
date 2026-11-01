@@ -3,12 +3,12 @@ export function useProjects() {
     title: 'CodeTime',
     description: 'Programmer Time Tracking.',
     link: 'https://codetime.dev',
-    icon: 'i-tabler-clock',
+    icon: 'i-jannchie-clock',
   }, {
     title: 'Anichart.js',
     description: 'Animate historical data.',
     link: 'https://github.com/Jannchie/anichart.js',
-    icon: 'i-tabler-chart-histogram',
+    icon: 'i-jannchie-histogram',
   }, {
     title: 'Zeroroku',
     description: 'Data Observatory.',
@@ -18,11 +18,11 @@ export function useProjects() {
     title: 'Roku UI',
     description: 'React UI Library.',
     link: 'https://roku-ui.vercel.app',
-    icon: 'i-tabler-components',
+    icon: 'i-jannchie-shapes',
   }, {
     title: 'Jannchie\'s Blog',
     description: 'Here.',
     link: 'https://github.com/Jannchie/jannchie.com',
-    icon: 'i-tabler-building-cottage',
+    icon: 'i-jannchie-home-heart',
   }]
 }

@@ -22,7 +22,7 @@ if (globalThis.window !== undefined) {
       class="fixed bottom-8 right-8 cursor-pointer border border-bd bg-bg-variant p-2 leading-none"
       @click="scrollToTop"
     >
-      <i class="i-tabler-chevron-up" />
+      <i class="i-jannchie-chevron-up" />
     </div>
   </TransitionFade>
 </template>

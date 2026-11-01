@@ -42,6 +42,9 @@ importers:
       '@jannchie/eslint-config':
         specifier: ^3.7.9
         version: 3.7.9(@typescript-eslint/typescript-estree@8.67.0(typescript@5.9.3))(@typescript-eslint/utils@8.67.0(eslint@10.9.0(jiti@2.7.0))(typescript@5.9.3))(@unocss/eslint-plugin@66.8.1(eslint@10.9.0(jiti@2.7.0))(typescript@5.9.3))(@vue/compiler-sfc@3.5.41)(eslint@10.9.0(jiti@2.7.0))(typescript@5.9.3)
+      '@jannchie/iconify-json':
+        specifier: ^0.4.0
+        version: 0.4.0
       '@jannchie/shiki-theme':
         specifier: ^3.2.0
         version: 3.2.0
@@ -1387,6 +1390,9 @@ packages:
         optional: true
       svelte-eslint-parser:
         optional: true
+
+  '@jannchie/iconify-json@0.4.0':
+    resolution: {integrity: sha512-9GQibzZOeL22zQZn2UYfLZqDnvMOTAXI9kLDAwQdZ0nxnk3Tn6MF2WbAJL84Sk27w1wyPIeftIoAvkZhar5XSA==}
 
   '@jannchie/shiki-theme@3.2.0':
     resolution: {integrity: sha512-OzqJRYMm75aPPWKRHsCzuPkY6O37xU02CPEnqGFsGyl3L4wBaP+AsVQCxkja/ulJgsqItFJJQxWIZGpcDHEtWQ==}
@@ -8486,6 +8492,8 @@ snapshots:
       - ts-declaration-location
       - typescript
       - vitest
+
+  '@jannchie/iconify-json@0.4.0': {}
 
   '@jannchie/shiki-theme@3.2.0': {}
 
