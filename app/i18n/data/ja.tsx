@@ -35,6 +35,8 @@ export default {
   'demo-furi-desc': '「振り仮名」でクリップボード内の日本語テキストにふりがなを素早く付けることができます。LLMを基にしています。',
   'demo-arthash-title': 'Arthash - アート風の画像プレースホルダーハッシュ',
   'demo-arthash-desc': 'Arthash は画像を 17B〜400B のコンパクトなハッシュに符号化し、読み込み中のプレースホルダーとして利用できます。コアは Rust 製で、DCT・図形・ピクセルなど複数のスタイルに対応し、Python と TypeScript（WASM）のバインディングを提供します。',
+  'demo-my-home-title': 'My Home - 間取りエディタと 3D トゥーンジオラマ',
+  'demo-my-home-desc': 'ブラウザで動く間取りエディタと 3D トゥーンジオラマ。日本・中国・欧米の間取りを生成し、住人の職業・性格・趣味に合わせて家具を自動配置して 3D で確認できます。時刻と都市による日照、2900 点以上のプロシージャル素材、9 スタイルの配色。サーバー・アカウント不要。',
   'demo-telemetry-hud-title': 'Telemetry HUD - サイバーパンク風システムモニター壁紙',
   'demo-telemetry-hud-desc': '実際のハードウェア情報をサイバーパンク風の HUD として表示するデスクトップ壁紙。CPU の P / E コア、GPU、メモリモジュール、ディスク、ネットワーク、マザーボードのスロット、バッテリーまで表示します。センサーは小さな Rust 製ヘルパーが読み取り、Wallpaper Engine なしでデスクトップアイコンの後ろに単体で表示することも、Wallpaper Engine の壁紙として使うこともできます。マウス視差、CRT 風ポストエフェクト、9 種類のカラーテーマ付き。',
   'demo-cartographer-title': 'Cartographer - 手続き型ファンタジー世界地図',

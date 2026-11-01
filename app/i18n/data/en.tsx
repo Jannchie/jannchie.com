@@ -35,6 +35,8 @@ export default {
   'demo-furi-desc': 'Furi is a tool for quickly annotating Japanese text in the clipboard with furigana. It is based on LLM.',
   'demo-arthash-title': 'Arthash - Artistic Image Placeholder Hash',
   'demo-arthash-desc': 'Arthash encodes an image into a compact 17B–400B hash to use as a placeholder while the full image loads. Written in Rust, it supports DCT, shape and pixel styles, with Python and TypeScript (WASM) bindings.',
+  'demo-my-home-title': 'My Home - Floor Plan Editor and 3D Toon Diorama',
+  'demo-my-home-desc': 'A floor plan editor and toon-shaded 3D diorama in the browser. Generate Japanese, Chinese or Western layouts, furnish them automatically from a household profile of jobs, personalities and hobbies, then explore the result in 3D with sunlight by time and city, 2900+ procedural assets and 9 style palettes. No server or account needed.',
   'demo-telemetry-hud-title': 'Telemetry HUD - Cyberpunk System Monitor Wallpaper',
   'demo-telemetry-hud-desc': 'A live desktop wallpaper that shows real hardware telemetry as a cyberpunk HUD: CPU P/E cores, GPU, memory modules, disks, network, mainboard slots and battery. A small Rust helper reads the sensors; it runs standalone behind the desktop icons or in Wallpaper Engine, with mouse parallax, CRT post-processing and nine color themes.',
   'demo-cartographer-title': 'Cartographer - Procedural Fantasy World Maps',

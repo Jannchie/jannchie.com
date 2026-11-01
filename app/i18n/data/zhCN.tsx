@@ -35,6 +35,8 @@ export default {
   'demo-furi-desc': '「振り仮名」是一个日语假名注音工具。用于快速给出剪贴板中的日语文本的假名注音。基于 LLM。',
   'demo-arthash-title': 'Arthash - 艺术化的图片占位符哈希',
   'demo-arthash-desc': 'Arthash 可以把图片编码成 17B ~ 400B 的紧凑哈希，用作加载时的占位图。核心由 Rust 实现，支持 DCT、几何图形与像素等多种风格，并提供 Python 与 TypeScript（WASM）绑定。',
+  'demo-my-home-title': 'My Home - 户型编辑器与 3D 卡通沙盘',
+  'demo-my-home-desc': '浏览器里的户型编辑器与 3D 卡通沙盘。生成日式、中式或欧美户型，按住户的职业、性格与兴趣一键布置家具，再在 3D 中查看：按时刻与城市计算日照，2900+ 程序化素材，9 种风格配色。无需服务器和账号。',
   'demo-telemetry-hud-title': 'Telemetry HUD - 赛博风系统监控壁纸',
   'demo-telemetry-hud-desc': '把真实硬件遥测做成赛博风 HUD 的动态桌面壁纸：CPU 大小核、GPU、内存条、磁盘、网络、主板插槽与电池一应俱全。数据由一个小巧的 Rust 服务读取；既能脱离 Wallpaper Engine 直接显示在桌面图标后面，也能作为 Wallpaper Engine 壁纸使用，带鼠标视差、CRT 后处理和九套配色主题。',
   'demo-cartographer-title': 'Cartographer - 程序化幻想世界地图',

@@ -1,6 +1,12 @@
 export function useDemos() {
   return [
     {
+      title: 'demo-my-home-title',
+      desc: 'demo-my-home-desc',
+      href: 'https://home.jannchie.com',
+      link: '/videos/demo-my-home.mp4',
+    },
+    {
       title: 'demo-telemetry-hud-title',
       desc: 'demo-telemetry-hud-desc',
       href: 'https://github.com/Jannchie/telemetry-hud',
