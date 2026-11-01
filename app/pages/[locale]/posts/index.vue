@@ -67,7 +67,7 @@ useSeoMeta(buildSeoMeta({
             </h3>
             <div
               v-if="post.createdAt"
-              class="text-xs text-fg-3 font-mono"
+              class="text-xs text-fg-3 tabular-nums"
             >
               {{ postDateFormatter.format(new Date(post.createdAt)) }}
             </div>

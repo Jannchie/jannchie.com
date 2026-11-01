@@ -166,7 +166,7 @@ const createdAt = computed(() => {
               >
                 {{ data.description }}
               </p>
-              <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 font-mono">
+              <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 tabular-nums">
                 <span v-if="createdAt">
                   {{ createdAt }}
                 </span>
@@ -200,7 +200,7 @@ const createdAt = computed(() => {
           </div>
           <div class="border-t border-bd -mx-4 sm:-mx-8">
             <div class="divide-y divide-bd">
-              <div class="px-4 py-3 text-sm text-fg-3 font-mono opacity-75 sm:px-8">
+              <div class="px-4 py-3 text-sm text-fg-3 opacity-75 sm:px-8">
                 <ContentLicense />
               </div>
               <div class="px-4 py-4 text-sm text-fg-3 font-mono opacity-75 sm:px-8">

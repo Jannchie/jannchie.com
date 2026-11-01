@@ -90,7 +90,7 @@ const hasAnyDetail = computed(() => {
           >
             {{ data.description }}
           </p>
-          <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 font-mono">
+          <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 tabular-nums">
             <span v-if="updatedAtLabel">
               updated · {{ updatedAtLabel }}
             </span>
@@ -127,7 +127,7 @@ const hasAnyDetail = computed(() => {
       <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
         <div class="md:grid md:grid-cols-[10rem_1fr]">
           <div class="flex items-start border-x border-b border-bd px-4 py-3 md:border-x-0 md:border-b-0 md:border-r md:px-6 md:py-6">
-            <span class="text-sm text-fg-1 tracking-wider font-mono md:text-base">
+            <span class="text-sm text-fg-1 tracking-wider md:text-base">
               {{ group.name }}
             </span>
           </div>
@@ -149,13 +149,13 @@ const hasAnyDetail = computed(() => {
                   {{ item.name }}
                 </component>
                 <span v-else>{{ item.name }}</span>
-                <span v-if="item.note" class="ml-2 text-xs text-fg-3 font-mono">
+                <span v-if="item.note" class="ml-2 text-xs text-fg-3">
                   — {{ item.note }}
                 </span>
               </span>
               <span
                 v-if="hasAnyDetail"
-                class="text-right text-sm text-fg-3 font-mono"
+                class="text-right text-sm text-fg-3"
               >
                 {{ item.detail ?? '' }}
               </span>
@@ -170,7 +170,7 @@ const hasAnyDetail = computed(() => {
       class="w-full flex justify-center border-b border-bd"
     >
       <div class="mx-4 max-w-[52rem] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 font-mono sm:px-8">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 sm:px-8">
           <span class="text-fg-3/70">→</span>
           <NuxtLink
             v-for="s in siblings"

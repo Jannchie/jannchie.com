@@ -150,7 +150,7 @@ const demosDivided = computed(() => {
               </h3>
               <div
                 v-if="post.createdAt"
-                class="text-xs text-fg-3"
+                class="text-xs text-fg-3 tabular-nums"
               >
                 {{ contentDateFormatter.format(new Date(post.createdAt)) }}
               </div>
@@ -179,7 +179,7 @@ const demosDivided = computed(() => {
               </h3>
               <div
                 v-if="essay.createdAt"
-                class="text-xs text-fg-3"
+                class="text-xs text-fg-3 tabular-nums"
               >
                 {{ contentDateFormatter.format(new Date(essay.createdAt)) }}
               </div>

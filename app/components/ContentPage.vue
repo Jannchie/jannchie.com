@@ -145,7 +145,7 @@ const siblings = computed(() => {
           >
             {{ data.description }}
           </p>
-          <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 font-mono">
+          <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-fg-3 tabular-nums">
             <span v-if="updatedAt">
               updated · {{ updatedAt }}
             </span>
@@ -176,7 +176,7 @@ const siblings = computed(() => {
       class="w-full flex justify-center border-b border-bd"
     >
       <div class="mx-4 max-w-[1120px] min-w-0 w-full border-x-0 border-bd lg:mx-16 sm:mx-8 sm:border-x">
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 font-mono sm:px-8">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-4 text-xs text-fg-3 sm:px-8">
           <span class="text-fg-3/70">
             →
           </span>
